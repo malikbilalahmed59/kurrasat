@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "كُرّاس - إنشاء كراسة" %}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'style/create.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- قسم عنوان الصفحة -->
+<section class="page-title">
+  <div class="container">
+    <h1 class="animate fade-in">{% trans "إنشاء كراسة" %}</h1>
+    <div class="breadcrumb animate fade-in delay-100">
+      <a href="{% url 'core:index' %}">{% trans "الرئيسية" %}</a> / <span>{% trans "إنشاء كراسة" %}</span>
+    </div>
+  </div>
+  <div class="floating-circle large"></div>
+  <div class="floating-circle medium"></div>
+</section>
+
+<!-- قسم نموذج إنشاء الكراسة -->
+<section class="create-notebook">
+  <div class="container">
+    <div class="form-container">
+      <h2>{% trans "نموذج تسجيل المنافسة" %}</h2>
+      <form id="notebook-form" method="post" action="{% url 'documents:create' %}">
+        {% csrf_token %}
+        
+        {% if form.non_field_errors %}
+          <div class="error-message">
+            {% for error in form.non_field_errors %}
+              {{ error }}
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        <div class="form-group">
+          <label for="id_title">{% trans "اسم الكراسة:" %}</label>
+          <input
+            type="text"
+            id="id_title"
+            name="title"
+            value="{{ form.title.value|default:'' }}"
+            placeholder="{% trans 'أدخل اسم الكراسة' %}"
+            required
+          />
+          {% if form.title.errors %}
+            <div class="error-message">
+              {% for error in form.title.errors %}
+                {{ error }}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="id_description">{% trans "أهداف المنافسة:" %}</label>
+          <textarea
+            id="id_description"
+            name="description"
+            rows="4"
+            placeholder="{% trans 'أدخل أهداف المنافسة' %}"
+            required
+          >{{ form.description.value|default:'' }}</textarea>
+          {% if form.description.errors %}
+            <div class="error-message">
+              {% for error in form.description.errors %}
+                {{ error }}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          <label for="id_content">{% trans "وصف المنافسة:" %}</label>
+          <textarea
+            id="id_content"
+            name="content"
+            rows="8"
+            placeholder="{% trans 'أدخل وصف المنافسة' %}"
+            required
+          >{{ form.content.value|default:'' }}</textarea>
+          {% if form.content.errors %}
+            <div class="error-message">
+              {% for error in form.content.errors %}
+                {{ error }}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            <span class="btn-text">{% trans "إنشاء" %}</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="floating-circle small"></div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/create.js' %}"></script>
+{% endblock %}

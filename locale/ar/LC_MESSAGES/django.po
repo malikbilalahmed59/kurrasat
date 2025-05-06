@@ -1,0 +1,1340 @@
+# Arabic Translations for Kurras Application
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-04 12:38+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\models.py:7
+msgid "Free Plan"
+msgstr "الخطة المجانية"
+
+#: .\accounts\models.py:8
+msgid "Basic Plan"
+msgstr "الخطة الأساسية"
+
+#: .\accounts\models.py:9
+msgid "Professional Plan"
+msgstr "الخطة الاحترافية"
+
+#: .\accounts\views.py:16
+msgid "Your account has been created successfully!"
+msgstr "تم إنشاء حسابك بنجاح!"
+
+#: .\accounts\views.py:36
+msgid "Invalid username or password."
+msgstr "اسم المستخدم أو كلمة المرور غير صحيحة."
+
+#: .\accounts\views.py:49
+msgid "Your profile has been updated!"
+msgstr "تم تحديث ملفك الشخصي!"
+
+#: .\accounts\views.py:64
+msgid "Your password was successfully updated!"
+msgstr "تم تحديث كلمة المرور بنجاح!"
+
+#: .\accounts\views.py:67
+msgid "Please correct the error below."
+msgstr "يرجى تصحيح الخطأ أدناه."
+#: .\documents\admin.py:15 .\documents\admin.py:76
+msgid "Document Analysis"
+msgstr "تحليل المستند"
+
+#: .\documents\admin.py:16 .\documents\admin.py:77
+msgid "Document Analyses"
+msgstr "تحليلات المستندات"
+
+#: .\documents\admin.py:34 .\documents\models.py:23 .\documents\models.py:30
+msgid "Document"
+msgstr "مستند"
+
+#: .\documents\admin.py:35 .\documents\models.py:24
+msgid "Documents"
+msgstr "المستندات"
+
+#: .\documents\admin.py:41 .\documents\models.py:16
+msgid "Content"
+msgstr "المحتوى"
+
+#: .\documents\admin.py:45
+msgid "Timestamps"
+msgstr "الطوابع الزمنية"
+
+#: .\documents\admin.py:54
+msgid "View"
+msgstr "عرض"
+
+#: .\documents\admin.py:64
+msgid "Actions"
+msgstr "الإجراءات"
+
+#: .\documents\admin.py:83
+msgid "Analysis"
+msgstr "تحليل"
+
+#: .\documents\models.py:13
+msgid "User"
+msgstr "المستخدم"
+
+#: .\documents\models.py:14
+msgid "Title"
+msgstr "العنوان"
+
+#: .\documents\models.py:15
+msgid "Description"
+msgstr "الوصف"
+
+#: .\documents\models.py:17
+msgid "File"
+msgstr "الملف"
+
+#: .\documents\models.py:18
+msgid "Status"
+msgstr "الحالة"
+
+#: .\documents\models.py:19
+msgid "Created at"
+msgstr "تم الإنشاء في"
+
+#: .\documents\models.py:20
+msgid "Updated at"
+msgstr "تم التحديث في"
+
+#: .\documents\models.py:31
+msgid "Analysis text"
+msgstr "نص التحليل"
+
+#: .\documents\models.py:32
+msgid "Suggestions"
+msgstr "الاقتراحات"
+
+#: .\documents\models.py:33
+msgid "Analysis date"
+msgstr "تاريخ التحليل"
+
+#: .\documents\models.py:36
+msgid "Document analysis"
+msgstr "تحليل المستند"
+
+#: .\documents\models.py:37
+msgid "Document analyses"
+msgstr "تحليلات المستندات"
+
+#: .\documents\models.py:40
+#, python-brace-format
+msgid "Analysis for {title}"
+msgstr "تحليل لـ {title}"
+
+#: .\documents\views.py:19
+msgid "Document created successfully!"
+msgstr "تم إنشاء المستند بنجاح!"
+
+#: .\documents\views.py:44
+msgid "Missing required fields"
+msgstr "حقول مطلوبة مفقودة"
+
+#: .\documents\views.py:74
+msgid "Document updated successfully!"
+msgstr "تم تحديث المستند بنجاح!"
+
+#: .\documents\views.py:88
+msgid "Document deleted successfully!"
+msgstr "تم حذف المستند بنجاح!"
+
+#: .\documents\views.py:106
+msgid "File not found."
+msgstr "الملف غير موجود."
+
+#: .\kurrasat\settings.py:122
+msgid "Arabic"
+msgstr "العربية"
+
+#: .\kurrasat\settings.py:123
+msgid "English"
+msgstr "الإنجليزية"
+
+#: .\kurrasat\urls.py:17
+msgid "admin/"
+msgstr ""
+
+#: .\templates\404.html:5
+msgid "404 - الصفحة غير موجودة"
+msgstr "404 - الصفحة غير موجودة"
+
+#: .\templates\404.html:43
+msgid "الصفحة غير موجودة"
+msgstr "الصفحة غير موجودة"
+
+#: .\templates\404.html:45
+msgid ""
+"عذراً، الصفحة التي تبحث عنها غير موجودة. ربما تم نقلها أو حذفها أو تم تغيير "
+"عنوانها."
+msgstr ""
+"عذراً، الصفحة التي تبحث عنها غير موجودة. ربما تم نقلها أو حذفها أو تم تغيير "
+"عنوانها."
+
+#: .\templates\404.html:49 .\templates\500.html:49
+msgid "العودة للصفحة الرئيسية"
+msgstr "العودة للصفحة الرئيسية"
+
+#: .\templates\500.html:5
+msgid "500 - خطأ في الخادم"
+msgstr "500 - خطأ في الخادم"
+
+#: .\templates\500.html:43
+msgid "خطأ في الخادم"
+msgstr "خطأ في الخادم"
+
+#: .\templates\500.html:45
+msgid "عذراً، حدث خطأ غير متوقع في الخادم. يرجى المحاولة مرة أخرى لاحقاً."
+msgstr "عذراً، حدث خطأ غير متوقع في الخادم. يرجى المحاولة مرة أخرى لاحقاً."
+
+#: .\templates\admin\base_site.html:34
+#, fuzzy
+#| msgid "كيفية استخدام كُرّاسات"
+msgid "منصة إدارة كُرّاسات"
+msgstr "كيفية استخدام كُرّاسات"
+
+#: .\templates\admin\base_site.html:36
+msgid "Kurrasat Administration"
+msgstr ""
+
+#: .\templates\base.html:8 .\templates\index.html:5
+msgid "كُرّاسات - منصة الذكاء الاصطناعي"
+msgstr "كُرّاسات - منصة الذكاء الاصطناعي"
+
+#: .\templates\base.html:57 .\templates\base.html:143
+msgid "Kurras Logo"
+msgstr "شعار كُرّاسات"
+
+#: .\templates\base.html:62 .\templates\base.html:104
+#: .\templates\create.html:17 .\templates\development.html:19
+#: .\templates\document_detail.html:15 .\templates\document_edit.html:17
+#: .\templates\login.html:18 .\templates\password_reset_complete.html:34
+#: .\templates\password_reset_confirm.html:23
+#: .\templates\password_reset_done.html:34
+#: .\templates\password_reset_form.html:25 .\templates\signup.html:18
+msgid "الرئيسية"
+msgstr "الرئيسية"
+
+#: .\templates\base.html:63 .\templates\base.html:105
+msgid "من نحن"
+msgstr "من نحن"
+
+#: .\templates\base.html:64 .\templates\base.html:106
+msgid "المميزات"
+msgstr "المميزات"
+
+#: .\templates\base.html:65 .\templates\base.html:107
+msgid "الخدمات"
+msgstr "الخدمات"
+
+#: .\templates\base.html:66 .\templates\base.html:108
+#: .\templates\index.html:162
+msgid "الباقات"
+msgstr "الباقات"
+
+#: .\templates\base.html:67 .\templates\base.html:109
+#: .\templates\index.html:280
+msgid "الميثاق"
+msgstr "الميثاق"
+
+#: .\templates\base.html:68 .\templates\base.html:110 .\templates\base.html:153
+#: .\templates\index.html:294
+msgid "تواصل معنا"
+msgstr "تواصل معنا"
+
+#: .\templates\base.html:87 .\templates\base.html:114
+msgid "الملف الشخصي"
+msgstr "الملف الشخصي"
+
+#: .\templates\base.html:89 .\templates\base.html:116
+#: .\templates\login.html:121 .\templates\signup.html:16
+#: .\templates\signup.html:18
+msgid "مستخدم جديد"
+msgstr "مستخدم جديد"
+
+#: .\templates\base.html:90 .\templates\base.html:117 .\templates\login.html:16
+#: .\templates\login.html:18 .\templates\login.html:116
+#: .\templates\signup.html:146
+msgid "تسجيل دخول"
+msgstr "تسجيل دخول"
+
+#: .\templates\base.html:146
+msgid ""
+"لوحة تحكم مدعومة بالذكاء الاصطناعي لتسهيل استقبال وإنشاء وتحسين ملفات تقديم "
+"العروض بدقة وكفاءة، مع توفير تجربة سلسلة لإعداد المستندات وفقًا للمعايير "
+"المطلوبة، وذلك من خلال تنظيم ووضوح عالٍ في كل خطوة."
+msgstr ""
+"لوحة تحكم مدعومة بالذكاء الاصطناعي لتسهيل استقبال وإنشاء وتحسين ملفات تقديم "
+"العروض بدقة وكفاءة، مع توفير تجربة سلسلة لإعداد المستندات وفقًا للمعايير "
+"المطلوبة، وذلك من خلال تنظيم ووضوح عالٍ في كل خطوة."
+
+#: .\templates\base.html:151
+msgid "الدعم"
+msgstr "الدعم"
+
+#: .\templates\base.html:154 .\templates\signup.html:136
+msgid "سياسة الخصوصية"
+msgstr "سياسة الخصوصية"
+
+#: .\templates\base.html:158
+msgid "خدمات"
+msgstr "خدمات"
+
+#: .\templates\base.html:160 .\templates\create.html:97
+#: .\templates\index.html:137
+msgid "إنشاء"
+msgstr "إنشاء"
+
+#: .\templates\base.html:161 .\templates\index.html:148
+msgid "تطوير"
+msgstr "تطوير"
+
+#: .\templates\base.html:174
+msgid "&copy; جمع الحقوق محفوظة لكُرَّاسات 2025"
+msgstr "&copy; جميع الحقوق محفوظة لكُرَّاسات 2025"
+
+#: .\templates\create.html:5
+msgid "كُرّاس - إنشاء كراسة"
+msgstr "كُرّاسات - إنشاء كراسة"
+
+#: .\templates\create.html:15 .\templates\create.html:17
+msgid "إنشاء كراسة"
+msgstr "إنشاء كراسة"
+
+#: .\templates\create.html:28
+msgid "نموذج تسجيل المنافسة"
+msgstr "نموذج تسجيل المنافسة"
+
+#: .\templates\create.html:41
+msgid "اسم الكراسة:"
+msgstr "اسم الكراسة:"
+
+#: .\templates\create.html:47
+msgid "أدخل اسم الكراسة"
+msgstr "أدخل اسم الكراسة"
+
+#: .\templates\create.html:60
+msgid "أهداف المنافسة:"
+msgstr "أهداف المنافسة:"
+
+#: .\templates\create.html:65
+msgid "أدخل أهداف المنافسة"
+msgstr "أدخل أهداف المنافسة"
+
+#: .\templates\create.html:78
+msgid "وصف المنافسة:"
+msgstr "وصف المنافسة:"
+
+#: .\templates\create.html:83
+msgid "أدخل وصف المنافسة"
+msgstr "أدخل وصف المنافسة"
+
+#: .\templates\development.html:5
+msgid "كُرّاس - تطوير المستند"
+msgstr "كُرّاسات - تطوير المستند"
+
+#: .\templates\development.html:16 .\templates\development.html:21
+msgid "تطوير المستند"
+msgstr "تطوير المستند"
+
+#: .\templates\development.html:17
+msgid "قم بتحميل ملفك وتحليل جودته للحصول على تقرير مفصل"
+msgstr "قم بتحميل ملفك وتحليل جودته للحصول على تقرير مفصل"
+
+#: .\templates\development.html:39
+msgid "تحميل ملف للتطوير"
+msgstr "تحميل ملف للتطوير"
+
+#: .\templates\development.html:40
+msgid "يرجى إدخال تفاصيل الملف وتحميله للتحليل"
+msgstr "يرجى إدخال تفاصيل الملف وتحميله للتحليل"
+
+#: .\templates\development.html:46
+msgid "عنوان الملف"
+msgstr "عنوان الملف"
+
+#: .\templates\development.html:51
+msgid "أدخل عنوان الملف"
+msgstr "أدخل عنوان الملف"
+
+#: .\templates\development.html:58
+msgid "وصف الملف"
+msgstr "وصف الملف"
+
+#: .\templates\development.html:62
+msgid "أدخل وصفًا موجزًا للملف"
+msgstr "أدخل وصفًا موجزًا للملف"
+
+#: .\templates\development.html:70 .\templates\development.html:157
+msgid "تحميل الملف"
+msgstr "تحميل الملف"
+
+#: .\templates\development.html:85
+msgid "اسحب الملف هنا أو انقر للتحميل"
+msgstr "اسحب الملف هنا أو انقر للتحميل"
+
+#: .\templates\development.html:86
+msgid "PDF, DOC, DOCX, TXT (الحد الأقصى: 10MB)"
+msgstr "PDF, DOC, DOCX, TXT (الحد الأقصى: 10MB)"
+
+#: .\templates\development.html:94
+msgid "لم يتم اختيار ملف"
+msgstr "لم يتم اختيار ملف"
+
+#: .\templates\development.html:117
+msgid "تحليل الملف"
+msgstr "تحليل الملف"
+
+#: .\templates\development.html:128 .\templates\document_detail.html:93
+msgid "اقتراحات للتحسين"
+msgstr "اقتراحات للتحسين"
+
+#: .\templates\development.html:135
+msgid "تحميل التقرير"
+msgstr "تحميل التقرير"
+
+#: .\templates\development.html:148
+msgid "كيف يعمل تحليل الجودة؟"
+msgstr "كيف يعمل تحليل الجودة؟"
+
+#: .\templates\development.html:149
+msgid "عملية بسيطة من 4 خطوات لتحسين جودة مستنداتك"
+msgstr "عملية بسيطة من 4 خطوات لتحسين جودة مستنداتك"
+
+#: .\templates\development.html:158
+msgid "قم بتحميل المستند الذي ترغب في تحليله وتحسينه"
+msgstr "قم بتحميل المستند الذي ترغب في تحليله وتحسينه"
+
+#: .\templates\development.html:166
+msgid "التحليل"
+msgstr "التحليل"
+
+#: .\templates\development.html:168
+msgid "يقوم النظام بتحليل المستند وتقييم جودته بناءً على معايير محددة"
+msgstr "يقوم النظام بتحليل المستند وتقييم جودته بناءً على معايير محددة"
+
+#: .\templates\development.html:177
+msgid "النتائج"
+msgstr "النتائج"
+
+#: .\templates\development.html:178
+msgid "عرض نتائج التحليل مع تقييم مفصل واقتراحات للتحسين"
+msgstr "عرض نتائج التحليل مع تقييم مفصل واقتراحات للتحسين"
+
+#: .\templates\development.html:186
+msgid "التقرير"
+msgstr "التقرير"
+
+#: .\templates\development.html:187
+msgid "تحميل تقرير PDF مفصل يمكنك استخدامه لتحسين المستند"
+msgstr "تحميل تقرير PDF مفصل يمكنك استخدامه لتحسين المستند"
+
+#: .\templates\document_confirm_delete.html:5
+msgid "حذف المستند"
+msgstr "حذف المستند"
+
+#: .\templates\document_confirm_delete.html:59
+msgid "هل أنت متأكد من رغبتك في حذف هذا المستند؟"
+msgstr "هل أنت متأكد من رغبتك في حذف هذا المستند؟"
+
+#: .\templates\document_confirm_delete.html:60
+msgid "أنت على وشك حذف المستند:"
+msgstr "أنت على وشك حذف المستند:"
+
+#: .\templates\document_confirm_delete.html:61
+msgid ""
+"هذا الإجراء لا يمكن التراجع عنه. سيتم حذف جميع البيانات المرتبطة بهذا "
+"المستند بشكل نهائي."
+msgstr ""
+"هذا الإجراء لا يمكن التراجع عنه. سيتم حذف جميع البيانات المرتبطة بهذا "
+"المستند بشكل نهائي."
+
+#: .\templates\document_confirm_delete.html:67
+msgid "نعم، احذف المستند"
+msgstr "نعم، احذف المستند"
+
+#: .\templates\document_confirm_delete.html:70
+#: .\templates\document_edit.html:119
+msgid "إلغاء"
+msgstr "إلغاء"
+
+#: .\templates\document_detail.html:5
+msgid "كُرّاس"
+msgstr "كُرّاسات"
+
+#: .\templates\document_detail.html:16 .\templates\document_edit.html:18
+#: .\templates\drafts.html:15 .\templates\profile.html:52
+msgid "المسودات"
+msgstr "المسودات"
+
+#: .\templates\document_detail.html:27 .\templates\document_edit.html:64
+#: .\templates\drafts.html:68
+msgid "نشط"
+msgstr "نشط"
+
+#: .\templates\document_detail.html:29 .\templates\document_edit.html:65
+#: .\templates\drafts.html:70
+msgid "مكتمل"
+msgstr "مكتمل"
+
+#: .\templates\document_detail.html:31 .\templates\document_edit.html:66
+#: .\templates\drafts.html:72
+msgid "مؤرشف"
+msgstr "مؤرشف"
+
+#: .\templates\document_detail.html:33 .\templates\document_edit.html:67
+#: .\templates\drafts.html:74
+msgid "قيد المراجعة"
+msgstr "قيد المراجعة"
+
+#: .\templates\document_detail.html:39
+msgid "تم الإنشاء:"
+msgstr "تم الإنشاء:"
+
+#: .\templates\document_detail.html:44 .\templates\drafts.html:61
+msgid "آخر تحديث:"
+msgstr "آخر تحديث:"
+
+#: .\templates\document_detail.html:52 .\templates\document_edit.html:19
+#: .\templates\drafts.html:85
+msgid "تحرير"
+msgstr "تحرير"
+
+#: .\templates\document_detail.html:55 .\templates\drafts.html:88
+msgid "تنزيل"
+msgstr "تنزيل"
+
+#: .\templates\document_detail.html:58 .\templates\drafts.html:91
+msgid "حذف"
+msgstr "حذف"
+
+#: .\templates\document_detail.html:67
+msgid "وصف المستند"
+msgstr "وصف المستند"
+
+#: .\templates\document_detail.html:74
+msgid "محتوى المستند"
+msgstr "محتوى المستند"
+
+#: .\templates\document_detail.html:82
+msgid "تحليلات المستند"
+msgstr "تحليلات المستند"
+
+#: .\templates\document_detail.html:86
+msgid "تحليل بتاريخ"
+msgstr "تحليل بتاريخ"
+
+#: .\templates\document_detail.html:88
+msgid "نتائج التحليل"
+msgstr "نتائج التحليل"
+
+#: .\templates\document_edit.html:5 .\templates\document_edit.html:15
+#: .\templates\document_edit.html:30
+msgid "تحرير المستند"
+msgstr "تحرير المستند"
+
+#: .\templates\document_edit.html:43
+msgid "عنوان المستند:"
+msgstr "عنوان المستند:"
+
+#: .\templates\document_edit.html:49
+msgid "أدخل عنوان المستند"
+msgstr "أدخل عنوان المستند"
+
+#: .\templates\document_edit.html:62
+msgid "حالة المستند:"
+msgstr "حالة المستند:"
+
+#: .\templates\document_edit.html:79
+msgid "وصف المستند:"
+msgstr "وصف المستند:"
+
+#: .\templates\document_edit.html:84
+msgid "أدخل وصف المستند"
+msgstr "أدخل وصف المستند"
+
+#: .\templates\document_edit.html:97
+msgid "محتوى المستند:"
+msgstr "محتوى المستند:"
+
+#: .\templates\document_edit.html:102
+msgid "أدخل محتوى المستند"
+msgstr "أدخل محتوى المستند"
+
+#: .\templates\document_edit.html:116 .\templates\profile.html:84
+msgid "حفظ التغييرات"
+msgstr "حفظ التغييرات"
+
+#: .\templates\drafts.html:5
+msgid "كُرّاس - المسودات"
+msgstr "كُرّاسات - المسودات"
+
+#: .\templates\drafts.html:16
+msgid "قم بإدارة مسوداتك وتحريرها وتنزيلها بسهولة"
+msgstr "قم بإدارة مسوداتك وتحريرها وتنزيلها بسهولة"
+
+#: .\templates\drafts.html:26 .\templates\drafts.html:101
+msgid "إنشاء مسودة جديدة"
+msgstr "إنشاء مسودة جديدة"
+
+#: .\templates\drafts.html:33
+msgid "البحث في المسودات..."
+msgstr "البحث في المسودات..."
+
+#: .\templates\drafts.html:42
+msgid "جميع المسودات"
+msgstr "جميع المسودات"
+
+#: .\templates\drafts.html:43
+msgid "المسودات النشطة"
+msgstr "المسودات النشطة"
+
+#: .\templates\drafts.html:44
+msgid "المسودات المكتملة"
+msgstr "المسودات المكتملة"
+
+#: .\templates\drafts.html:45
+msgid "المسودات المؤرشفة"
+msgstr "المسودات المؤرشفة"
+
+#: .\templates\drafts.html:46
+msgid "المسودات قيد المراجعة"
+msgstr "المسودات قيد المراجعة"
+
+#: .\templates\drafts.html:99
+msgid "لا توجد مسودات"
+msgstr "لا توجد مسودات"
+
+#: .\templates\drafts.html:100
+msgid "لم تقم بإنشاء أي مسودة بعد. قم بإنشاء مسودة جديدة للبدء."
+msgstr "لم تقم بإنشاء أي مسودة بعد. قم بإنشاء مسودة جديدة للبدء."
+
+#: .\templates\index.html:13
+msgid "كُرَّاسات"
+msgstr "كُرَّاسات"
+
+#: .\templates\index.html:16
+msgid ""
+"أداة تعتمد على الذكاء الاصطناعي لتسهيل إنشاء وتحسين طلبات تقديم العروض بدقة "
+"وكفاءة. توفر تجربة سلسة لإعداد المستندات وفقا للمعايير المطلوبة، مع ضمان "
+"الوضوح والتنظيم في كل خطوة."
+msgstr ""
+"أداة تعتمد على الذكاء الاصطناعي لتسهيل إنشاء وتحسين طلبات تقديم العروض بدقة "
+"وكفاءة. توفر تجربة سلسة لإعداد المستندات وفقا للمعايير المطلوبة، مع ضمان "
+"الوضوح والتنظيم في كل خطوة."
+
+#: .\templates\index.html:19
+msgid ""
+"كُرَّاسات تتماشى مع معايير وزارة المالية، لضمان أعلى مستويات الدقة والالتزام "
+"النظامي."
+msgstr ""
+"كُرَّاسات تتماشى مع معايير وزارة المالية، لضمان أعلى مستويات الدقة والالتزام "
+"النظامي."
+
+#: .\templates\index.html:30
+msgid "من نحن ؟"
+msgstr "من نحن ؟"
+
+#: .\templates\index.html:33
+msgid ""
+"كُرّاسات هي أداة ذكاء اصطناعي متقدمة تهدف إلى تسهيل عملية إنشاء وتحسين طلبات "
+"تقديم العروض بدقة وكفاءة عالية. تم تطوير الأداة لدعم اللغة العربية بالكامل، "
+"مما يمكن الجهات والمؤسسات من إعداد مستندات احترافية تتماشى مع أفضل الممارسات "
+"والمعايير المعتمدة. نحن نسعى إلى تبسيط الإجراءات، رفع مستوى الدقة، وتحقيق "
+"الكفاءة من خلال تسخير تقنيات الذكاء الاصطناعي الحديثة."
+msgstr ""
+"كُرّاسات هي أداة ذكاء اصطناعي متقدمة تهدف إلى تسهيل عملية إنشاء وتحسين طلبات "
+"تقديم العروض بدقة وكفاءة عالية. تم تطوير الأداة لدعم اللغة العربية بالكامل، "
+"مما يمكن الجهات والمؤسسات من إعداد مستندات احترافية تتماشى مع أفضل الممارسات "
+"والمعايير المعتمدة. نحن نسعى إلى تبسيط الإجراءات، رفع مستوى الدقة، وتحقيق "
+"الكفاءة من خلال تسخير تقنيات الذكاء الاصطناعي الحديثة."
+
+#: .\templates\index.html:44
+msgid "المميزات الرئيسية لكُرّاسات"
+msgstr "المميزات الرئيسية لكُرّاسات"
+
+#: .\templates\index.html:46
+msgid ""
+"أداة الذكاء الاصطناعي المخصصة لإنشاء وتطوير كراسات الشروط والمواصفات بكفاءة، "
+"مع ضمان الدقة والامتثال وتوفير تجربة سلسة وبديهية"
+msgstr ""
+"أداة الذكاء الاصطناعي المخصصة لإنشاء وتطوير كراسات الشروط والمواصفات بكفاءة، "
+"مع ضمان الدقة والامتثال وتوفير تجربة سلسة وبديهية"
+
+#: .\templates\index.html:54
+msgid "إنشاء و تطوير"
+msgstr "إنشاء و تطوير"
+
+#: .\templates\index.html:56
+msgid "إنشاء وتطوير طلب تقديم عرض جيد ليكون أسهل وأكثر دقة"
+msgstr "إنشاء وتطوير طلب تقديم عرض جيد ليكون أسهل وأكثر دقة"
+
+#: .\templates\index.html:64
+msgid "امتثال للمعايير الرسمية"
+msgstr "امتثال للمعايير الرسمية"
+
+#: .\templates\index.html:66
+msgid ""
+"التأكد من توافق النظام مع المعايير الرسمية المعتمدة لكراسة الشروط والمواصفات"
+msgstr ""
+"التأكد من توافق النظام مع المعايير الرسمية المعتمدة لكراسة الشروط والمواصفات"
+
+#: .\templates\index.html:74
+msgid "جودة دون أخطاء"
+msgstr "جودة دون أخطاء"
+
+#: .\templates\index.html:76
+msgid "تقليل الأخطاء وتحقيق جودة عالية في الأداء"
+msgstr "تقليل الأخطاء وتحقيق جودة عالية في الأداء"
+
+#: .\templates\index.html:84
+msgid "سرعة وكفاءة عالية"
+msgstr "سرعة وكفاءة عالية"
+
+#: .\templates\index.html:86
+msgid "تحسين سرعة الإداء و كفاءته لتحقيق أفضل تجربة"
+msgstr "تحسين سرعة الأداء وكفاءته لتحقيق أفضل تجربة"
+
+#: .\templates\index.html:94
+msgid "سهولة ووضوح الاستخدام"
+msgstr "سهولة ووضوح الاستخدام"
+
+#: .\templates\index.html:95
+msgid "واجهة مستخدم بسيطة و سهلة الاستخدام"
+msgstr "واجهة مستخدم بسيطة وسهلة الاستخدام"
+
+#: .\templates\index.html:102
+msgid "دعم كامل للغة العربية"
+msgstr "دعم كامل للغة العربية"
+
+#: .\templates\index.html:104
+msgid "دعم كامل للغة العربية في جميع جوانب النظام"
+msgstr "دعم كامل للغة العربية في جميع جوانب النظام"
+
+#: .\templates\index.html:116
+msgid "كيفية استخدام كُرّاسات"
+msgstr "كيفية استخدام كُرّاسات"
+
+#: .\templates\index.html:118
+msgid ""
+"اكتشف كيفية استخدام أداة كُرّاسات لإنشاء وتحسين كراسات الشروط والمواصفات "
+"بسهولة وكفاءة"
+msgstr ""
+"اكتشف كيفية استخدام أداة كُرّاسات لإنشاء وتحسين كراسات الشروط والمواصفات "
+"بسهولة وكفاءة"
+
+#: .\templates\index.html:139
+msgid ""
+"ابدأ بإنشاء مستند جديد بسهولة، وفقا للمعايير المطلوبة، مع إمكانية التعديل "
+"والتخصيص حسب الحاجة"
+msgstr ""
+"ابدأ بإنشاء مستند جديد بسهولة، وفقا للمعايير المطلوبة، مع إمكانية التعديل "
+"والتخصيص حسب الحاجة"
+
+#: .\templates\index.html:150
+msgid ""
+"طور مستنداتك من خلال تحسين المحتوى، إضافة التعديلات، والتأكد من توافقها مع "
+"المتطلبات"
+msgstr ""
+"طور مستنداتك من خلال تحسين المحتوى، إضافة التعديلات، والتأكد من توافقها مع "
+"المتطلبات"
+
+#: .\templates\index.html:164
+msgid ""
+"اختر الباقة التي تناسب احتياجاتك واستمتع بتجربة فريدة مع خدماتنا المميزة"
+msgstr ""
+"اختر الباقة التي تناسب احتياجاتك واستمتع بتجربة فريدة مع خدماتنا المميزة"
+
+#: .\templates\index.html:169 .\templates\index.html:198
+#: .\templates\index.html:232
+msgid "قريباً"
+msgstr "قريباً"
+
+#: .\templates\index.html:170
+msgid "الباقة المجانية"
+msgstr "الباقة المجانية"
+
+#: .\templates\index.html:173 .\templates\index.html:202
+#: .\templates\index.html:236
+msgid "﷼"
+msgstr "﷼"
+
+#: .\templates\index.html:174 .\templates\index.html:203
+#: .\templates\index.html:237
+msgid "/شهرياً"
+msgstr "/شهرياً"
+
+#: .\templates\index.html:179
+msgid "إنشاء طلبات عروض (حتى 3 محاولات فقط)"
+msgstr "إنشاء طلبات عروض (حتى 3 محاولات فقط)"
+
+#: .\templates\index.html:183 .\templates\index.html:212
+#: .\templates\profile.html:197
+msgid "إمكانية حفظ المسودات واستكمالها لاحقاً"
+msgstr "إمكانية حفظ المسودات واستكمالها لاحقاً"
+
+#: .\templates\index.html:187 .\templates\index.html:216
+#: .\templates\index.html:254
+msgid "تحسين طلبات العروض وفقًا للمعايير السعودية"
+msgstr "تحسين طلبات العروض وفقًا للمعايير السعودية"
+
+#: .\templates\index.html:191 .\templates\index.html:220
+#: .\templates\index.html:258 .\templates\profile.html:192
+msgid "دعم اللغة العربية"
+msgstr "دعم اللغة العربية"
+
+#: .\templates\index.html:194
+msgid "جرّب مجاناً"
+msgstr "جرّب مجاناً"
+
+#: .\templates\index.html:199
+msgid "الباقة الأساسية"
+msgstr "الباقة الأساسية"
+
+#: .\templates\index.html:208 .\templates\index.html:242
+#: .\templates\profile.html:195
+msgid "إنشاء غير محدود لطلبات العروض"
+msgstr "إنشاء غير محدود لطلبات العروض"
+
+#: .\templates\index.html:227 .\templates\index.html:268
+msgid "اشترك الآن"
+msgstr "اشترك الآن"
+
+#: .\templates\index.html:233
+msgid "الباقة الاحترافية"
+msgstr "الباقة الاحترافية"
+
+#: .\templates\index.html:246 .\templates\profile.html:194
+msgid "تطوير غير محدود لطلبات العروض"
+msgstr "تطوير غير محدود لطلبات العروض"
+
+#: .\templates\index.html:250
+msgid "إمكانية حفظ المسودات واستكمالها لاحقًا"
+msgstr "إمكانية حفظ المسودات واستكمالها لاحقًا"
+
+#: .\templates\index.html:262
+msgid "مخصصة للمجموعات وتتيح العمل المشترك"
+msgstr "مخصصة للمجموعات وتتيح العمل المشترك"
+
+#: .\templates\index.html:283
+msgid ""
+"نحن في 'كراسات' نلتزم بتقديم حلول ذكية ومبتكرة ترتكز على تقنيات الذكاء "
+"الاصطناعي، لدعم المؤسسات في إعداد وتحسين مستنداتها بكفاءة واحترافية عالية. "
+"نعتمد في عملنا على طلبات العروض لضمان دقة المحتوى ومواءمته للمعايير المحلية "
+"المعتمدة، مما يساهم في رفع جودة المستندات وتقليل نسب الأخطاء. كما نحرص على "
+"تطوير أدواتنا بشكل مستمر، وفق أحدث التقنيات العالمية، لضمان تجربة استخدام "
+"سلسة وفعّالة تلبي احتياجات المؤسسات وتسهم في تحقيق أعلى مستويات الدقة "
+"والكفاءة."
+msgstr ""
+"نحن في 'كراسات' نلتزم بتقديم حلول ذكية ومبتكرة ترتكز على تقنيات الذكاء "
+"الاصطناعي، لدعم المؤسسات في إعداد وتحسين مستنداتها بكفاءة واحترافية عالية. "
+"نعتمد في عملنا على طلبات العروض لضمان دقة المحتوى ومواءمته للمعايير المحلية "
+"المعتمدة، مما يساهم في رفع جودة المستندات وتقليل نسب الأخطاء. كما نحرص على "
+"تطوير أدواتنا بشكل مستمر، وفق أحدث التقنيات العالمية، لضمان تجربة استخدام "
+"سلسة وفعّالة تلبي احتياجات المؤسسات وتسهم في تحقيق أعلى مستويات الدقة "
+"والكفاءة."
+
+#: .\templates\index.html:295
+msgid "هل تحتاج مساعدة؟"
+msgstr "هل تحتاج مساعدة؟"
+
+#: .\templates\index.html:301
+msgid "الاسم"
+msgstr "الاسم"
+
+#: .\templates\index.html:302
+msgid "أدخل اسمك"
+msgstr "أدخل اسمك"
+
+#: .\templates\index.html:305 .\templates\password_reset_form.html:53
+#: .\templates\profile.html:80
+msgid "البريد الإلكتروني"
+msgstr "البريد الإلكتروني"
+
+#: .\templates\index.html:306 .\templates\profile.html:81
+#: .\templates\signup.html:76
+msgid "أدخل بريدك الإلكتروني"
+msgstr "أدخل بريدك الإلكتروني"
+
+#: .\templates\index.html:310
+msgid "الرسالة"
+msgstr "الرسالة"
+
+#: .\templates\index.html:311
+msgid "اكتب رسالتك..."
+msgstr "اكتب رسالتك..."
+
+#: .\templates\index.html:314
+msgid "إرسال الرسالة"
+msgstr "إرسال الرسالة"
+
+#: .\templates\login.html:5
+msgid "تسجيل دخول - كُرّاس"
+msgstr "تسجيل دخول - كُرّاسات"
+
+#: .\templates\login.html:55
+msgid "أدخل اسم المستخدم أو البريد الإلكتروني"
+msgstr "أدخل اسم المستخدم أو البريد الإلكتروني"
+
+#: .\templates\login.html:76
+msgid "كلمة المرور"
+msgstr "كلمة المرور"
+
+#: .\templates\login.html:93
+msgid "تذكرني"
+msgstr "تذكرني"
+
+#: .\templates\login.html:95
+msgid "نسيت كلمة المرور؟"
+msgstr "نسيت كلمة المرور؟"
+
+#: .\templates\login.html:99
+msgid "أو تسجيل الدخول باستخدام"
+msgstr "أو تسجيل الدخول باستخدام"
+
+#: .\templates\login.html:106
+msgid "تسجيل الدخول باستخدام Google"
+msgstr "تسجيل الدخول باستخدام Google"
+
+#: .\templates\login.html:111
+msgid "تسجيل الدخول باستخدام Apple"
+msgstr "تسجيل الدخول باستخدام Apple"
+
+#: .\templates\login.html:120
+msgid "ليس لديك حساب؟"
+msgstr "ليس لديك حساب؟"
+
+#: .\templates\password_reset_complete.html:5
+#: .\templates\password_reset_complete.html:32
+msgid "تم إعادة تعيين كلمة المرور"
+msgstr "تم إعادة تعيين كلمة المرور"
+
+#: .\templates\password_reset_complete.html:34
+#: .\templates\password_reset_confirm.html:5
+#: .\templates\password_reset_confirm.html:21
+#: .\templates\password_reset_confirm.html:23
+#: .\templates\password_reset_confirm.html:88
+msgid "إعادة تعيين كلمة المرور"
+msgstr "إعادة تعيين كلمة المرور"
+
+#: .\templates\password_reset_complete.html:42
+msgid "تم إعادة تعيين كلمة المرور بنجاح!"
+msgstr "تم إعادة تعيين كلمة المرور بنجاح!"
+
+#: .\templates\password_reset_complete.html:44
+msgid ""
+"تم تغيير كلمة المرور الخاصة بك. يمكنك الآن تسجيل الدخول باستخدام كلمة المرور "
+"الجديدة."
+msgstr ""
+"تم تغيير كلمة المرور الخاصة بك. يمكنك الآن تسجيل الدخول باستخدام كلمة المرور "
+"الجديدة."
+
+#: .\templates\password_reset_complete.html:48
+msgid "تسجيل الدخول"
+msgstr "تسجيل الدخول"
+
+#: .\templates\password_reset_confirm.html:32
+msgid "يرجى إدخال كلمة مرور جديدة مرتين حتى نتمكن من التحقق من صحتها."
+msgstr "يرجى إدخال كلمة مرور جديدة مرتين حتى نتمكن من التحقق من صحتها."
+
+#: .\templates\password_reset_confirm.html:52 .\templates\profile.html:146
+msgid "كلمة المرور الجديدة"
+msgstr "كلمة المرور الجديدة"
+
+#: .\templates\password_reset_confirm.html:73
+msgid "تأكيد كلمة المرور الجديدة"
+msgstr "تأكيد كلمة المرور الجديدة"
+
+#: .\templates\password_reset_confirm.html:96
+msgid "رابط إعادة تعيين كلمة المرور غير صالح"
+msgstr "رابط إعادة تعيين كلمة المرور غير صالح"
+
+#: .\templates\password_reset_confirm.html:98
+msgid ""
+"قد يكون هذا الرابط قد استُخدم من قبل أو انتهت صلاحيته. يرجى طلب رابط جديد "
+"لإعادة تعيين كلمة المرور."
+msgstr ""
+"قد يكون هذا الرابط قد استُخدم من قبل أو انتهت صلاحيته. يرجى طلب رابط جديد "
+"لإعادة تعيين كلمة المرور."
+
+#: .\templates\password_reset_confirm.html:101
+msgid "طلب رابط جديد"
+msgstr "طلب رابط جديد"
+
+#: .\templates\password_reset_done.html:5
+#: .\templates\password_reset_done.html:32
+msgid "تم إرسال بريد إعادة تعيين كلمة المرور"
+msgstr "تم إرسال بريد إعادة تعيين كلمة المرور"
+
+#: .\templates\password_reset_done.html:34
+#: .\templates\password_reset_form.html:5
+#: .\templates\password_reset_form.html:23
+#: .\templates\password_reset_form.html:25
+msgid "استعادة كلمة المرور"
+msgstr "استعادة كلمة المرور"
+
+#: .\templates\password_reset_done.html:42
+msgid "تم إرسال بريد إلكتروني إليك!"
+msgstr "تم إرسال بريد إلكتروني إليك!"
+
+#: .\templates\password_reset_done.html:44
+msgid ""
+"لقد أرسلنا لك تعليمات لإعادة تعيين كلمة المرور على بريدك الإلكتروني، إذا كان "
+"الحساب موجودًا لدينا."
+msgstr ""
+"لقد أرسلنا لك تعليمات لإعادة تعيين كلمة المرور على بريدك الإلكتروني، إذا كان "
+"الحساب موجودًا لدينا."
+
+#: .\templates\password_reset_done.html:47
+msgid ""
+"ستتلقى الرسالة قريبًا. إذا لم تصلك الرسالة، يرجى التأكد من أنك أدخلت عنوان "
+"البريد الإلكتروني الصحيح وتحقق من مجلد البريد المزعج."
+msgstr ""
+"ستتلقى الرسالة قريبًا. إذا لم تصلك الرسالة، يرجى التأكد من أنك أدخلت عنوان "
+"البريد الإلكتروني الصحيح وتحقق من مجلد البريد المزعج."
+
+#: .\templates\password_reset_done.html:51
+#: .\templates\password_reset_form.html:73
+msgid "العودة إلى تسجيل الدخول"
+msgstr "العودة إلى تسجيل الدخول"
+
+#: .\templates\password_reset_form.html:33
+msgid "أدخل بريدك الإلكتروني وسنرسل لك رابطاً لإعادة تعيين كلمة المرور."
+msgstr "أدخل بريدك الإلكتروني وسنرسل لك رابطاً لإعادة تعيين كلمة المرور."
+
+#: .\templates\password_reset_form.html:69
+msgid "إرسال رابط إعادة التعيين"
+msgstr "إرسال رابط إعادة التعيين"
+
+#: .\templates\payment.html:5
+msgid "كُرّاس - الدفع"
+msgstr "كُرّاسات - الدفع"
+
+#: .\templates\payment.html:54
+msgid "رقم البطاقة"
+msgstr "رقم البطاقة"
+
+#: .\templates\payment.html:58
+msgid "اسم حامل البطاقة"
+msgstr "اسم حامل البطاقة"
+
+#: .\templates\payment.html:63
+msgid "شهر الانتهاء"
+msgstr "شهر الانتهاء"
+
+#: .\templates\payment.html:65
+msgid "الشهر"
+msgstr "الشهر"
+
+#: .\templates\payment.html:81
+msgid "سنة الانتهاء"
+msgstr "سنة الانتهاء"
+
+#: .\templates\payment.html:83
+msgid "السنة"
+msgstr "السنة"
+
+#: .\templates\payment.html:93
+msgid "رمز التحقق"
+msgstr "رمز التحقق"
+
+#: .\templates\payment.html:98
+msgid "تأكيد الدفع"
+msgstr "تأكيد الدفع"
+
+#: .\templates\privacy_policy.html:5
+msgid "كُرّاس - سياسة الخصوصية"
+msgstr "كُرّاسات - سياسة الخصوصية"
+
+#: .\templates\privacy_policy.html:15
+msgid "سياسة الخصوصية لمنصة كراس"
+msgstr "سياسة الخصوصية لمنصة كُرّاسات"
+
+#: .\templates\privacy_policy.html:24
+msgid "الغرض"
+msgstr "الغرض"
+
+#: .\templates\privacy_policy.html:26
+msgid ""
+"تحدد هذه السياسة الإطار العام لسياسة خصوصية البيانات الشخصية في منصة كراس، "
+"حيث تعتبر بمثابة اتفاقية ملزمة، ويعد استخدامك للمنصة قبولًا تامًا بشروط هذه "
+"السياسة. إذا لم تكن موافقًا على هذه السياسة أو أي جزء منها، يجب عليك التوقف "
+"عن استخدام المنصة."
+msgstr ""
+"تحدد هذه السياسة الإطار العام لسياسة خصوصية البيانات الشخصية في منصة كُرّاسات، "
+"حيث تعتبر بمثابة اتفاقية ملزمة، ويعد استخدامك للمنصة قبولًا تامًا بشروط هذه "
+"السياسة. إذا لم تكن موافقًا على هذه السياسة أو أي جزء منها، يجب عليك التوقف "
+"عن استخدام المنصة."
+
+#: .\templates\privacy_policy.html:32
+msgid "عن المنصة"
+msgstr "عن المنصة"
+
+#: .\templates\privacy_policy.html:34
+msgid ""
+"منصة كراس هي منصة رقمية متخصصة في إنشاء وتحسين كراسات الشروط والمواصفات في "
+"المملكة العربية السعودية، حيث تتيح للمستخدم إمكانية إنشاء كراسة جديدة عبر "
+"إدخال معلومات محددة أو تطوير كراسة موجودة عبر تحسينها باستخدام تقنيات الذكاء "
+"الاصطناعي لضمان دقة وفعالية المحتوى."
+msgstr ""
+"منصة كُرّاسات هي منصة رقمية متخصصة في إنشاء وتحسين كراسات الشروط والمواصفات في "
+"المملكة العربية السعودية، حيث تتيح للمستخدم إمكانية إنشاء كراسة جديدة عبر "
+"إدخال معلومات محددة أو تطوير كراسة موجودة عبر تحسينها باستخدام تقنيات الذكاء "
+"الاصطناعي لضمان دقة وفعالية المحتوى."
+
+#: .\templates\privacy_policy.html:40
+msgid "أطراف المنصة"
+msgstr "أطراف المنصة"
+
+#: .\templates\privacy_policy.html:42
+msgid ""
+"المنصة: وهي منصة كراس، التي تم تطويرها بهدف تحسين كراسات الشروط والمواصفات، "
+"وتعمل وفق القوانين والأنظمة المعمول بها في المملكة العربية السعودية."
+msgstr ""
+"المنصة: وهي منصة كُرّاسات، التي تم تطويرها بهدف تحسين كراسات الشروط "
+"والمواصفات، وتعمل وفق القوانين والأنظمة المعمول بها في المملكة العربية "
+"السعودية."
+
+#: .\templates\privacy_policy.html:45
+msgid ""
+"المستخدم: هو أي فرد أو جهة تقوم باستخدام المنصة لإنشاء أو تطوير كراسات "
+"الشروط والمواصفات."
+msgstr ""
+"المستخدم: هو أي فرد أو جهة تقوم باستخدام المنصة لإنشاء أو تطوير كراسات "
+"الشروط والمواصفات."
+
+#: .\templates\privacy_policy.html:51
+msgid "جمع البيانات"
+msgstr "جمع البيانات"
+
+#: .\templates\privacy_policy.html:53
+msgid ""
+"يوافق المستخدم على أن المنصة يحق لها جمع البيانات اللازمة لقياس وتحليل "
+"وتحسين تجربة المستخدم، وتشمل على سبيل المثال لا الحصر:"
+msgstr ""
+"يوافق المستخدم على أن المنصة يحق لها جمع البيانات اللازمة لقياس وتحليل "
+"وتحسين تجربة المستخدم، وتشمل على سبيل المثال لا الحصر:"
+
+#: .\templates\privacy_policy.html:56
+msgid ""
+"البيانات الشخصية: مثل الاسم، البريد الإلكتروني، ورقم الهاتف عند التسجيل."
+msgstr ""
+"البيانات الشخصية: مثل الاسم، البريد الإلكتروني، ورقم الهاتف عند التسجيل."
+
+#: .\templates\privacy_policy.html:59
+msgid ""
+"بيانات إنشاء الكراسات: مثل اسم الجهة، اسم المنافسة، ونوع البيانات المدخلة "
+"عند إنشاء الكراسة."
+msgstr ""
+"بيانات إنشاء الكراسات: مثل اسم الجهة، اسم المنافسة، ونوع البيانات المدخلة "
+"عند إنشاء الكراسة."
+
+#: .\templates\privacy_policy.html:62
+msgid "بيانات تطوير الكراسات: مثل الملفات التي يتم رفعها لتحليلها وتحسينها."
+msgstr "بيانات تطوير الكراسات: مثل الملفات التي يتم رفعها لتحليلها وتحسينها."
+
+#: .\templates\privacy_policy.html:65
+msgid ""
+"البيانات الإحصائية: مثل عدد الكراسات التي تم إنشاؤها أو تحسينها، والتعديلات "
+"المقترحة."
+msgstr ""
+"البيانات الإحصائية: مثل عدد الكراسات التي تم إنشاؤها أو تحسينها، والتعديلات "
+"المقترحة."
+
+#: .\templates\privacy_policy.html:68
+msgid "البيانات التقنية: مثل نوع الجهاز، نظام التشغيل، المتصفح، وعنوان (IP)."
+msgstr "البيانات التقنية: مثل نوع الجهاز، نظام التشغيل، المتصفح، وعنوان (IP)."
+
+#: .\templates\privacy_policy.html:71
+msgid ""
+"البيانات الأخرى: مثل البيانات المطلوبة من خدمات الطرف الثالث (مثل أنظمة "
+"الدفع السحابية عند الحاجة)."
+msgstr ""
+"البيانات الأخرى: مثل البيانات المطلوبة من خدمات الطرف الثالث (مثل أنظمة "
+"الدفع السحابية عند الحاجة)."
+
+#: .\templates\privacy_policy.html:78
+msgid "الاتصال بنا"
+msgstr "الاتصال بنا"
+
+#: .\templates\privacy_policy.html:80
+msgid ""
+"في حال وجود أي استفسارات أو طلبات تتعلق بسياسة الخصوصية، يمكن للمستخدمين "
+"التواصل معنا عبر البريد الإلكتروني المخصص للدعم."
+msgstr ""
+"في حال وجود أي استفسارات أو طلبات تتعلق بسياسة الخصوصية، يمكن للمستخدمين "
+"التواصل معنا عبر البريد الإلكتروني المخصص للدعم."
+
+#: .\templates\profile.html:5
+msgid "كُرّاس - الملف الشخصي"
+msgstr "كُرّاسات - الملف الشخصي"
+
+#: .\templates\profile.html:21 .\templates\profile.html:23
+msgid "صورة المستخدم"
+msgstr "صورة المستخدم"
+
+#: .\templates\profile.html:40 .\templates\profile.html:64
+msgid "المعلومات الشخصية"
+msgstr "المعلومات الشخصية"
+
+#: .\templates\profile.html:43 .\templates\profile.html:90
+msgid "الإعدادات"
+msgstr "الإعدادات"
+
+#: .\templates\profile.html:46 .\templates\profile.html:130
+msgid "الأمان"
+msgstr "الأمان"
+
+#: .\templates\profile.html:49 .\templates\profile.html:173
+msgid "الاشتراك"
+msgstr "الاشتراك"
+
+#: .\templates\profile.html:55
+msgid "تسجيل الخروج"
+msgstr "تسجيل الخروج"
+
+#: .\templates\profile.html:70
+msgid "الاسم الأول"
+msgstr "الاسم الأول"
+
+#: .\templates\profile.html:71
+msgid "أدخل اسمك الأول"
+msgstr "أدخل اسمك الأول"
+
+#: .\templates\profile.html:75
+msgid "الاسم الأخير"
+msgstr "الاسم الأخير"
+
+#: .\templates\profile.html:76
+msgid "أدخل اسمك الأخير"
+msgstr "أدخل اسمك الأخير"
+
+#: .\templates\profile.html:93
+msgid "المظهر"
+msgstr "المظهر"
+
+#: .\templates\profile.html:96
+msgid "وضع العرض"
+msgstr "وضع العرض"
+
+#: .\templates\profile.html:97
+msgid "اختر بين الوضع الفاتح والوضع الداكن"
+msgstr "اختر بين الوضع الفاتح والوضع الداكن"
+
+#: .\templates\profile.html:101
+msgid "فاتح"
+msgstr "فاتح"
+
+#: .\templates\profile.html:104
+msgid "داكن"
+msgstr "داكن"
+
+#: .\templates\profile.html:113
+msgid "لغة الواجهة"
+msgstr "لغة الواجهة"
+
+#: .\templates\profile.html:114
+msgid "اختر لغة واجهة المستخدم"
+msgstr "اختر لغة واجهة المستخدم"
+
+#: .\templates\profile.html:120
+msgid "العربية"
+msgstr "العربية"
+
+#: .\templates\profile.html:121
+msgid "الإنجليزية"
+msgstr "الإنجليزية"
+
+#: .\templates\profile.html:135
+msgid "كلمة المرور الحالية"
+msgstr "كلمة المرور الحالية"
+
+#: .\templates\profile.html:137
+msgid "أدخل كلمة المرور الحالية"
+msgstr "أدخل كلمة المرور الحالية"
+
+#: .\templates\profile.html:148
+msgid "أدخل كلمة المرور الجديدة"
+msgstr "أدخل كلمة المرور الجديدة"
+
+#: .\templates\profile.html:157 .\templates\signup.html:118
+msgid "تأكيد كلمة المرور"
+msgstr "تأكيد كلمة المرور"
+
+#: .\templates\profile.html:159
+msgid "أعد إدخال كلمة المرور الجديدة"
+msgstr "أعد إدخال كلمة المرور الجديدة"
+
+#: .\templates\profile.html:167
+msgid "تحديث كلمة المرور"
+msgstr "تحديث كلمة المرور"
+
+#: .\templates\profile.html:176
+msgid "الخطة الحالية"
+msgstr "الخطة الحالية"
+
+#: .\templates\profile.html:179
+msgid "الخطة المجانية"
+msgstr "الخطة المجانية"
+
+#: .\templates\profile.html:181
+msgid "الخطة الأساسية"
+msgstr "الخطة الأساسية"
+
+#: .\templates\profile.html:183
+msgid "الخطة الاحترافية"
+msgstr "الخطة الاحترافية"
+
+#: .\templates\profile.html:189
+msgid "تتضمن الخطة:"
+msgstr "تتضمن الخطة:"
+
+#: .\templates\profile.html:191
+msgid "تحسين طلبات العروض وفقاً للمعايير السعودية"
+msgstr "تحسين طلبات العروض وفقاً للمعايير السعودية"
+
+#: .\templates\profile.html:201
+msgid "ترقية الخطة"
+msgstr "ترقية الخطة"
+
+#: .\templates\signup.html:5
+msgid "مستخدم جديد - كُرّاس"
+msgstr "مستخدم جديد - كُرّاسات"
+
+#: .\templates\signup.html:55
+msgid "أدخل اسم المستخدم"
+msgstr "أدخل اسم المستخدم"
+
+#: .\templates\signup.html:97
+msgid "أدخل كلمة المرور"
+msgstr "أدخل كلمة المرور"
+
+#: .\templates\signup.html:135
+msgid "أوافق على"
+msgstr "أوافق على"
+
+#: .\templates\signup.html:135
+msgid "الشروط والأحكام"
+msgstr "الشروط والأحكام"
+
+#: .\templates\signup.html:135
+msgid "و"
+msgstr "و"
+
+#: .\templates\signup.html:142
+msgid "تسجيل حساب"
+msgstr "تسجيل حساب"
+
+#: .\templates\signup.html:146
+msgid "هل لديك حساب؟"
+msgstr "هل لديك حساب؟"

@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #0F492C;
+    --secondary-color: #0097a7;
+    --text-color: #333;
+    --light-text: #999;
+    --bg-light: #f5f5f5;
+    --bg-white: #fff;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --transition: all 0.3s ease;
+    --accent-green: #0F492C;
+    --dark-green: #0F492C;
+    --teal: #0097a7;
+    --light-blue: #64b5f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-light);
+    min-height: 100vh;
+}
+
+/* Analytics Main Section */
+.analytics-main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.analytics-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--accent-green);
+}
+
+.section-description {
+    font-size: 1rem;
+    color: var(--light-text);
+}
+
+/* Card Styles */
+.analytics-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.analytics-card {
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 25px;
+    transition: transform 0.3s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-5px);
+}
+
+.analytics-card h3 {
+    color: var(--accent-green);
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.analytics-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: var(--accent-green);
+}
+
+/* Summary Card Styles */
+.summary-stats {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.stat-item {
+    flex: 1;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--accent-green);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+/* Chart Card Styles */
+.chart-container {
+    height: 250px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+.legend-color.completed {
+    background-color: var(--dark-green);
+}
+
+.legend-color.in-progress {
+    background-color: var(--teal);
+}
+
+.legend-color.scheduled {
+    background-color: var(--light-blue);
+}
+
+.legend-text {
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+/* Performance Card Styles */
+.performance-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.metric-label {
+    flex: 1;
+    color: var(--text-color);
+    text-align: right;
+}
+
+.progress-bar {
+    flex: 2;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    margin: 0 15px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--accent-green);
+    border-radius: 5px;
+}
+
+.metric-value {
+    flex: 0 0 40px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Download Section Styles */
+.download-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.download-btn {
+    background: var(--bg-gradient);
+    color: white;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
+}
+
+/* Responsive Styles */
+@media (min-width: 992px) {
+    /* Desktop layout - cards in a row with specific order */
+    .analytics-wrapper {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .analytics-card {
+        flex: 1;
+    }
+    
+    /* Order for desktop: Performance (left), Chart (middle), Summary (right) */
+    .performance-card {
+        order: 1;
+    }
+    
+    .chart-card {
+        order: 2;
+    }
+    
+    .summary-card {
+        order: 3;
+    }
+}
+
+@media (max-width: 991px) {
+    /* Mobile layout - stacked cards with specific order */
+    .analytics-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* Order for mobile: Summary (top), Chart (middle), Performance (bottom) */
+    .summary-card {
+        order: 1;
+    }
+    
+    .chart-card {
+        order: 2;
+    }
+    
+    .performance-card {
+        order: 3;
+    }
+    
+    /* Adjust spacing for mobile */
+    .analytics-main {
+        padding: 30px 15px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .analytics-main {
+        padding: 20px 10px;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .analytics-card {
+        padding: 20px 15px;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .download-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

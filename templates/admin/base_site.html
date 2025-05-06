@@ -1,0 +1,39 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block usertools %}
+    {{ block.super }}
+    <div style="float: right; margin-right: 20px; margin-top: 10px;">
+        <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ request.get_full_path }}" />
+            {% get_current_language as CURRENT_LANGUAGE %}
+            {% get_available_languages as LANGUAGES %}
+            
+            {% for lang_code, lang_name in LANGUAGES %}
+                {% if lang_code != CURRENT_LANGUAGE %}
+                    <input type="hidden" name="language" value="{{ lang_code }}" />
+                    <button type="submit" 
+                            style="background-color: #417690; color: white; border: none; 
+                                   padding: 5px 10px; border-radius: 4px; cursor: pointer;">
+                        {% if lang_code == 'ar' %}
+                            العربية
+                        {% else %}
+                            English
+                        {% endif %}
+                    </button>
+                {% endif %}
+            {% endfor %}
+        </form>
+    </div>
+{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">
+        {% if CURRENT_LANGUAGE == 'ar' %}
+            <a href="{% url 'admin:index' %}">{{ _('منصة إدارة كُرّاسات') }}</a>
+        {% else %}
+            <a href="{% url 'admin:index' %}">{{ _('Kurrasat Administration') }}</a>
+        {% endif %}
+    </h1>
+{% endblock %}

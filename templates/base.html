@@ -1,0 +1,194 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{% trans "كُرّاسات - منصة الذكاء الاصطناعي" %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'style/style.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <style>
+    /* Messages styling */
+    .messages-container {
+      position: fixed;
+      top: 90px;
+      right: 20px;
+      z-index: 1000;
+      width: 300px;
+    }
+
+    .message {
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .message.success { background-color: #28a745; }
+    .message.error { background-color: #dc3545; }
+    .message.warning { background-color: #ffc107; color: black; }
+    .message.info { background-color: #17a2b8; }
+
+    .close-message {
+      background: none;
+      border: none;
+      color: inherit;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+  </style>
+
+  {% block extra_css %}{% endblock %}
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <a href="{% url 'core:index' %}">
+          <img src="{% static 'images/logo1.png' %}" alt="{% trans 'Kurras Logo' %}" style="height: 40px;">
+        </a>
+      </div>      
+      <nav>
+        <ul>
+          <li><a href="{% url 'core:index' %}#hero">{% trans "الرئيسية" %}</a></li>
+          <li><a href="{% url 'core:index' %}#about">{% trans "من نحن" %}</a></li>
+          <li><a href="{% url 'core:index' %}#features">{% trans "المميزات" %}</a></li>
+          <li><a href="{% url 'core:index' %}#services">{% trans "الخدمات" %}</a></li>
+          <li><a href="{% url 'core:index' %}#packages">{% trans "الباقات" %}</a></li>
+          <li><a href="{% url 'core:index' %}#charter">{% trans "الميثاق" %}</a></li>
+          <li><a href="{% url 'core:index' %}#contact">{% trans "تواصل معنا" %}</a></li>
+          <li>
+            <form action="{% url 'set_language' %}" method="post" id="language-form">
+              {% csrf_token %}
+              <input name="next" type="hidden" value="{{ clean_path }}">
+              <input name="language" type="hidden" value="{{ opposite_language }}">
+              <div class="lang-toggle" onclick="document.getElementById('language-form').submit();">
+                <i class="fas fa-globe"></i>
+                <span>{{ opposite_language_name }}</span>
+              </div>
+            </form>
+          </li>
+        </ul>
+      </nav>
+        {% if user.is_authenticated %}
+          <a href="{% url 'accounts:profile' %}" class="btn btn-filled">{% trans "الملف الشخصي" %}</a>
+        {% else %}
+          <a href="{% url 'accounts:signup' %}" class="btn btn-outline">{% trans "مستخدم جديد" %}</a>
+          <a href="{% url 'accounts:login' %}" class="btn btn-filled">{% trans "تسجيل دخول" %}</a>
+        {% endif %}
+      </div>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu-close">
+      <i class="fas fa-times"></i>
+    </div>
+    <ul>
+      <li><a href="{% url 'core:index' %}#hero">{% trans "الرئيسية" %}</a></li>
+      <li><a href="{% url 'core:index' %}#about">{% trans "من نحن" %}</a></li>
+      <li><a href="{% url 'core:index' %}#features">{% trans "المميزات" %}</a></li>
+      <li><a href="{% url 'core:index' %}#services">{% trans "الخدمات" %}</a></li>
+      <li><a href="{% url 'core:index' %}#packages">{% trans "الباقات" %}</a></li>
+      <li><a href="{% url 'core:index' %}#charter">{% trans "الميثاق" %}</a></li>
+      <li><a href="{% url 'core:index' %}#contact">{% trans "تواصل معنا" %}</a></li>
+      <li>
+        <form action="{% url 'set_language' %}" method="post" id="mobile-language-form">
+          {% csrf_token %}
+          <input name="next" type="hidden" value="{{ clean_path }}">
+          <input name="language" type="hidden" value="{{ opposite_language }}">
+          <div class="lang-toggle mobile-lang-toggle" onclick="document.getElementById('mobile-language-form').submit();">
+            <i class="fas fa-globe"></i>
+            <span>{{ opposite_language_name }}</span>
+          </div>
+        </form>
+      </li>
+    </ul>
+    <div class="auth-buttons">
+      {% if user.is_authenticated %}
+        <a href="{% url 'accounts:profile' %}" class="btn btn-filled">{% trans "الملف الشخصي" %}</a>
+      {% else %}
+        <a href="{% url 'accounts:signup' %}" class="btn btn-outline">{% trans "مستخدم جديد" %}</a>
+        <a href="{% url 'accounts:login' %}" class="btn btn-filled">{% trans "تسجيل دخول" %}</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="overlay"></div>
+
+  {% if messages %}
+    <div class="messages-container">
+      {% for message in messages %}
+        <div class="message {{ message.tags }}">
+          {{ message }}
+          <button class="close-message"><i class="fas fa-times"></i></button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>
+            <img src="{% static 'images/logo1.png' %}" alt="{% trans 'Kurras Logo' %}" style="height: 40px;">
+          </h2>
+          <p>
+            {% trans " لوحة تحكم مدعومة بتقنيات الذكاء الاصطناعي لتسهيل استقبال، إنشاء، وتحسين ملفات طلبات العروض بدقة وكفاءة.نوفر تجربة متكاملة لإعداد المستندات وفقًا للمعايير المطلوبة، من خلال تنظيم واضح في كل خطوة وسلاسة في الاستخدام. " %}
+          </p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-section">
+            <h3>{% trans "الدعم" %}</h3>
+            <ul>
+              <li><a href="{% url 'core:index' %}#contact">{% trans "تواصل معنا" %}</a></li>
+              <li><a href="{% url 'core:privacy_policy' %}">{% trans "سياسة الخصوصية" %}</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>{% trans "خدمات" %}</h3>
+            <ul>
+              <li><a href="{% url 'documents:create' %}">{% trans "إنشاء" %}</a></li>
+              <li><a href="{% url 'documents:development' %}">{% trans "تطوير" %}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://youtube.com/@kurrasat?si=8gmAf3xv9nUktqK1" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://x.com/Kurrasatt" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://wa.me/966599262757" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:kurrasat.saudi@gmail.com" <i class="fas fa-envelope"></i>
+        </a>
+        
+              </div>
+      <div class="copyright">
+        <p>{% trans "&copy; جمع الحقوق محفوظة لكُرَّاسات 2025" %}</p>
+      </div>
+      <div class="scroll-to-top">
+        <a href="#top"><i class="fas fa-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/script.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,112 @@
+/* Privacy Policy Page Styles */
+.policy-hero {
+    background-color: var(--background-light);
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .page-title {
+    color: var(--text-primary);
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .privacy-policy-content {
+    padding: 50px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .policy-section {
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .policy-section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  [dir="rtl"] .policy-section h2 {
+    text-align: right;
+  }
+  
+  [dir="ltr"] .policy-section h2 {
+    text-align: left;
+  }
+  
+  .policy-item {
+    display: flex;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    position: relative;
+  }
+  
+  .sub-item {
+    margin-bottom: 10px;
+  }
+  
+  [dir="rtl"] .sub-item {
+    padding-right: 30px;
+    padding-left: 0;
+  }
+  
+  [dir="ltr"] .sub-item {
+    padding-left: 30px;
+    padding-right: 0;
+  }
+  
+  .item-number {
+    font-weight: bold;
+    color: var(--primary-color);
+    flex: 0 0 50px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  [dir="rtl"] .item-number {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+  
+  .item-text {
+    flex: 1;
+  }
+  
+  /* Dark mode adjustments */
+  .dark-mode .policy-hero {
+    background-color: var(--background-dark);
+  }
+  
+  .dark-mode .page-title,
+  .dark-mode .policy-section h2 {
+    color: var(--text-light);
+  }
+  
+  .dark-mode .item-number {
+    color: var(--accent-color);
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .policy-item {
+      flex-direction: column;
+    }
+  
+    .item-number {
+      margin-bottom: 5px;
+    }
+  
+    [dir="rtl"] .sub-item {
+      padding-right: 15px;
+      padding-left: 0;
+    }
+  
+    [dir="ltr"] .sub-item {
+      padding-left: 15px;
+      padding-right: 0;
+    }
+  }
+  

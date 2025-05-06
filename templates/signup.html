@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "مستخدم جديد - كُرّاس" %}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'style/auth.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- Signup Section -->
+<section class="auth-section">
+  <div class="container">
+    <div class="auth-header">
+      <h1>{% trans "مستخدم جديد" %}</h1>
+      <div class="auth-breadcrumb">
+        <a href="{% url 'core:index' %}">{% trans "الرئيسية" %}</a> / <span>{% trans "مستخدم جديد" %}</span>
+      </div>
+    </div>
+
+    <div class="auth-container">
+      <div class="auth-content">
+        <div class="auth-right">
+
+          <!-- Django Messages -->
+          {% if messages %}
+            <div class="messages">
+              {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          <form id="signupForm" method="post" class="auth-form">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+              <div class="error-message">
+                {% for error in form.non_field_errors %}
+                  {{ error }}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <div class="form-group">
+              <div class="input-icon-wrapper">
+                <i class="fas fa-user"></i>
+                <input
+                  type="text"
+                  id="id_username"
+                  name="username"
+                  placeholder="{% trans 'أدخل اسم المستخدم' %}"
+                  required
+                  value="{{ form.username.value|default:'' }}"
+                />
+              </div>
+              {% if form.username.errors %}
+                <div class="error-message">
+                  {% for error in form.username.errors %}
+                    {{ error }}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="form-group">
+              <div class="input-icon-wrapper">
+                <i class="fas fa-envelope"></i>
+                <input
+                  type="email"
+                  id="id_email"
+                  name="email"
+                  placeholder="{% trans 'أدخل بريدك الإلكتروني' %}"
+                  required
+                  value="{{ form.email.value|default:'' }}"
+                />
+              </div>
+              {% if form.email.errors %}
+                <div class="error-message">
+                  {% for error in form.email.errors %}
+                    {{ error }}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="form-group">
+              <div class="input-icon-wrapper">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  id="id_password1"
+                  name="password1"
+                  placeholder="{% trans 'أدخل كلمة المرور' %}"
+                  required
+                />
+                <i class="fas fa-eye toggle-password"></i>
+              </div>
+              {% if form.password1.errors %}
+                <div class="error-message">
+                  {% for error in form.password1.errors %}
+                    {{ error }}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="form-group">
+              <div class="input-icon-wrapper">
+                <i class="fas fa-lock"></i>
+                <input
+                  type="password"
+                  id="id_password2"
+                  name="password2"
+                  placeholder="{% trans 'تأكيد كلمة المرور' %}"
+                  required
+                />
+                <i class="fas fa-eye toggle-password"></i>
+              </div>
+              {% if form.password2.errors %}
+                <div class="error-message">
+                  {% for error in form.password2.errors %}
+                    {{ error }}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="form-terms">
+              <input type="checkbox" id="terms" name="terms" required />
+              <label for="terms">
+                <span>{% trans "أوافق على" %}</span> <a href="#">{% trans "الشروط والأحكام" %}</a> <span>{% trans "و" %}</span>
+                <a href="{% url 'core:privacy_policy' %}">{% trans "سياسة الخصوصية" %}</a>
+              </label>
+              <div class="error-message" id="termsError"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              {% trans "تسجيل حساب" %}
+            </button>
+
+            <div class="auth-footer">
+              <span>{% trans "هل لديك حساب؟" %}</span> <a href="{% url 'accounts:login' %}">{% trans "تسجيل دخول" %}</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/auth.js' %}"></script>
+{% endblock %}

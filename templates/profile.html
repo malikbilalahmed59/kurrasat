@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "كُرّاس - الملف الشخصي" %}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'style/profile.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="profile-section">
+  <div class="container">
+    <div class="profile-container">
+      <!-- Sidebar -->
+      <div class="profile-sidebar">
+        <div class="profile-avatar">
+          <form id="avatar-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if user.profile.profile_image %}
+              <img src="{{ user.profile.profile_image.url }}" alt="{% trans 'صورة المستخدم' %}" id="profile-avatar-img" />
+            {% else %}
+              <img src="{% static 'images/avatar-placeholder.png' %}" alt="{% trans 'صورة المستخدم' %}" id="profile-avatar-img" />
+            {% endif %}
+            <div class="avatar-upload">
+              <label for="avatar-upload-input">
+                <i class="fas fa-camera"></i>
+              </label>
+              <input type="file" id="avatar-upload-input" name="profile_image" accept="image/*" onchange="document.getElementById('avatar-form').submit();" />
+            </div>
+          </form>
+        </div>
+
+        <h3 class="profile-name" id="profile-name">{{ user.get_full_name|default:user.username }}</h3>
+        <p class="profile-email" id="profile-email">{{ user.email }}</p>
+
+        <!-- Sidebar Menu -->
+        <ul class="profile-menu">
+          <li class="active" data-tab="personal-info">
+            <i class="fas fa-user"></i><span>{% trans "المعلومات الشخصية" %}</span>
+          </li>
+          <li data-tab="settings">
+            <i class="fas fa-cog"></i><span>{% trans "الإعدادات" %}</span>
+          </li>
+          <li data-tab="security">
+            <i class="fas fa-lock"></i><span>{% trans "الأمان" %}</span>
+          </li>
+          <li data-tab="subscription">
+            <i class="fas fa-credit-card"></i><span>{% trans "الاشتراك" %}</span>
+          </li>
+          <li id="drafts-btn">
+            <a href="{% url 'documents:drafts' %}"><i class="fas fa-file-alt"></i><span>{% trans "المسودات" %}</span></a>
+          </li>
+          <li id="logout-btn">
+            <a href="{% url 'accounts:logout' %}"><i class="fas fa-sign-out-alt"></i><span>{% trans "تسجيل الخروج" %}</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Content Area -->
+      <div class="profile-content">
+        <!-- Personal Info -->
+        <div class="profile-tab active" id="personal-info">
+          <h2>{% trans "المعلومات الشخصية" %}</h2>
+          <form id="personal-info-form" method="post" action="{% url 'accounts:profile' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" name="tab" value="personal_info">
+
+            <div class="form-group">
+              <label for="first_name">{% trans "الاسم الأول" %}</label>
+              <input type="text" id="first_name" name="first_name" value="{{ form.first_name.value|default:'' }}" placeholder="{% trans 'أدخل اسمك الأول' %}" />
+            </div>
+
+            <div class="form-group">
+              <label for="last_name">{% trans "الاسم الأخير" %}</label>
+              <input type="text" id="last_name" name="last_name" value="{{ form.last_name.value|default:'' }}" placeholder="{% trans 'أدخل اسمك الأخير' %}" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">{% trans "البريد الإلكتروني" %}</label>
+              <input type="email" id="email" name="email" value="{{ form.email.value|default:'' }}" placeholder="{% trans 'أدخل بريدك الإلكتروني' %}" readonly />
+            </div>
+
+            <button type="submit" class="btn btn-primary">{% trans "حفظ التغييرات" %}</button>
+          </form>
+        </div>
+
+<!-- Settings -->
+<div class="profile-tab" id="settings">
+  <h2>{% trans "الإعدادات" %}</h2>
+
+  <div class="settings-section">
+    <h3>{% trans "المظهر" %}</h3>
+    <div class="setting-item">
+      <div class="setting-info">
+        <h4>{% trans "وضع العرض" %}</h4>
+        <p>{% trans "اختر بين الوضع الفاتح والوضع الداكن" %}</p>
+      </div>
+      <div class="theme-toggle" id="theme-toggle1">
+        <i class="fas fa-moon theme-toggle-icon1"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <!-- Security -->
+        <div class="profile-tab" id="security">
+          <h2>{% trans "الأمان" %}</h2>
+          <form id="password-change-form" method="post" action="{% url 'accounts:password_change' %}">
+            {% csrf_token %}
+
+            <div class="form-group">
+              <label for="current-password">{% trans "كلمة المرور الحالية" %}</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="current-password" name="old_password" placeholder="{% trans 'أدخل كلمة المرور الحالية' %}" required />
+                <i class="fas fa-eye-slash toggle-password"></i>
+              </div>
+              {% for error in password_form.old_password.errors %}
+                <div class="error-message">{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <div class="form-group">
+              <label for="new-password">{% trans "كلمة المرور الجديدة" %}</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="new-password" name="new_password1" placeholder="{% trans 'أدخل كلمة المرور الجديدة' %}" required />
+                <i class="fas fa-eye-slash toggle-password"></i>
+              </div>
+              {% for error in password_form.new_password1.errors %}
+                <div class="error-message">{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <div class="form-group">
+              <label for="confirm-password">{% trans "تأكيد كلمة المرور" %}</label>
+              <div class="password-input-wrapper">
+                <input type="password" id="confirm-password" name="new_password2" placeholder="{% trans 'أعد إدخال كلمة المرور الجديدة' %}" required />
+                <i class="fas fa-eye-slash toggle-password"></i>
+              </div>
+              {% for error in password_form.new_password2.errors %}
+                <div class="error-message">{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <button type="submit" class="btn btn-primary">{% trans "تحديث كلمة المرور" %}</button>
+          </form>
+        </div>
+
+        <!-- Subscription -->
+        <div class="profile-tab" id="subscription">
+          <h2>{% trans "الاشتراك" %}</h2>
+          <div class="subscription-info">
+            <div class="current-plan">
+              <h3>{% trans "الخطة الحالية" %}</h3>
+              <div class="plan-badge {{ user.profile.subscription_type }}">
+                {% if user.profile.subscription_type == 'free' %}
+                  {% trans "الخطة المجانية" %}
+                {% elif user.profile.subscription_type == 'basic' %}
+                  {% trans "الخطة الأساسية" %}
+                {% elif user.profile.subscription_type == 'professional' %}
+                  {% trans "الخطة الاحترافية" %}
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="plan-features">
+              <h4>{% trans "تتضمن الخطة:" %}</h4>
+              <ul>
+                <li>{% trans "تحسين طلبات العروض وفقاً للمعايير السعودية" %}</li>
+                <li>{% trans "دعم اللغة العربية" %}</li>
+                {% if user.profile.subscription_type != 'free' %}
+                  <li>{% trans "تطوير غير محدود لطلبات العروض" %}</li>
+                  <li>{% trans "إنشاء غير محدود لطلبات العروض" %}</li>
+                {% endif %}
+                <li>{% trans "إمكانية حفظ المسودات واستكمالها لاحقاً" %}</li>
+              </ul>
+            </div>
+
+            <a href="{% url 'core:index' %}#packages" class="btn btn-primary">{% trans "ترقية الخطة" %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+      <script src="{% static 'js/script.js' %}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const themeToggle = document.getElementById('theme-toggle1');
+  const themeIcon = themeToggle.querySelector('.theme-toggle-icon1'); // safer and scoped
+
+  const savedTheme = localStorage.getItem('theme') || 'auto';
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function setThemeClass() {
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-theme');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    } else if (savedTheme === 'dark' || (savedTheme === 'auto' && prefersDarkScheme.matches)) {
+      document.body.classList.remove('light-theme');
+      themeIcon.classList.replace('fa-sun', 'fa-moon');
+    } else {
+      document.body.classList.add('light-theme');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+  }
+
+  setThemeClass();
+
+  themeToggle.addEventListener('click', function () {
+    const isLight = document.body.classList.contains('light-theme');
+    document.body.classList.toggle('light-theme', !isLight);
+    localStorage.setItem('theme', isLight ? 'dark' : 'light');
+    themeIcon.classList.toggle('fa-sun', !isLight);
+    themeIcon.classList.toggle('fa-moon', isLight);
+  });
+});
+
+
+
+
+  // Tab switching
+  document.querySelectorAll('.profile-menu li[data-tab]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.profile-tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.profile-menu li').forEach(li => li.classList.remove('active'));
+      document.getElementById(btn.dataset.tab).classList.add('active');
+      btn.classList.add('active');
+    });
+  });
+
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            // Toggle theme
+            if (document.body.classList.contains('light-theme')) {
+                // Switch to dark theme
+                document.body.classList.remove('light-theme');
+                localStorage.setItem('theme', 'dark');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            } else {
+                // Switch to light theme
+                document.body.classList.add('light-theme');
+                localStorage.setItem('theme', 'light');
+                if (themeIcon) {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            }
+        });
+    }
+  // Toggle password visibility
+  document.querySelectorAll('.toggle-password').forEach(icon => {
+    icon.addEventListener('click', () => {
+      const input = icon.previousElementSibling;
+      input.type = input.type === 'password' ? 'text' : 'password';
+      icon.classList.toggle('fa-eye');
+      icon.classList.toggle('fa-eye-slash');
+    });
+  });
+</script>
+{% endblock %}

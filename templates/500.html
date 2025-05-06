@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "500 - خطأ في الخادم" %}{% endblock %}
+
+{% block extra_css %}
+<style>
+  .error-container {
+    text-align: center;
+    padding: 100px 0;
+  }
+  
+  .error-code {
+    font-size: 120px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+  }
+  
+  .error-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    font-size: 1.2rem;
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+  
+  .error-image {
+    max-width: 300px;
+    margin: 30px auto;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="error-container">
+    <div class="error-code">500</div>
+    <h1 class="error-title">{% trans "خطأ في الخادم" %}</h1>
+    <p class="error-message">
+      {% trans "عذراً، حدث خطأ غير متوقع في الخادم. يرجى المحاولة مرة أخرى لاحقاً." %}
+    </p>
+    <img src="{% static 'images/500.svg' %}" alt="500" class="error-image">
+    <a href="{% url 'core:index' %}" class="btn btn-primary">
+      <i class="fas fa-home"></i> {% trans "العودة للصفحة الرئيسية" %}
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "حذف المستند" %} - {{ document.title }}{% endblock %}
+
+{% block extra_css %}
+<style>
+  .delete-confirmation {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .delete-confirmation i {
+    font-size: 64px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+  }
+
+  .delete-confirmation h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .delete-confirmation p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #666;
+  }
+
+  .delete-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .btn-danger {
+    background-color: #e74c3c;
+    color: white;
+  }
+
+  .btn-danger:hover {
+    background-color: #c0392b;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="delete-confirmation-section">
+  <div class="container">
+    <div class="delete-confirmation">
+      <i class="fas fa-exclamation-triangle"></i>
+      <h2>{% trans "هل أنت متأكد من رغبتك في حذف هذا المستند؟" %}</h2>
+      <p>{% trans "أنت على وشك حذف المستند:" %} <strong>{{ document.title }}</strong></p>
+      <p>{% trans "هذا الإجراء لا يمكن التراجع عنه. سيتم حذف جميع البيانات المرتبطة بهذا المستند بشكل نهائي." %}</p>
+
+      <form method="post" action="{% url 'documents:document_delete' document.id %}">
+        {% csrf_token %}
+        <div class="delete-actions">
+          <button type="submit" class="btn btn-danger">
+            <i class="fas fa-trash-alt"></i> {% trans "نعم، احذف المستند" %}
+          </button>
+          <a href="{% url 'documents:document_detail' document.id %}" class="btn btn-outline">
+            <i class="fas fa-times"></i> {% trans "إلغاء" %}
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

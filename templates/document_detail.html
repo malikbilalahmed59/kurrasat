@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ document.title }} - {% trans "كُرّاس" %}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'style/style.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="document-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:index' %}">{% trans "الرئيسية" %}</a> / 
+      <a href="{% url 'documents:drafts' %}">{% trans "المسودات" %}</a> / 
+      <span>{{ document.title }}</span>
+    </div>
+    
+    <div class="document-title-section">
+      <h1>{{ document.title }}</h1>
+      <div class="document-meta">
+        <div class="document-status {{ document.status }}">
+          <i class="fas fa-circle"></i>
+          <span>
+            {% if document.status == 'active' %}
+              {% trans "نشط" %}
+            {% elif document.status == 'completed' %}
+              {% trans "مكتمل" %}
+            {% elif document.status == 'archived' %}
+              {% trans "مؤرشف" %}
+            {% elif document.status == 'pending' %}
+              {% trans "قيد المراجعة" %}
+            {% endif %}
+          </span>
+        </div>
+        <div class="document-date">
+          <i class="fas fa-calendar-alt"></i>
+          <span>{% trans "تم الإنشاء:" %}</span>
+          <span>{{ document.created_at|date:"d F Y" }}</span>
+        </div>
+        <div class="document-date">
+          <i class="fas fa-calendar-check"></i>
+          <span>{% trans "آخر تحديث:" %}</span>
+          <span>{{ document.updated_at|date:"d F Y" }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="document-actions">
+      <a href="{% url 'documents:document_edit' document.id %}" class="btn btn-primary">
+        <i class="fas fa-edit"></i> {% trans "تحرير" %}
+      </a>
+<a href="{% static 'js/utils/'|add:pdf %}" class="btn btn-outline">
+  <i class="fas fa-download"></i> {% trans "تنزيل" %}
+</a>
+      <a href="{% url 'documents:document_delete' document.id %}" class="btn btn-outline btn-delete">
+        <i class="fas fa-trash-alt"></i> {% trans "حذف" %}
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="document-content">
+  <div class="container">
+    <div class="document-description">
+      <h2>{% trans "وصف المستند" %}</h2>
+      <div class="content-box">
+        {{ document.description|linebreaks }}
+      </div>
+    </div>
+    
+    <div class="document-body">
+      <h2>{% trans "محتوى المستند" %}</h2>
+      <div class="content-box">
+        {{ document.content|linebreaks }}
+      </div>
+    </div>
+    
+    {% if analyses %}
+    <div class="document-analyses">
+      <h2>{% trans "تحليلات المستند" %}</h2>
+      
+      {% for analysis in analyses %}
+      <div class="analysis-item">
+        <h3>{% trans "تحليل بتاريخ" %} {{ analysis.analysis_date|date:"d F Y" }}</h3>
+        <div class="content-box">
+          <h4>{% trans "نتائج التحليل" %}</h4>
+          <div class="analysis-text">
+            {{ analysis.analysis_text|linebreaks }}
+          </div>
+          
+          <h4>{% trans "اقتراحات للتحسين" %}</h4>
+          <div class="suggestions">
+            {{ analysis.suggestions|linebreaks }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

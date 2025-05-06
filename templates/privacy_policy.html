@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "كُرّاس - سياسة الخصوصية" %}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'style/privacy-policy.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- Page Title -->
+<section class="policy-hero">
+  <div class="container">
+    <h1 class="page-title">{% trans "سياسة الخصوصية لمنصة كراس" %}</h1>
+  </div>
+</section>
+
+<!-- Privacy Policy Content -->
+<section class="privacy-policy-content">
+  <div class="container">
+    <!-- Purpose Section -->
+    <div class="policy-section">
+      <h2>{% trans "الغرض" %}</h2>
+      <div class="policy-item">
+        <span class="item-text">{% trans "تحدد هذه السياسة الإطار العام لسياسة خصوصية البيانات الشخصية في منصة كراس، حيث تعتبر بمثابة اتفاقية ملزمة، ويعد استخدامك للمنصة قبولًا تامًا بشروط هذه السياسة. إذا لم تكن موافقًا على هذه السياسة أو أي جزء منها، يجب عليك التوقف عن استخدام المنصة." %}</span>
+      </div>
+    </div>
+
+    <!-- About Platform Section -->
+    <div class="policy-section">
+      <h2>{% trans "عن المنصة" %}</h2>
+      <div class="policy-item">
+        <span class="item-text">{% trans "منصة كراس هي منصة رقمية متخصصة في إنشاء وتحسين كراسات الشروط والمواصفات في المملكة العربية السعودية، حيث تتيح للمستخدم إمكانية إنشاء كراسة جديدة عبر إدخال معلومات محددة أو تطوير كراسة موجودة عبر تحسينها باستخدام تقنيات الذكاء الاصطناعي لضمان دقة وفعالية المحتوى." %}</span>
+      </div>
+    </div>
+
+    <!-- Platform Parties Section -->
+    <div class="policy-section">
+      <h2>{% trans "أطراف المنصة" %}</h2>
+      <div class="policy-item">
+        <span class="item-text">{% trans "المنصة: وهي منصة كراس، التي تم تطويرها بهدف تحسين كراسات الشروط والمواصفات، وتعمل وفق القوانين والأنظمة المعمول بها في المملكة العربية السعودية." %}</span>
+      </div>
+      <div class="policy-item">
+        <span class="item-text">{% trans "المستخدم: هو أي فرد أو جهة تقوم باستخدام المنصة لإنشاء أو تطوير كراسات الشروط والمواصفات." %}</span>
+      </div>
+    </div>
+
+    <!-- Data Collection Section -->
+    <div class="policy-section">
+      <h2>{% trans "جمع البيانات" %}</h2>
+      <div class="policy-item">
+        <span class="item-text">{% trans "يوافق المستخدم على أن المنصة يحق لها جمع البيانات اللازمة لقياس وتحليل وتحسين تجربة المستخدم، وتشمل على سبيل المثال لا الحصر:" %}</span>
+      </div>
+      <div class="policy-item sub-item">
+        <span class="item-text">{% trans "البيانات الشخصية: مثل الاسم، البريد الإلكتروني، ورقم الهاتف عند التسجيل." %}</span>
+      </div>
+      <div class="policy-item sub-item">
+        <span class="item-text">{% trans "بيانات إنشاء الكراسات: مثل اسم الجهة، اسم المنافسة، ونوع البيانات المدخلة عند إنشاء الكراسة." %}</span>
+      </div>
+      <div class="policy-item sub-item">
+        <span class="item-text">{% trans "بيانات تطوير الكراسات: مثل الملفات التي يتم رفعها لتحليلها وتحسينها." %}</span>
+      </div>
+      <div class="policy-item sub-item">
+        <span class="item-text">{% trans "البيانات الإحصائية: مثل عدد الكراسات التي تم إنشاؤها أو تحسينها، والتعديلات المقترحة." %}</span>
+      </div>
+      <div class="policy-item sub-item">
+        <span class="item-text">{% trans "البيانات التقنية: مثل نوع الجهاز، نظام التشغيل، المتصفح، وعنوان (IP)." %}</span>
+      </div>
+      <div class="policy-item sub-item">
+        <span class="item-text">{% trans "البيانات الأخرى: مثل البيانات المطلوبة من خدمات الطرف الثالث (مثل أنظمة الدفع السحابية عند الحاجة)." %}</span>
+      </div>
+    </div>
+
+    <!-- More sections... -->
+    <!-- Contact Us Section -->
+    <div class="policy-section">
+      <h2>{% trans "الاتصال بنا" %}</h2>
+      <div class="policy-item">
+        <span class="item-text">{% trans "في حال وجود أي استفسارات أو طلبات تتعلق بسياسة الخصوصية، يمكن للمستخدمين التواصل معنا عبر البريد الإلكتروني المخصص للدعم." %}</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

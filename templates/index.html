@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "كُرّاسات - منصة الذكاء الاصطناعي" %}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-logo">
+        <h1 style="font-size: 6rem; color: white;">{% trans "كُرَّاسات" %}</h1>
+      </div>
+      <p class="hero-description">
+        {% trans "أداة تعتمد على الذكاء الاصطناعي لتسهيل إنشاء وتحسين طلبات تقديم العروض بدقة وكفاءة. توفر تجربة سلسة لإعداد المستندات وفقا للمعايير المطلوبة، مع ضمان الوضوح والتنظيم في كل خطوة." %}
+      </p>
+      <p style="font-weight: bold; margin-top: 1rem;">
+        {% trans "كُرَّاسات تتماشى مع معايير وزارة المالية، لضمان أعلى مستويات الدقة والالتزام النظامي." %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="floating-circle medium"></div>
+  <div class="floating-circle small"></div>
+  <div class="container">
+    <h2 class="section-title">{% trans "من نحن ؟" %}</h2>
+    <div class="about-content">
+      <p>
+        {% trans "كُرَّاسات هي أداة ذكاء اصطناعي متقدمة تهدف إلى تسهيل عملية إنشاء وتحسين طلبات تقديم العروض بدقة وكفاءة عالية. تم تطوير الأداة لدعم اللغة العربية بالكامل، مما يمكن الجهات والمؤسسات من إعداد مستندات احترافية تتماشى مع أفضل الممارسات والمعايير المعتمدة. نحن نسعى إلى تبسيط الإجراءات، رفع مستوى الدقة، وتحقيق الكفاءة من خلال تسخير تقنيات الذكاء الاصطناعي الحديثة." %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+  <div class="floating-circle large"></div>
+  <div class="floating-circle medium"></div>
+  <div class="container">
+    <h2 class="section-title">{% trans "المميزات الرئيسية لكُرّاسات" %}</h2>
+    <p class="section-description">
+      {% trans "أداة الذكاء الاصطناعي المخصصة لإنشاء وتطوير كُرَّاسات الشروط والمواصفات بكفاءة، مع ضمان الدقة والامتثال وتوفير تجربة سلسة وبديهية" %}
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <h3>{% trans "إنشاء و تطوير" %}</h3>
+        <p>
+          {% trans "إنشاء وتطوير طلبات العروض بطريقة تُسهّل العملية وتُحسّن الدقة" %}
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>{% trans "الامتثال للمعايير الرسمية" %}</h3>
+        <p>
+          {% trans " ضمان توافق النظام مع المعايير الرسمية المعتمدة من وزارة المالية لكراسات الشروط والمواصفات في المملكة العربية السعودية" %}
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <h3>{% trans "جودة دون أخطاء" %}</h3>
+        <p>
+          {% trans "تقليل الأخطاء لتحقيق جودة أداء عالية" %}
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-tachometer-alt"></i>
+        </div>
+        <h3>{% trans "سرعة وكفاءة عالية" %}</h3>
+        <p>
+          {% trans "أداء سريع وكفاءة عالية لضمان أفضل تجربة للمستخدم" %}
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-user-friends"></i>
+        </div>
+        <h3>{% trans "سهولة ووضوح الاستخدام" %}</h3>
+        <p>{% trans "واجهة استخدام بسيطة وواضحة تسهّل التفاعل مع النظام" %}</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-language"></i>
+        </div>
+        <h3>{% trans "دعم كامل للغة العربية" %}</h3>
+        <p>
+          {% trans " دعم متكامل للغة العربية في كافة عناصر النظام " %}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How to Use Section -->
+<section id="how-to-use" class="how-to-use">
+  <div class="floating-circle large"></div>
+  <div class="floating-circle small"></div>
+  <div class="container">
+    <h2 class="section-title">{% trans "كيفية استخدام كُرَّاسات" %}</h2>
+    <p class="section-description">
+      {% trans " تعرّف على كيفية استخدام أداة كُرَّاسات لإنشاء وتحسين كراسات الشروط والمواصفات بكفاءة وسهولة" %}
+    </p>
+
+    <div class="video-container">
+      <div class="video-placeholder">
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="how-to-use">
+  <div class="process-cards-row">
+    <a href="{% url 'documents:create' %}" class="animate fade-in delay-100">
+      <div class="process-card small">
+        <div class="process-icon">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <h3>{% trans "إنشاء" %}</h3>
+        <p>
+          {% trans "أنشئ مستندًا جديدًا بسهولة، بما يتوافق مع المعايير المطلوبة، مع إمكانية التعديل والتخصيص حسب الحاجة." %}
+        </p>
+      </div>
+    </a>
+    <a href="{% url 'documents:development' %}" class="animate fade-in delay-200">
+      <div class="process-card small">
+        <div class="process-icon">
+          <i class="fas fa-edit"></i>
+        </div>
+        <h3>{% trans "تطوير" %}</h3>
+        <p>
+          {% trans "حسّن مستنداتك من خلال تطوير المحتوى، وإضافة التعديلات، وضمان توافقها مع المتطلبات." %}
+        </p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Packages Section -->
+<section id="packages" class="packages">
+  <div class="floating-circle medium"></div>
+  <div class="floating-circle small"></div>
+  <div class="container">
+    <h2 class="section-title">{% trans "الباقات" %}</h2>
+    <p class="section-description">
+      {% trans "اختر الباقة التي تناسب احتياجاتك واستمتع بتجربة فريدة مع خدماتنا المميزة" %}
+    </p>
+
+    <div class="packages-container">
+      <div class="package-card">
+        <h3>{% trans "الباقة المجانية" %}</h3>
+        <div class="package-price">
+          <span class="price">0</span>
+          <span class="currency">{% trans "﷼" %}</span>
+          <span class="period">{% trans "/شهرياً" %}</span>
+        </div>
+        <ul class="package-features">
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "إنشاء حتى 3 طلبات عروض" %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans " حفظ المسودات مع إمكانية استكمالها لاحقًا" %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "تحسين الطلبات بما يتوافق مع المعايير السعودية" %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "دعم كامل للغة العربية" %}</span>
+          </li>
+        </ul>
+        <a href="#" class="btn btn-primary">{% trans "جرّب مجاناً" %}</a>
+      </div>
+
+      <div class="package-card">
+        <div class="coming-soon-badge">{% trans "قريباً" %}</div>
+        <h3>{% trans "الباقة الأساسية" %}</h3>
+        <div class="package-price">
+          <span class="price">75</span>
+          <span class="currency">{% trans "﷼" %}</span>
+          <span class="period">{% trans "/شهرياً" %}</span>
+        </div>
+        <ul class="package-features">
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "إنشاء غير محدود لطلبات العروض" %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "حفظ المسودات مع إمكانية استكمالها لاحقًا" %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "تحسين الطلبات بما يتوافق مع المعايير السعودية" %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "دعم كامل اللغة العربية" %}</span>
+          </li>
+        </ul>
+        <a href="{% url 'core:payment' %}" 
+           class="btn btn-primary subscribe-btn" 
+           data-package="basic"
+           data-price="75">
+          {% trans "اشترك الآن" %}
+        </a>
+      </div>
+
+      <div class="package-card">
+        <div class="coming-soon-badge">{% trans "قريباً" %}</div>
+        <h3>{% trans "الباقة الاحترافية" %}</h3>
+        <div class="package-price">
+          <span class="price">199</span>
+          <span class="currency">{% trans "﷼" %}</span>
+          <span class="period">{% trans "/شهرياً" %}</span>
+        </div>
+        <ul class="package-features">
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "إنشاء غير محدود لطلبات العروض" %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "تطوير غير محدود لطلبات العروض" %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans " حفظ المسودات مع إمكانية استكمالها لاحقًا" %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "  تحسين الطلبات بما يتوافق مع المعايير السعودية  " %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "دعم كامل اللغة العربية" %}</span>
+          </li>
+          <li>
+            <i class="fas fa-check"></i>
+            <span>{% trans "مخصصة للعمل الجماعي وتتيح التعاون بين المستخدمين" %}</span>
+          </li>
+        </ul>
+        <a href="{% url 'core:payment' %}" class="btn btn-primary subscribe-btn" 
+           data-package="professional"
+           data-price="199">
+           {% trans "اشترك الآن" %}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Charter Section -->
+<section id="charter" class="charter">
+  <div class="floating-circle medium"></div>
+  <div class="floating-circle small"></div>
+  <div class="container">
+    <h2 class="section-title">{% trans "الميثاق" %}</h2>
+    <div class="about-content">
+      <p>
+        {% trans "نحن في كُرّاسات نلتزم بتقديم حلول ذكية ومبتكرة تعتمد على تقنيات الذكاء الاصطناعي، لدعم المؤسسات في إعداد وتحسين مستنداتها بكفاءة واحترافية عالية. نُركّز في عملنا على طلبات العروض لضمان دقة المحتوى ومواءمته للمعايير المحلية المعتمدة، مما يُسهم في رفع جودة المستندات وتقليل نسبة الأخطاء. كما نحرص على تطوير أدواتنا باستمرار، باستخدام أحدث التقنيات العالمية، لتوفير تجربة استخدام سلسة وفعّالة تلبي احتياجات المؤسسات، وتسهم في تحقيق أعلى مستويات الدقة والكفاءة." %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <div class="floating-circle medium"></div>
+  <div class="floating-circle small"></div>
+  <div class="container">
+    <h2 class="section-title">{% trans "تواصل معنا" %}</h2>
+    <p class="section-description">{% trans "هل تحتاج مساعدة؟" %}</p>
+
+    <form class="contact-form" method="post" action="#">
+      {% csrf_token %}
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">{% trans "الاسم" %}</label>
+          <input type="text" id="name" name="name" placeholder="{% trans 'أدخل اسمك' %}" dir="auto" required />
+        </div>
+        <div class="form-group">
+          <label for="email">{% trans "البريد الإلكتروني" %}</label>
+          <input type="email" id="email" name="email" placeholder="{% trans 'أدخل بريدك الإلكتروني' %}" dir="auto" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">{% trans "الرسالة" %}</label>
+        <textarea id="message" name="message" rows="6" placeholder="{% trans 'اكتب رسالتك...' %}" dir="auto" required></textarea>
+      </div>
+      <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <button type="submit" class="btn btn-primary">
+          {% trans "إرسال " %}
+        </button>
+      </div>
+    </form>
+    
+  </div>
+</section>
+{% endblock %}
