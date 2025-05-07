@@ -98,12 +98,12 @@
 <section class="development-hero">
   <div class="container">
     <div class="hero-content">
-      <h1>{% trans "تطوير المستند" %}</h1>
+      <h1>{% trans "تحسين الكراسة" %}</h1>
       <p>{% trans "قم بتحميل ملفك وتحليل جودته للحصول على تقرير مفصل" %}</p>
       <div class="breadcrumb">
         <a href="{% url 'core:index' %}">{% trans "الرئيسية" %}</a>
         <span class="separator">/</span>
-        <span class="current">{% trans "تطوير المستند" %}</span>
+        <span class="current">{% trans "تحسين الكراسة" %}</span>
       </div>
     </div>
   </div>
@@ -121,7 +121,7 @@
       <div class="upload-form-container">
         <div class="form-card">
           <div class="form-header">
-            <h2>{% trans "تحميل ملف للتطوير" %}</h2>
+            <h2>{% trans "تحميل ملف للتحسين" %}</h2>
             <p>{% trans "يرجى إدخال تفاصيل الملف وتحميله للتحليل" %}</p>
           </div>
           <form id="development-form" class="development-form" method="post" action="{% url 'documents:development' %}" enctype="multipart/form-data">
@@ -133,18 +133,31 @@
                 type="text"
                 id="file-title"
                 name="file-title"
-                placeholder="{% trans 'أدخل عنوان الملف' %}"
+                placeholder="{% trans ':أدخل عنوان الملف' %}"
                 required
               />
               <div class="error-message" id="title-error"></div>
             </div>
 
             <div class="form-group">
-              <label for="file-description">{% trans "وصف الملف" %}</label>
+              <label for="file-description">{% trans ":أهداف المنافسة " %}</label>
               <textarea
                 id="file-description"
                 name="file-description"
-                placeholder="{% trans 'أدخل وصفًا موجزًا للملف' %}"
+                placeholder="{% trans ':أدخل وصفًا موجزًا للمنافسة' %}"
+                rows="4"
+                required
+              ></textarea>
+              <div class="error-message" id="description-error"></div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="file-description">{% trans ":وصف الملف" %}</label>
+              <textarea
+                id="file-description"
+                name="file-description"
+                placeholder="{% trans ':أدخل وصفًا موجزًا للملف' %}"
                 rows="4"
                 required
               ></textarea>
@@ -168,7 +181,7 @@
                   </div>
                   <div class="upload-text">
                     <p>{% trans "اسحب الملف هنا أو انقر للتحميل" %}</p>
-                    <span>{% trans "PDF, DOC, DOCX, TXT (الحد الأقصى: 10MB)" %}</span>
+                    <span>{% trans "PDF, DOC (الحد الأقصى: 10MB)" %}</span>
                   </div>
                 </div>
                 <div class="selected-file" id="selected-file">
