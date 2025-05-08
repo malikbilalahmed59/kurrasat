@@ -15,8 +15,7 @@
       <!-- Sidebar -->
       <div class="profile-sidebar">
         <div class="profile-avatar">
-          <form id="avatar-form" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
+            <form id="avatar-form" method="post" enctype="multipart/form-data" action="{% url 'accounts:profile' %}">            {% csrf_token %}
             {% if user.profile.profile_image %}
               <img src="{{ user.profile.profile_image.url }}" alt="{% trans 'صورة المستخدم' %}" id="profile-avatar-img" />
             {% else %}
@@ -28,6 +27,7 @@
               </label>
               <input type="file" id="avatar-upload-input" name="profile_image" accept="image/*" onchange="document.getElementById('avatar-form').submit();" />
             </div>
+            <input type="hidden" name="form_type" value="avatar_update">
           </form>
         </div>
 
