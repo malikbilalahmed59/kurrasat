@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-04 12:37+0500\n"
+"POT-Creation-Date: 2025-05-09 03:14+0500\n"
 "PO-Revision-Date: 2025-05-06 12:00+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,8 +73,6 @@ msgid "View"
 msgstr "View"
 
 #: .\documents\admin.py:64
-#, fuzzy
-#| msgid "Active"
 msgid "Actions"
 msgstr "Actions"
 
@@ -151,31 +149,51 @@ msgstr "Document analyses"
 msgid "Analysis for {title}"
 msgstr "Analysis for {title}"
 
-#: .\documents\views.py:19
+#: .\documents\views.py:26
 msgid "Document created successfully!"
 msgstr "Document created successfully!"
 
-#: .\documents\views.py:44
-msgid "Missing required fields"
-msgstr "Missing required fields"
+#: .\documents\views.py:88 .\documents\views.py:89
+msgid "Please select a file"
+msgstr "Please select a file"
 
-#: .\documents\views.py:74
+#: .\documents\views.py:94 .\documents\views.py:95
+msgid "Please enter a title"
+msgstr "Please enter a title"
+
+#: .\documents\views.py:111
+msgid "File uploaded successfully. Starting analysis..."
+msgstr "File uploaded successfully. Starting analysis..."
+
+#: .\documents\views.py:120
+msgid "Analysis will be provided shortly."
+msgstr "Analysis will be provided shortly."
+
+#: .\documents\views.py:121
+msgid "Please wait while we analyze your document."
+msgstr "Please wait while we analyze your document."
+
+#: .\documents\views.py:126
+msgid "Error during analysis"
+msgstr "Error during analysis"
+
+#: .\documents\views.py:207
 msgid "Document updated successfully!"
 msgstr "Document updated successfully!"
 
-#: .\documents\views.py:88
+#: .\documents\views.py:221
 msgid "Document deleted successfully!"
 msgstr "Document deleted successfully!"
 
-#: .\documents\views.py:106
+#: .\documents\views.py:258
 msgid "File not found."
 msgstr "File not found."
 
-#: .\kurrasat\settings.py:122
+#: .\kurrasat\settings.py:132
 msgid "Arabic"
 msgstr "Arabic"
 
-#: .\kurrasat\settings.py:123
+#: .\kurrasat\settings.py:133
 msgid "English"
 msgstr "English"
 
@@ -217,8 +235,6 @@ msgstr ""
 "Sorry, an unexpected error occurred on the server. Please try again later."
 
 #: .\templates\admin\base_site.html:34
-#, fuzzy
-#| msgid "كيفية استخدام كُرّاسات"
 msgid "منصة إدارة كُرّاسات"
 msgstr "Kurrasat Administration Platform"
 
@@ -230,12 +246,12 @@ msgstr "Kurrasat Administration"
 msgid "كُرّاسات - منصة الذكاء الاصطناعي"
 msgstr "Kurrasat - AI-powered Platform"
 
-#: .\templates\base.html:57 .\templates\base.html:143
+#: .\templates\base.html:57 .\templates\base.html:150
 msgid "Kurras Logo"
 msgstr "Kurras Logo"
 
-#: .\templates\base.html:62 .\templates\base.html:104
-#: .\templates\create.html:17 .\templates\development.html:19
+#: .\templates\base.html:62 .\templates\base.html:100
+#: .\templates\create.html:17 .\templates\development.html:104
 #: .\templates\document_detail.html:15 .\templates\document_edit.html:17
 #: .\templates\login.html:18 .\templates\password_reset_complete.html:34
 #: .\templates\password_reset_confirm.html:23
@@ -244,82 +260,82 @@ msgstr "Kurras Logo"
 msgid "الرئيسية"
 msgstr "Home"
 
-#: .\templates\base.html:63 .\templates\base.html:105
+#: .\templates\base.html:63 .\templates\base.html:101
 msgid "من نحن"
 msgstr "About Us"
 
-#: .\templates\base.html:64 .\templates\base.html:106
+#: .\templates\base.html:64 .\templates\base.html:102
 msgid "المميزات"
 msgstr "Features"
 
-#: .\templates\base.html:65 .\templates\base.html:107
+#: .\templates\base.html:65 .\templates\base.html:103
 msgid "الخدمات"
 msgstr "Services"
 
-#: .\templates\base.html:66 .\templates\base.html:108
-#: .\templates\index.html:162
+#: .\templates\base.html:66 .\templates\base.html:104
+#: .\templates\index.html:187
 msgid "الباقات"
 msgstr "Plans"
 
-#: .\templates\base.html:67 .\templates\base.html:109
-#: .\templates\index.html:280
+#: .\templates\base.html:67 .\templates\base.html:105
+#: .\templates\index.html:306
 msgid "الميثاق"
 msgstr "Charter"
 
-#: .\templates\base.html:68 .\templates\base.html:110 .\templates\base.html:153
-#: .\templates\index.html:294
+#: .\templates\base.html:68 .\templates\base.html:106 .\templates\base.html:160
+#: .\templates\index.html:328
 msgid "تواصل معنا"
 msgstr "Contact Us"
 
-#: .\templates\base.html:87 .\templates\base.html:114
+#: .\templates\base.html:83 .\templates\base.html:121
 msgid "الملف الشخصي"
 msgstr "Profile"
 
-#: .\templates\base.html:89 .\templates\base.html:116
-#: .\templates\login.html:121 .\templates\signup.html:16
+#: .\templates\base.html:85 .\templates\base.html:123
+#: .\templates\login.html:120 .\templates\signup.html:16
 #: .\templates\signup.html:18
 msgid "مستخدم جديد"
 msgstr "New User"
 
-#: .\templates\base.html:90 .\templates\base.html:117 .\templates\login.html:16
-#: .\templates\login.html:18 .\templates\login.html:116
+#: .\templates\base.html:86 .\templates\base.html:124 .\templates\login.html:16
+#: .\templates\login.html:18 .\templates\login.html:115
 #: .\templates\signup.html:146
 msgid "تسجيل دخول"
 msgstr "Login"
 
-#: .\templates\base.html:146
+#: .\templates\base.html:153
 msgid ""
-"لوحة تحكم مدعومة بالذكاء الاصطناعي لتسهيل استقبال وإنشاء وتحسين ملفات تقديم "
-"العروض بدقة وكفاءة، مع توفير تجربة سلسلة لإعداد المستندات وفقًا للمعايير "
-"المطلوبة، وذلك من خلال تنظيم ووضوح عالٍ في كل خطوة."
+" لوحة تحكم مدعومة بتقنيات الذكاء الاصطناعي لتسهيل استقبال، إنشاء، وتحسين "
+"ملفات طلبات العروض بدقة وكفاءة.نوفر تجربة متكاملة لإعداد المستندات وفقًا "
+"للمعايير المطلوبة، من خلال تنظيم واضح في كل خطوة وسلاسة في الاستخدام. "
 msgstr ""
 "An AI-powered dashboard for efficiently receiving, creating, and enhancing "
 "proposal documents with precision, offering a seamless experience for "
 "preparing documents according to required standards — with high clarity and "
 "organization at every step."
 
-#: .\templates\base.html:151
+#: .\templates\base.html:158
 msgid "الدعم"
 msgstr "Support"
 
-#: .\templates\base.html:154 .\templates\signup.html:136
+#: .\templates\base.html:161 .\templates\signup.html:136
 msgid "سياسة الخصوصية"
 msgstr "Privacy Policy"
 
-#: .\templates\base.html:158
+#: .\templates\base.html:165
 msgid "خدمات"
 msgstr "Services"
 
-#: .\templates\base.html:160 .\templates\create.html:97
-#: .\templates\index.html:137
+#: .\templates\base.html:167 .\templates\create.html:97
+#: .\templates\index.html:156
 msgid "إنشاء"
 msgstr "Create"
 
-#: .\templates\base.html:161 .\templates\index.html:148
+#: .\templates\base.html:168 .\templates\index.html:170
 msgid "تطوير"
 msgstr "Develop"
 
-#: .\templates\base.html:174
+#: .\templates\base.html:183
 msgid "&copy; جمع الحقوق محفوظة لكُرَّاسات 2025"
 msgstr "&copy; All rights reserved to Kurrasat 2025"
 
@@ -363,103 +379,115 @@ msgstr "Enter competition description"
 msgid "كُرّاس - تطوير المستند"
 msgstr "Kurrasat - Document Enhancement"
 
-#: .\templates\development.html:16 .\templates\development.html:21
-msgid "تطوير المستند"
-msgstr "Enhance Document"
+#: .\templates\development.html:101 .\templates\development.html:106
+msgid "تحسين الكراسة"
+msgstr "Proposal Enhancement"
 
-#: .\templates\development.html:17
+#: .\templates\development.html:102
 msgid "قم بتحميل ملفك وتحليل جودته للحصول على تقرير مفصل"
 msgstr "Upload your file and analyze its quality for a detailed report"
 
-#: .\templates\development.html:39
-msgid "تحميل ملف للتطوير"
+#: .\templates\development.html:124
+msgid "تحميل ملف للتحسين"
 msgstr "Upload File for Enhancement"
 
-#: .\templates\development.html:40
+#: .\templates\development.html:125
 msgid "يرجى إدخال تفاصيل الملف وتحميله للتحليل"
 msgstr "Please enter file details and upload for analysis"
 
-#: .\templates\development.html:46
+#: .\templates\development.html:131
 msgid "عنوان الملف"
 msgstr "File Title"
 
-#: .\templates\development.html:51
-msgid "أدخل عنوان الملف"
-msgstr "Enter file title"
+#: .\templates\development.html:136
+msgid ":أدخل عنوان الملف"
+msgstr "Enter file title:"
 
-#: .\templates\development.html:58
-msgid "وصف الملف"
-msgstr "File Description"
+#: .\templates\development.html:143
+msgid ":أهداف المنافسة "
+msgstr "Competition Objectives:"
 
-#: .\templates\development.html:62
-msgid "أدخل وصفًا موجزًا للملف"
-msgstr "Enter a brief file description"
+#: .\templates\development.html:147
+msgid ":أدخل وصفًا موجزًا للمنافسة"
+msgstr "Enter a brief description of the competition:"
 
-#: .\templates\development.html:70 .\templates\development.html:157
+#: .\templates\development.html:156
+msgid ":وصف الملف"
+msgstr "File Description:"
+
+#: .\templates\development.html:160
+msgid ":أدخل وصفًا موجزًا للملف"
+msgstr "Enter a brief file description:"
+
+#: .\templates\development.html:168 .\templates\development.html:262
 msgid "تحميل الملف"
 msgstr "Upload File"
 
-#: .\templates\development.html:85
+#: .\templates\development.html:183
 msgid "اسحب الملف هنا أو انقر للتحميل"
 msgstr "Drag the file here or click to upload"
 
-#: .\templates\development.html:86
-msgid "PDF, DOC, DOCX, TXT (الحد الأقصى: 10MB)"
-msgstr "PDF, DOC, DOCX, TXT (Maximum: 10MB)"
+#: .\templates\development.html:184
+msgid "PDF, DOC (الحد الأقصى: 10MB)"
+msgstr "PDF, DOC (Maximum: 10MB)"
 
-#: .\templates\development.html:94
+#: .\templates\development.html:192
 msgid "لم يتم اختيار ملف"
 msgstr "No file selected"
 
-#: .\templates\development.html:117
+#: .\templates\development.html:216
 msgid "تحليل الملف"
 msgstr "Analyze file"
 
-#: .\templates\development.html:128 .\templates\document_detail.html:93
+#: .\templates\development.html:220
+msgid "تحميل"
+msgstr "Upload"
+
+#: .\templates\development.html:233 .\templates\document_detail.html:93
 msgid "اقتراحات للتحسين"
 msgstr "Suggestions for improvement"
 
-#: .\templates\development.html:135
+#: .\templates\development.html:240
 msgid "تحميل التقرير"
 msgstr "Download report"
 
-#: .\templates\development.html:148
+#: .\templates\development.html:253
 msgid "كيف يعمل تحليل الجودة؟"
 msgstr "How does quality analysis work?"
 
-#: .\templates\development.html:149
+#: .\templates\development.html:254
 msgid "عملية بسيطة من 4 خطوات لتحسين جودة مستنداتك"
 msgstr "A simple 4-step process to improve the quality of your documents"
 
-#: .\templates\development.html:158
+#: .\templates\development.html:263
 msgid "قم بتحميل المستند الذي ترغب في تحليله وتحسينه"
 msgstr "Upload the document you wish to analyze and improve"
 
-#: .\templates\development.html:166
+#: .\templates\development.html:271
 msgid "التحليل"
 msgstr "Analysis"
 
-#: .\templates\development.html:168
+#: .\templates\development.html:273
 msgid "يقوم النظام بتحليل المستند وتقييم جودته بناءً على معايير محددة"
 msgstr ""
 "The system analyzes the document and evaluates its quality based on defined "
 "criteria"
 
-#: .\templates\development.html:177
+#: .\templates\development.html:282
 msgid "النتائج"
 msgstr "Results"
 
-#: .\templates\development.html:178
+#: .\templates\development.html:283
 msgid "عرض نتائج التحليل مع تقييم مفصل واقتراحات للتحسين"
 msgstr ""
 "Display analysis results with detailed evaluation and suggestions for "
 "improvement"
 
-#: .\templates\development.html:186
+#: .\templates\development.html:291
 msgid "التقرير"
 msgstr "Report"
 
-#: .\templates\development.html:187
+#: .\templates\development.html:292
 msgid "تحميل تقرير PDF مفصل يمكنك استخدامه لتحسين المستند"
 msgstr ""
 "Download a detailed PDF report that you can use to improve the document"
@@ -659,215 +687,204 @@ msgstr ""
 "experience for document preparation in line with required standards, "
 "ensuring clarity and organization at every step."
 
-#: .\templates\index.html:19
+#: .\templates\index.html:23
 msgid ""
 "كُرَّاسات تتماشى مع معايير وزارة المالية، لضمان أعلى مستويات الدقة والالتزام "
 "النظامي."
 msgstr ""
-"Kurrasat complies with the Ministry of Finance standards to ensure the highest "
-"levels of accuracy and regulatory compliance."
+"Kurrasat complies with the Ministry of Finance standards to ensure the "
+"highest levels of accuracy and regulatory compliance."
 
-#: .\templates\index.html:30
+#: .\templates\index.html:34
 msgid "من نحن ؟"
 msgstr "Who are we?"
 
-#: .\templates\index.html:33
+
 msgid ""
-"كُرّاسات هي أداة ذكاء اصطناعي متقدمة تهدف إلى تسهيل عملية إنشاء وتحسين طلبات "
+"كُرَّاسات هي أداة ذكاء اصطناعي متقدمة تهدف إلى تسهيل عملية إنشاء وتحسين طلبات "
 "تقديم العروض بدقة وكفاءة عالية. تم تطوير الأداة لدعم اللغة العربية بالكامل، "
 "مما يمكن الجهات والمؤسسات من إعداد مستندات احترافية تتماشى مع أفضل الممارسات "
 "والمعايير المعتمدة. نحن نسعى إلى تبسيط الإجراءات، رفع مستوى الدقة، وتحقيق "
 "الكفاءة من خلال تسخير تقنيات الذكاء الاصطناعي الحديثة."
 msgstr ""
-"Kurrasat is an advanced AI tool designed to streamline the process of creating "
-"and enhancing RFPs (Request for Proposals) with high accuracy and "
+"Kurrasat is an advanced AI tool designed to streamline the process of "
+"creating and enhancing RFPs (Request for Proposals) with high accuracy and "
 "efficiency. The tool was developed to fully support the Arabic language, "
 "enabling organizations and institutions to create professional documents "
 "that comply with best practices and established standards. We aim to "
 "simplify procedures, improve accuracy, and achieve efficiency by leveraging "
 "cutting-edge AI technologies."
 
-#: .\templates\index.html:44
+#: .\templates\index.html:54
 msgid "المميزات الرئيسية لكُرّاسات"
 msgstr "Main features of Kurrasat"
 
-#: .\templates\index.html:46
-msgid ""
-"أداة الذكاء الاصطناعي المخصصة لإنشاء وتطوير كراسات الشروط والمواصفات بكفاءة، "
-"مع ضمان الدقة والامتثال وتوفير تجربة سلسة وبديهية"
-msgstr ""
-"An AI tool dedicated to creating and developing specifications and "
-"conditions documents efficiently, ensuring accuracy and compliance, while "
-"providing a seamless and intuitive experience."
 
-#: .\templates\index.html:54
+msgid "أداة الذكاء الاصطناعي المخصصة لإنشاء وتطوير كُرَّاسات الشروط والمواصفات بكفاءة، مع ضمان الدقة والامتثال وتوفير تجربة سلسة وبديهية"
+msgstr "An AI tool dedicated to creating and developing specifications and conditions documents efficiently, ensuring accuracy and compliance, while providing a seamless and intuitive experience."
+
+#: .\templates\index.html:67
 msgid "إنشاء و تطوير"
 msgstr "Create and develop"
 
-#: .\templates\index.html:56
-msgid "إنشاء وتطوير طلب تقديم عرض جيد ليكون أسهل وأكثر دقة"
-msgstr "Creating and developing a good RFP to be easier and more accurate."
+#: .\templates\index.html:69
+msgid "إنشاء وتطوير طلبات العروض بطريقة تُسهّل العملية وتُحسّن الدقة"
+msgstr ""
+"Creating and developing RFPs in a way that streamlines the process and "
+"improves accuracy"
 
-#: .\templates\index.html:64
-msgid "امتثال للمعايير الرسمية"
+#: .\templates\index.html:77
+msgid "الامتثال للمعايير الرسمية"
 msgstr "Compliance with official standards"
 
-#: .\templates\index.html:66
-msgid ""
-"التأكد من توافق النظام مع المعايير الرسمية المعتمدة لكراسة الشروط والمواصفات"
-msgstr ""
-"Ensuring the system complies with the official standards for the "
-"specifications document."
 
-#: .\templates\index.html:74
+msgid "ضمان توافق النظام مع المعايير الرسمية المعتمدة من وزارة المالية لكراسات الشروط والمواصفات في المملكة العربية السعودية"
+msgstr "Ensuring the system complies with the official standards endorsed by the Ministry of Finance for specifications and conditions documents in Saudi Arabia"
+
+#: .\templates\index.html:90
 msgid "جودة دون أخطاء"
 msgstr "Error-free quality"
 
-#: .\templates\index.html:76
-msgid "تقليل الأخطاء وتحقيق جودة عالية في الأداء"
-msgstr "Minimizing errors and achieving high-quality performance."
+#: .\templates\index.html:92
+msgid "تقليل الأخطاء لتحقيق جودة أداء عالية"
+msgstr "Minimizing errors to achieve high-quality performance"
 
-#: .\templates\index.html:84
+#: .\templates\index.html:100
 msgid "سرعة وكفاءة عالية"
 msgstr "High speed and efficiency"
 
-#: .\templates\index.html:86
-msgid "تحسين سرعة الإداء و كفاءته لتحقيق أفضل تجربة"
-msgstr "Improve performance speed and efficiency for the best experience."
+#: .\templates\index.html:102
+msgid "أداء سريع وكفاءة عالية لضمان أفضل تجربة للمستخدم"
+msgstr ""
+"Fast performance and high efficiency to ensure the best user experience"
 
-#: .\templates\index.html:94
+#: .\templates\index.html:110
 msgid "سهولة ووضوح الاستخدام"
 msgstr "Ease of use and clarity."
 
-#: .\templates\index.html:95
-msgid "واجهة مستخدم بسيطة و سهلة الاستخدام"
-msgstr "Simple and user-friendly interface."
+#: .\templates\index.html:111
+msgid "واجهة استخدام بسيطة وواضحة تسهّل التفاعل مع النظام"
+msgstr ""
+"Simple and clear user interface that facilitates interaction with the system"
 
-#: .\templates\index.html:102
+#: .\templates\index.html:118 .\templates\index.html:215
 msgid "دعم كامل للغة العربية"
 msgstr "Full support for the Arabic language."
 
-#: .\templates\index.html:104
-msgid "دعم كامل للغة العربية في جميع جوانب النظام"
+#: .\templates\index.html:120
+msgid " دعم متكامل للغة العربية في كافة عناصر النظام "
 msgstr "Full support for the Arabic language across all aspects of the system."
 
-#: .\templates\index.html:116
-msgid "كيفية استخدام كُرّاسات"
-msgstr "How to use Kurrasat."
 
-#: .\templates\index.html:118
+msgid "كيفية استخدام كُرَّاسات"
+msgstr "How to use Kurrasat"
+
+
+msgid "تعرّف على كيفية استخدام أداة كُرَّاسات لإنشاء وتحسين كراسات الشروط والمواصفات بكفاءة وسهولة"
+msgstr "Learn how to use the Kurrasat tool to create and enhance specifications and conditions documents efficiently and easily"
+
+#: .\templates\index.html:158
 msgid ""
-"اكتشف كيفية استخدام أداة كُرّاسات لإنشاء وتحسين كراسات الشروط والمواصفات "
-"بسهولة وكفاءة"
+"أنشئ مستندًا جديدًا بسهولة، بما يتوافق مع المعايير المطلوبة، مع إمكانية "
+"التعديل والتخصيص حسب الحاجة."
 msgstr ""
-"Discover how to use the Kurrasat tool to create and enhance specifications and "
-"conditions documents with ease and efficiency."
+"Create a new document easily, in accordance with the required standards, "
+"with the ability to edit and customize as needed."
 
-#: .\templates\index.html:139
+#: .\templates\index.html:172
 msgid ""
-"ابدأ بإنشاء مستند جديد بسهولة، وفقا للمعايير المطلوبة، مع إمكانية التعديل "
-"والتخصيص حسب الحاجة"
+"حسّن مستنداتك من خلال تطوير المحتوى، وإضافة التعديلات، وضمان توافقها مع "
+"المتطلبات."
 msgstr ""
-"Start by creating a new document easily, according to the required "
-"standards, with the ability to edit and customize as needed."
+"Enhance your documents by improving content, adding modifications, and "
+"ensuring they meet the requirements."
 
-#: .\templates\index.html:150
-msgid ""
-"طور مستنداتك من خلال تحسين المحتوى، إضافة التعديلات، والتأكد من توافقها مع "
-"المتطلبات"
-msgstr ""
-"Enhance your documents by improving content, adding revisions, and ensuring "
-"they meet the requirements."
-
-#: .\templates\index.html:164
+#: .\templates\index.html:189
 msgid ""
 "اختر الباقة التي تناسب احتياجاتك واستمتع بتجربة فريدة مع خدماتنا المميزة"
 msgstr ""
 "Choose the package that fits your needs and enjoy a unique experience with "
 "our premium services."
 
-#: .\templates\index.html:169 .\templates\index.html:198
-#: .\templates\index.html:232
-msgid "قريباً"
-msgstr "Coming soon."
-
-#: .\templates\index.html:170
+#: .\templates\index.html:194
 msgid "الباقة المجانية"
 msgstr "Free package"
 
-#: .\templates\index.html:173 .\templates\index.html:202
-#: .\templates\index.html:236
+#: .\templates\index.html:197 .\templates\index.html:226
+#: .\templates\index.html:260
 msgid "﷼"
 msgstr "SAR"
 
-#: .\templates\index.html:174 .\templates\index.html:203
-#: .\templates\index.html:237
+#: .\templates\index.html:198 .\templates\index.html:227
+#: .\templates\index.html:261
 msgid "/شهرياً"
 msgstr "/monthly"
 
-#: .\templates\index.html:179
-msgid "إنشاء طلبات عروض (حتى 3 محاولات فقط)"
-msgstr "Create RFPs (up to 3 attempts only)"
+#: .\templates\index.html:203
+msgid "إنشاء حتى 3 طلبات عروض"
+msgstr "Create up to 3 RFPs"
 
-#: .\templates\index.html:183 .\templates\index.html:212
-#: .\templates\profile.html:197
-msgid "إمكانية حفظ المسودات واستكمالها لاحقاً"
-msgstr "Ability to save drafts and resume later."
+#: .\templates\index.html:207 .\templates\index.html:274
+msgid " حفظ المسودات مع إمكانية استكمالها لاحقًا"
+msgstr "Save drafts with the ability to resume later"
 
-#: .\templates\index.html:187 .\templates\index.html:216
-#: .\templates\index.html:254
-msgid "تحسين طلبات العروض وفقًا للمعايير السعودية"
-msgstr "Improve RFPs according to Saudi standards."
+#: .\templates\index.html:211 .\templates\index.html:240
+#: .\templates\index.html:278
+msgid "تحسين الطلبات بما يتوافق مع المعايير السعودية"
+msgstr "Improve RFPs according to Saudi standards"
 
-#: .\templates\index.html:191 .\templates\index.html:220
-#: .\templates\index.html:258 .\templates\profile.html:192
-msgid "دعم اللغة العربية"
-msgstr "Arabic language support."
-
-#: .\templates\index.html:194
+#: .\templates\index.html:218
 msgid "جرّب مجاناً"
 msgstr "Try for free."
 
-#: .\templates\index.html:199
+#: .\templates\index.html:222 .\templates\index.html:256
+msgid "قريباً"
+msgstr "Coming soon."
+
+#: .\templates\index.html:223
 msgid "الباقة الأساسية"
 msgstr "Basic package"
 
-#: .\templates\index.html:208 .\templates\index.html:242
-#: .\templates\profile.html:195
+#: .\templates\index.html:232 .\templates\index.html:266
+#: .\templates\profile.html:174
 msgid "إنشاء غير محدود لطلبات العروض"
 msgstr "Unlimited creation of RFPs."
 
-#: .\templates\index.html:227 .\templates\index.html:268
+#: .\templates\index.html:236
+msgid "حفظ المسودات مع إمكانية استكمالها لاحقًا"
+msgstr "Save drafts with the ability to resume later."
+
+#: .\templates\index.html:244 .\templates\index.html:284
+msgid "دعم كامل اللغة العربية"
+msgstr "Full support for the Arabic language"
+
+#: .\templates\index.html:251 .\templates\index.html:294
 msgid "اشترك الآن"
 msgstr "Subscribe now."
 
-#: .\templates\index.html:233
+#: .\templates\index.html:257
 msgid "الباقة الاحترافية"
 msgstr "Professional package"
 
-#: .\templates\index.html:246 .\templates\profile.html:194
+#: .\templates\index.html:270 .\templates\profile.html:173
 msgid "تطوير غير محدود لطلبات العروض"
 msgstr "Unlimited development of RFPs."
 
-#: .\templates\index.html:250
-msgid "إمكانية حفظ المسودات واستكمالها لاحقًا"
-msgstr "Ability to save drafts and resume later."
+#: .\templates\index.html:288
+msgid "مخصصة للعمل الجماعي وتتيح التعاون بين المستخدمين"
+msgstr "Designed for teamwork and enables collaboration between users"
 
-#: .\templates\index.html:262
-msgid "مخصصة للمجموعات وتتيح العمل المشترك"
-msgstr "Designed for teams and enables collaborative work."
-
-#: .\templates\index.html:283
+#: .\templates\index.html:309
 msgid ""
-"نحن في 'كراسات' نلتزم بتقديم حلول ذكية ومبتكرة ترتكز على تقنيات الذكاء "
+"نحن في كُرّاسات نلتزم بتقديم حلول ذكية ومبتكرة تعتمد على تقنيات الذكاء "
 "الاصطناعي، لدعم المؤسسات في إعداد وتحسين مستنداتها بكفاءة واحترافية عالية. "
-"نعتمد في عملنا على طلبات العروض لضمان دقة المحتوى ومواءمته للمعايير المحلية "
-"المعتمدة، مما يساهم في رفع جودة المستندات وتقليل نسب الأخطاء. كما نحرص على "
-"تطوير أدواتنا بشكل مستمر، وفق أحدث التقنيات العالمية، لضمان تجربة استخدام "
-"سلسة وفعّالة تلبي احتياجات المؤسسات وتسهم في تحقيق أعلى مستويات الدقة "
-"والكفاءة."
+"نُركّز في عملنا على طلبات العروض لضمان دقة المحتوى ومواءمته للمعايير المحلية "
+"المعتمدة، مما يُسهم في رفع جودة المستندات وتقليل نسبة الأخطاء. كما نحرص على "
+"تطوير أدواتنا باستمرار، باستخدام أحدث التقنيات العالمية، لتوفير تجربة "
+"استخدام سلسة وفعّالة تلبي احتياجات المؤسسات، وتسهم في تحقيق أعلى مستويات "
+"الدقة والكفاءة."
 msgstr ""
-"At 'Kurrasat', we are committed to providing smart and innovative solutions "
+"At Kurrasat, we are committed to providing smart and innovative solutions "
 "based on AI technologies, to support organizations in preparing and "
 "enhancing their documents with high efficiency and professionalism. Our work "
 "is centered around RFPs to ensure content accuracy and alignment with local "
@@ -877,39 +894,39 @@ msgstr ""
 "organizations and contributes to achieving the highest levels of accuracy "
 "and efficiency."
 
-#: .\templates\index.html:295
+#: .\templates\index.html:329
 msgid "هل تحتاج مساعدة؟"
 msgstr "Need help?"
 
-#: .\templates\index.html:301
+#: .\templates\index.html:335
 msgid "الاسم"
 msgstr "Name"
 
-#: .\templates\index.html:302
+#: .\templates\index.html:336
 msgid "أدخل اسمك"
 msgstr "Enter your name"
 
-#: .\templates\index.html:305 .\templates\password_reset_form.html:53
+#: .\templates\index.html:339 .\templates\password_reset_form.html:53
 #: .\templates\profile.html:80
 msgid "البريد الإلكتروني"
 msgstr "Email"
 
-#: .\templates\index.html:306 .\templates\profile.html:81
+#: .\templates\index.html:340 .\templates\profile.html:81
 #: .\templates\signup.html:76
 msgid "أدخل بريدك الإلكتروني"
 msgstr "Enter your email"
 
-#: .\templates\index.html:310
+#: .\templates\index.html:344
 msgid "الرسالة"
 msgstr "Message"
 
-#: .\templates\index.html:311
+#: .\templates\index.html:345
 msgid "اكتب رسالتك..."
 msgstr "Write your message..."
 
-#: .\templates\index.html:314
-msgid "إرسال الرسالة"
-msgstr "Send message"
+#: .\templates\index.html:349
+msgid "إرسال "
+msgstr "Send"
 
 #: .\templates\login.html:5
 msgid "تسجيل دخول - كُرّاس"
@@ -927,23 +944,19 @@ msgstr "Password"
 msgid "تذكرني"
 msgstr "Remember me"
 
-#: .\templates\login.html:95
-msgid "نسيت كلمة المرور؟"
-msgstr "Forgot password?"
-
-#: .\templates\login.html:99
+#: .\templates\login.html:98
 msgid "أو تسجيل الدخول باستخدام"
 msgstr "Or login with"
 
-#: .\templates\login.html:106
+#: .\templates\login.html:105
 msgid "تسجيل الدخول باستخدام Google"
 msgstr "Login with Google"
 
-#: .\templates\login.html:111
+#: .\templates\login.html:110
 msgid "تسجيل الدخول باستخدام Apple"
 msgstr "Login with Apple"
 
-#: .\templates\login.html:120
+#: .\templates\login.html:119
 msgid "ليس لديك حساب؟"
 msgstr "Don't have an account?"
 
@@ -979,7 +992,7 @@ msgstr "Log in"
 msgid "يرجى إدخال كلمة مرور جديدة مرتين حتى نتمكن من التحقق من صحتها."
 msgstr "Please enter your new password twice so we can verify it."
 
-#: .\templates\password_reset_confirm.html:52 .\templates\profile.html:146
+#: .\templates\password_reset_confirm.html:52 .\templates\profile.html:125
 msgid "كلمة المرور الجديدة"
 msgstr "New password"
 
@@ -1104,10 +1117,10 @@ msgid ""
 "عن استخدام المنصة."
 msgstr ""
 "This policy defines the general framework for the personal data privacy "
-"policy on the Kurrasat platform, as it serves as a binding agreement, and your "
-"use of the platform constitutes complete acceptance of the terms of this "
-"policy. If you do not agree with this policy or any part of it, you must "
-"stop using the platform."
+"policy on the Kurrasat platform, as it serves as a binding agreement, and "
+"your use of the platform constitutes complete acceptance of the terms of "
+"this policy. If you do not agree with this policy or any part of it, you "
+"must stop using the platform."
 
 #: .\templates\privacy_policy.html:32
 msgid "عن المنصة"
@@ -1120,11 +1133,12 @@ msgid ""
 "إدخال معلومات محددة أو تطوير كراسة موجودة عبر تحسينها باستخدام تقنيات الذكاء "
 "الاصطناعي لضمان دقة وفعالية المحتوى."
 msgstr ""
-"Kurrasat platform is a digital platform specialized in creating and improving "
-"specifications and conditions documents in the Kingdom of Saudi Arabia, "
-"where it allows the user to create a new document by entering specific "
-"information or develop an existing document by enhancing it using artificial "
-"intelligence technologies to ensure content accuracy and effectiveness."
+"Kurrasat platform is a digital platform specialized in creating and "
+"improving specifications and conditions documents in the Kingdom of Saudi "
+"Arabia, where it allows the user to create a new document by entering "
+"specific information or develop an existing document by enhancing it using "
+"artificial intelligence technologies to ensure content accuracy and "
+"effectiveness."
 
 #: .\templates\privacy_policy.html:40
 msgid "أطراف المنصة"
@@ -1135,9 +1149,9 @@ msgid ""
 "المنصة: وهي منصة كراس، التي تم تطويرها بهدف تحسين كراسات الشروط والمواصفات، "
 "وتعمل وفق القوانين والأنظمة المعمول بها في المملكة العربية السعودية."
 msgstr ""
-"The Platform: It is the Kurrasat platform, which was developed with the aim of "
-"improving specifications and conditions documents, and operates according to "
-"the laws and regulations in force in the Kingdom of Saudi Arabia."
+"The Platform: It is the Kurrasat platform, which was developed with the aim "
+"of improving specifications and conditions documents, and operates according "
+"to the laws and regulations in force in the Kingdom of Saudi Arabia."
 
 #: .\templates\privacy_policy.html:45
 msgid ""
@@ -1229,11 +1243,11 @@ msgstr "Personal Information"
 msgid "الإعدادات"
 msgstr "Settings"
 
-#: .\templates\profile.html:46 .\templates\profile.html:130
+#: .\templates\profile.html:46 .\templates\profile.html:109
 msgid "الأمان"
 msgstr "Security"
 
-#: .\templates\profile.html:49 .\templates\profile.html:173
+#: .\templates\profile.html:49 .\templates\profile.html:152
 msgid "الاشتراك"
 msgstr "Subscription"
 
@@ -1269,79 +1283,63 @@ msgstr "Display Mode"
 msgid "اختر بين الوضع الفاتح والوضع الداكن"
 msgstr "Choose between light mode and dark mode"
 
-#: .\templates\profile.html:101
-msgid "فاتح"
-msgstr "Light"
-
-#: .\templates\profile.html:104
-msgid "داكن"
-msgstr "Dark"
-
-#: .\templates\profile.html:113
-msgid "لغة الواجهة"
-msgstr "Interface Language"
-
 #: .\templates\profile.html:114
-msgid "اختر لغة واجهة المستخدم"
-msgstr "Choose the user interface language"
-
-#: .\templates\profile.html:120
-msgid "العربية"
-msgstr "Arabic"
-
-#: .\templates\profile.html:121
-msgid "الإنجليزية"
-msgstr "English"
-
-#: .\templates\profile.html:135
 msgid "كلمة المرور الحالية"
 msgstr "Current Password"
 
-#: .\templates\profile.html:137
+#: .\templates\profile.html:116
 msgid "أدخل كلمة المرور الحالية"
 msgstr "Enter your current password"
 
-#: .\templates\profile.html:148
+#: .\templates\profile.html:127
 msgid "أدخل كلمة المرور الجديدة"
 msgstr "Enter your new password"
 
-#: .\templates\profile.html:157 .\templates\signup.html:118
+#: .\templates\profile.html:136 .\templates\signup.html:118
 msgid "تأكيد كلمة المرور"
 msgstr "Confirm Password"
 
-#: .\templates\profile.html:159
+#: .\templates\profile.html:138
 msgid "أعد إدخال كلمة المرور الجديدة"
 msgstr "Re-enter your new password"
 
-#: .\templates\profile.html:167
+#: .\templates\profile.html:146
 msgid "تحديث كلمة المرور"
 msgstr "Update Password"
 
-#: .\templates\profile.html:176
+#: .\templates\profile.html:155
 msgid "الخطة الحالية"
 msgstr "Current Plan"
 
-#: .\templates\profile.html:179
+#: .\templates\profile.html:158
 msgid "الخطة المجانية"
 msgstr "Free Plan"
 
-#: .\templates\profile.html:181
+#: .\templates\profile.html:160
 msgid "الخطة الأساسية"
 msgstr "Basic Plan"
 
-#: .\templates\profile.html:183
+#: .\templates\profile.html:162
 msgid "الخطة الاحترافية"
 msgstr "Professional Plan"
 
-#: .\templates\profile.html:189
+#: .\templates\profile.html:168
 msgid "تتضمن الخطة:"
 msgstr "Plan includes:"
 
-#: .\templates\profile.html:191
+#: .\templates\profile.html:170
 msgid "تحسين طلبات العروض وفقاً للمعايير السعودية"
 msgstr "Improving RFPs according to Saudi standards"
 
-#: .\templates\profile.html:201
+#: .\templates\profile.html:171
+msgid "دعم اللغة العربية"
+msgstr "Arabic language support."
+
+#: .\templates\profile.html:176
+msgid "إمكانية حفظ المسودات واستكمالها لاحقاً"
+msgstr "Ability to save drafts and resume later."
+
+#: .\templates\profile.html:180
 msgid "ترقية الخطة"
 msgstr "Upgrade Plan"
 
@@ -1376,3 +1374,6 @@ msgstr "Register Account"
 #: .\templates\signup.html:146
 msgid "هل لديك حساب؟"
 msgstr "Do you have an account?"
+
+#~ msgid "  تحسين الطلبات بما يتوافق مع المعايير السعودية  "
+#~ msgstr "Improve RFPs according to Saudi standards"
