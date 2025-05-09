@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'accounts',
     'core',
     'documents',
+    'generator'
 ]
 
 MIDDLEWARE = [
@@ -137,16 +138,15 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
 
-STATIC_URL = '/static/'
-
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-
-
-MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# Static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -156,4 +156,4 @@ LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'core:index'
 LOGOUT_REDIRECT_URL = 'accounts:login'
 
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = "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"

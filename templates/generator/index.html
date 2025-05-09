@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "كُرّاس - مولد كراسة الشروط" %}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'style/create.css' %}" />
+{% endblock %}
+
+{% block content %}
+<!-- قسم عنوان الصفحة -->
+<section class="page-title">
+  <div class="container">
+    <h1 class="animate fade-in">{% trans "مولد كراسة الشروط" %}</h1>
+    <div class="breadcrumb animate fade-in delay-100">
+      <a href="{% url 'core:index' %}">{% trans "الرئيسية" %}</a> / <span>{% trans "مولد كراسة الشروط" %}</span>
+    </div>
+  </div>
+  <div class="floating-circle large"></div>
+  <div class="floating-circle medium"></div>
+</section>
+
+<!-- قسم نموذج إنشاء الكراسة -->
+<section class="create-notebook">
+  <div class="container">
+    <div class="form-container">
+      <h2>{% trans "نموذج إنشاء كراسة الشروط" %}</h2>
+      
+      <div class="alert alert-info">
+        {% trans "قم بإدخال تفاصيل المنافسة وسيتم إنشاء كراسة شروط كاملة بتنسيق Word. يرجى الانتظار بعد الضغط على زر الإنشاء، حيث قد تستغرق عملية التوليد من 3 إلى 5 دقائق لإنشاء كافة الأقسام الـ 12 للكراسة." %}
+      </div>
+      
+      {% if messages %}
+        {% for message in messages %}
+          <div class="error-message">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      
+      <form id="rfp-form" method="post" action="{% url 'generator:generate_rfp' %}">
+        {% csrf_token %}
+        
+        <div class="form-group">
+          <label for="competition_name">{% trans "اسم المنافسة:" %}</label>
+          <input
+            type="text"
+            id="competition_name"
+            name="competition_name"
+            placeholder="{% trans 'أدخل اسم المنافسة' %}"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="competition_objectives">{% trans "أهداف المنافسة:" %}</label>
+          <textarea
+            id="competition_objectives"
+            name="competition_objectives"
+            rows="4"
+            placeholder="{% trans 'أدخل أهداف المنافسة' %}"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="competition_description">{% trans "وصف المنافسة:" %}</label>
+          <textarea
+            id="competition_description"
+            name="competition_description"
+            rows="8"
+            placeholder="{% trans 'أدخل وصف المنافسة' %}"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" onclick="showLoader()">
+            <span class="btn-text">{% trans "إنشاء كراسة الشروط" %}</span>
+            <div id="loader" class="loader" style="display: none;"></div>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="floating-circle small"></div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  function showLoader() {
+    document.getElementById('loader').style.display = 'block';
+    document.querySelector('.btn-text').innerText = '{% trans "جاري التوليد..." %}';
+  }
+</script>
+{% endblock %}

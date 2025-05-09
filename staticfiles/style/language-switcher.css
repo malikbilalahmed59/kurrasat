@@ -1,0 +1,103 @@
+/* Language Switcher Styles */
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    /* margin-left: 1.5rem; */
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  .lang-toggle:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--glow);
+  }
+  
+  .light-theme .lang-toggle:hover {
+    color: white;
+  }
+  
+  .lang-toggle i {
+    margin-left: 0.5rem;
+  }
+  
+  /* RTL/LTR specific adjustments */
+  html[dir="ltr"] .lang-toggle i {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+  
+  html[dir="ltr"] nav ul li {
+    margin-left: 0;
+    margin-right: 1.5rem;
+  }
+  
+  html[dir="ltr"] .auth-buttons {
+    flex-direction: row-reverse;
+  }
+  
+  html[dir="ltr"] .feature-card {
+    text-align: left;
+  }
+  
+  html[dir="ltr"] .package-features {
+    text-align: left;
+  }
+  
+  html[dir="ltr"] .package-features li {
+    flex-direction: row-reverse;
+  }
+  
+  html[dir="ltr"] .package-features li i {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+  
+  html[dir="ltr"] .footer-section ul li:hover {
+    transform: translateX(5px);
+  }
+  
+  html[dir="ltr"] .footer-section h3::after {
+    left: 0;
+    right: auto;
+  }
+  
+  /* Mobile menu adjustments for LTR */
+  html[dir="ltr"] .mobile-menu {
+    right: auto;
+    left: -100%;
+  }
+  
+  html[dir="ltr"] .mobile-menu.active {
+    right: auto;
+    left: 0;
+  }
+  
+  html[dir="ltr"] .mobile-menu-close {
+    left: auto;
+    right: 1rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1158px) {
+    .lang-toggle {
+      margin: 0;
+      margin-bottom: 1rem;
+    }
+  
+    html[dir="ltr"] .footer-section h3::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  

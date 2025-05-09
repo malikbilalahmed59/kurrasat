@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تم إنشاء كراسة الشروط بنجاح</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            direction: rtl;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .success-icon {
+            color: #27ae60;
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+        .download-link {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .download-link:hover {
+            background-color: #2980b9;
+        }
+        .return-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #7f8c8d;
+        }
+        .rfp-details {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: right;
+        }
+        .rfp-details h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">✓</div>
+        <h1>تم إنشاء كراسة الشروط بنجاح</h1>
+
+        <div class="rfp-details">
+            <h3>تفاصيل المنافسة</h3>
+            <p><strong>الاسم:</strong> {{ rfp.competition_name }}</p>
+            <p><strong>الأهداف:</strong> {{ rfp.competition_objectives }}</p>
+            <p><strong>الوصف:</strong> {{ rfp.competition_description }}</p>
+        </div>
+
+        <a href="{% url 'generator:download_file' filename=filename %}" class="download-link">تحميل كراسة الشروط</a>
+
+        <p>يمكنك تحميل ملف الكراسة كامل الآن أو الرجوع للصفحة الرئيسية لإنشاء كراسة جديدة.</p>
+
+        <a href="{% url 'generator:rfp_form' %}" class="return-link">العودة للصفحة الرئيسية</a>
+    </div>
+</body>
+</html>
