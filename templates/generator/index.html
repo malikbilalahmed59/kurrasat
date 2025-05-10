@@ -6,9 +6,90 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'style/create.css' %}" />
+<style>
+  /* Spinner styling */
+  .loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* Overlay for loading state */
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    direction: rtl;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+  }
+
+  .loading-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .loading-overlay .spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 20px;
+  }
+
+  .loading-overlay .text {
+    margin-top: 15px;
+  }
+
+  .generation-progress {
+    margin-top: 15px;
+    width: 300px;
+    text-align: center;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Disable button styling */
+  .btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+</style>
 {% endblock %}
 
 {% block content %}
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="loading-overlay">
+  <div class="spinner"></div>
+  <div class="text">{% trans "جاري إنشاء كراسة الشروط..." %}</div>
+  <div id="generationProgress" class="generation-progress">
+    {% trans "يرجى الانتظار، قد تستغرق العملية من 3 إلى 5 دقائق" %}
+  </div>
+</div>
+
 <!-- قسم عنوان الصفحة -->
 <section class="page-title">
   <div class="container">
@@ -25,12 +106,12 @@
 <section class="create-notebook">
   <div class="container">
     <div class="form-container">
-      <h2>{% trans "نموذج إنشاء كراسة الشروط" %}</h2>
-      
+      <h2>{% trans "نموذج تسجيل المنافسة" %}</h2>
+
       <div class="alert alert-info">
         {% trans "قم بإدخال تفاصيل المنافسة وسيتم إنشاء كراسة شروط كاملة بتنسيق Word. يرجى الانتظار بعد الضغط على زر الإنشاء، حيث قد تستغرق عملية التوليد من 3 إلى 5 دقائق لإنشاء كافة الأقسام الـ 12 للكراسة." %}
       </div>
-      
+
       {% if messages %}
         {% for message in messages %}
           <div class="error-message">
@@ -38,17 +119,17 @@
           </div>
         {% endfor %}
       {% endif %}
-      
+
       <form id="rfp-form" method="post" action="{% url 'generator:generate_rfp' %}">
         {% csrf_token %}
-        
+
         <div class="form-group">
-          <label for="competition_name">{% trans "اسم المنافسة:" %}</label>
+          <label for="competition_name">{% trans "اسم الكراسة:" %}</label>
           <input
             type="text"
             id="competition_name"
             name="competition_name"
-            placeholder="{% trans 'أدخل اسم المنافسة' %}"
+            placeholder="{% trans 'أدخل اسم الكراسة' %}"
             required
           />
         </div>
@@ -76,9 +157,9 @@
         </div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary" onclick="showLoader()">
-            <span class="btn-text">{% trans "إنشاء كراسة الشروط" %}</span>
-            <div id="loader" class="loader" style="display: none;"></div>
+          <button type="submit" id="submitBtn" class="btn btn-primary">
+            <span class="btn-text">{% trans "إنشاء" %}</span>
+            <span id="loader" class="loader" style="display: none;"></span>
           </button>
         </div>
       </form>
@@ -90,9 +171,64 @@
 
 {% block extra_js %}
 <script>
+  // Form submission handler
+  document.getElementById('rfp-form').addEventListener('submit', function(event) {
+    // Show spinner and loading overlay
+    showLoader();
+
+    // Check form validity before proceeding
+    if (!this.checkValidity()) {
+      hideLoader();
+      return;
+    }
+  });
+
   function showLoader() {
-    document.getElementById('loader').style.display = 'block';
+    // Show the small spinner inside the button
+    document.getElementById('loader').style.display = 'inline-block';
+
+    // Change button text
     document.querySelector('.btn-text').innerText = '{% trans "جاري التوليد..." %}';
+
+    // Disable the button
+    document.getElementById('submitBtn').disabled = true;
+
+    // Show the full-screen overlay
+    document.getElementById('loadingOverlay').classList.add('visible');
+
+    // Optional: Update progress text periodically to keep user informed
+    startProgressUpdates();
+  }
+
+  function hideLoader() {
+    document.getElementById('loader').style.display = 'none';
+    document.querySelector('.btn-text').innerText = '{% trans "إنشاء كراسة الشروط" %}';
+    document.getElementById('submitBtn').disabled = false;
+    document.getElementById('loadingOverlay').classList.remove('visible');
+  }
+
+  function startProgressUpdates() {
+    const progressElement = document.getElementById('generationProgress');
+    const messages = [
+      '{% trans "جاري معالجة البيانات..." %}',
+      '{% trans "جاري تحليل المتطلبات..." %}',
+      '{% trans "جاري إنشاء المقدمة..." %}',
+      '{% trans "جاري إنشاء الأحكام العامة..." %}',
+      '{% trans "جاري إنشاء شروط تقديم العروض..." %}',
+      '{% trans "جاري إنشاء المتطلبات الفنية..." %}',
+      '{% trans "جاري تنسيق المستند النهائي..." %}',
+      '{% trans "اقتربنا من الانتهاء، يرجى الانتظار..." %}'
+    ];
+
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < messages.length) {
+        progressElement.textContent = messages[index];
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 15000); // Update message every 15 seconds
   }
 </script>
 {% endblock %}

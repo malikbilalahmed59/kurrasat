@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "كُرّاس - تحسين كراسة الشروط" %}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'style/create.css' %}" />
+<style>
+  /* Spinner styling */
+  .loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* Overlay for loading state */
+  .loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    direction: rtl;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+  }
+
+  .loading-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .loading-overlay .spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 20px;
+  }
+
+  .loading-overlay .text {
+    margin-top: 15px;
+  }
+
+  .generation-progress {
+    margin-top: 15px;
+    width: 300px;
+    text-align: center;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Disable button styling */
+  .btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* File input styling */
+  .file-input-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .file-input-label {
+    display: block;
+    background-color: #f5f5f5;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .file-input-label:hover {
+    background-color: #e8e8e8;
+    border-color: #999;
+  }
+  
+  .file-input-icon {
+    font-size: 48px;
+    color: #3498db;
+    margin-bottom: 10px;
+  }
+  
+  .file-input {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .file-name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    word-break: break-all;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Loading Overlay -->
+<div id="loadingOverlay" class="loading-overlay">
+  <div class="spinner"></div>
+  <div class="text">{% trans "جاري تحسين كراسة الشروط..." %}</div>
+  <div id="generationProgress" class="generation-progress">
+    {% trans "يرجى الانتظار، قد تستغرق العملية من 5 إلى 10 دقائق" %}
+  </div>
+</div>
+
+<!-- قسم عنوان الصفحة -->
+<section class="page-title">
+  <div class="container">
+    <h1 class="animate fade-in">{% trans "تحسين كراسة الشروط" %}</h1>
+    <div class="breadcrumb animate fade-in delay-100">
+      <a href="{% url 'core:index' %}">{% trans "الرئيسية" %}</a> / <span>{% trans "تحسين كراسة الشروط" %}</span>
+    </div>
+  </div>
+  <div class="floating-circle large"></div>
+  <div class="floating-circle medium"></div>
+</section>
+
+<!-- قسم نموذج تحسين الكراسة -->
+<section class="create-notebook">
+  <div class="container">
+    <div class="form-container">
+      <h2>{% trans "نموذج تحسين كراسة الشروط" %}</h2>
+      
+      <div class="alert alert-info">
+        {% trans "قم بتحميل كراسة الشروط الحالية وإدخال تفاصيل المنافسة وسيتم تحسين الكراسة بتنسيق Word. يرجى الانتظار بعد الضغط على زر التحسين، حيث قد تستغرق عملية التحليل والتحسين من 5 إلى 10 دقائق." %}
+      </div>
+      
+      {% if messages %}
+        {% for message in messages %}
+          <div class="error-message">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+      
+      <form id="improve-form" method="post" action="{% url 'generator:improve_rfp' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="file-input-container">
+          <label for="original_document" class="file-input-label">
+            <div class="file-input-icon"><i class="fas fa-file-upload"></i></div>
+            <span>{% trans "اضغط هنا لتحميل كراسة الشروط (.pdf)" %}</span>
+            <div id="file-name" class="file-name"></div>
+          </label>
+          <input 
+            type="file"
+            id="original_document"
+            name="original_document"
+            class="file-input"
+            accept=".pdf"
+            required
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="competition_name">{% trans "اسم المنافسة:" %}</label>
+          <input
+            type="text"
+            id="competition_name"
+            name="competition_name"
+            placeholder="{% trans 'أدخل اسم المنافسة' %}"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="competition_objectives">{% trans "أهداف المنافسة:" %}</label>
+          <textarea
+            id="competition_objectives"
+            name="competition_objectives"
+            rows="4"
+            placeholder="{% trans 'أدخل أهداف المنافسة' %}"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="competition_description">{% trans "وصف المنافسة:" %}</label>
+          <textarea
+            id="competition_description"
+            name="competition_description"
+            rows="8"
+            placeholder="{% trans 'أدخل وصف المنافسة' %}"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submitBtn" class="btn btn-primary">
+            <span class="btn-text">{% trans "تحسين كراسة الشروط" %}</span>
+            <span id="loader" class="loader" style="display: none;"></span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="floating-circle small"></div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  // File input handling
+  document.getElementById('original_document').addEventListener('change', function(e) {
+    var fileName = e.target.files[0] ? e.target.files[0].name : '';
+    document.getElementById('file-name').textContent = fileName;
+  });
+
+  // Form submission handler
+  document.getElementById('improve-form').addEventListener('submit', function(event) {
+    // Check if file is selected
+    const fileInput = document.getElementById('original_document');
+    if (fileInput.files.length === 0) {
+      alert('{% trans "يرجى تحديد ملف كراسة الشروط" %}');
+      event.preventDefault();
+      return;
+    }
+    
+    // Check file type
+    const fileName = fileInput.files[0].name;
+    if (!fileName.toLowerCase().endsWith('.pdf')) {
+      alert('{% trans "يرجى تحميل ملف بصيغة PDF فقط" %}');
+      event.preventDefault();
+      return;
+    }
+    
+    // Show spinner and loading overlay
+    showLoader();
+    
+    // Check form validity before proceeding
+    if (!this.checkValidity()) {
+      hideLoader();
+      return;
+    }
+  });
+
+  function showLoader() {
+    // Show the small spinner inside the button
+    document.getElementById('loader').style.display = 'inline-block';
+    
+    // Change button text
+    document.querySelector('.btn-text').innerText = '{% trans "جاري التحليل والتحسين..." %}';
+    
+    // Disable the button
+    document.getElementById('submitBtn').disabled = true;
+    
+    // Show the full-screen overlay
+    document.getElementById('loadingOverlay').classList.add('visible');
+    
+    // Optional: Update progress text periodically to keep user informed
+    startProgressUpdates();
+  }
+  
+  function hideLoader() {
+    document.getElementById('loader').style.display = 'none';
+    document.querySelector('.btn-text').innerText = '{% trans "تحسين كراسة الشروط" %}';
+    document.getElementById('submitBtn').disabled = false;
+    document.getElementById('loadingOverlay').classList.remove('visible');
+  }
+  
+  function startProgressUpdates() {
+    const progressElement = document.getElementById('generationProgress');
+    const messages = [
+      '{% trans "جاري تحليل الكراسة الحالية..." %}',
+      '{% trans "جاري استخراج الأقسام من الكراسة..." %}',
+      '{% trans "جاري تحسين قسم المقدمة..." %}',
+      '{% trans "جاري تحسين الأحكام العامة..." %}',
+      '{% trans "جاري تحسين شروط تقديم العروض..." %}',
+      '{% trans "جاري تحسين المتطلبات الفنية..." %}',
+      '{% trans "جاري تنسيق المستند النهائي..." %}',
+      '{% trans "اقتربنا من الانتهاء، يرجى الانتظار..." %}'
+    ];
+    
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < messages.length) {
+        progressElement.textContent = messages[index];
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 30000); // Update message every 30 seconds
+  }
+</script>
+{% endblock %}

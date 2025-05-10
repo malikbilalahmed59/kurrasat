@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'channels',
     'accounts',
     'core',
-    'documents',
     'generator'
 ]
 

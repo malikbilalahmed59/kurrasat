@@ -9,7 +9,12 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document as LangchainDocument
-
+# Build vector store from PDF files in knowledge directory
+import hashlib
+import pickle
+import time
+from datetime import datetime
+import json
 # Ensure OpenAI API key is set
 openai.api_key = settings.OPENAI_API_KEY
 os.environ["OPENAI_API_KEY"] = settings.OPENAI_API_KEY
@@ -73,8 +78,9 @@ def save_rfp_sections_to_word(sections, output_path):
     from docx import Document
     from docx.enum.text import WD_PARAGRAPH_ALIGNMENT, WD_LINE_SPACING
     from docx.enum.table import WD_TABLE_ALIGNMENT
-    from docx.shared import Pt, RGBColor
+    from docx.shared import Pt, RGBColor, Inches
     import re
+    import os
 
     # Create a new Document
     document = Document()
@@ -176,11 +182,25 @@ def save_rfp_sections_to_word(sections, output_path):
 
             # Handle bullet points
             elif line.strip().startswith('•') or line.strip().startswith('-') or line.strip().startswith('*'):
-                p = document.add_paragraph(style='List Bullet')
+                # Create a normal paragraph with custom formatting instead of using List Bullet style
+                p = document.add_paragraph()
                 p.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
+                p.paragraph_format.right_indent = Pt(0)
+                p.paragraph_format.left_indent = Pt(12)
+
+                # Set RTL for paragraph
+                try:
+                    p._element.get_or_add_pPr().set('bidi', '1')
+                except:
+                    pass
 
                 # Get the text after the bullet
                 text = line.strip()[1:].strip()
+
+                # Add manual bullet in RTL
+                run = p.add_run('• ')
+                run.font.rtl = True
+                run.font.name = 'Traditional Arabic'
 
                 # Replace markdown bold with actual bold
                 text_parts = re.split(r'(\*\*.*?\*\*)', text)
@@ -190,15 +210,35 @@ def save_rfp_sections_to_word(sections, output_path):
                         run = p.add_run(part[2:-2])
                         run.bold = True
                         run.font.rtl = True
+                        run.font.name = 'Traditional Arabic'
                     else:
                         # Add normal text
                         run = p.add_run(part)
                         run.font.rtl = True
+                        run.font.name = 'Traditional Arabic'
 
             # Handle numbered lists
             elif re.match(r'^\d+\.\s', line.strip()):
-                p = document.add_paragraph(style='List Number')
+                # Create a normal paragraph with custom formatting instead of using List Number style
+                p = document.add_paragraph()
                 p.alignment = WD_PARAGRAPH_ALIGNMENT.RIGHT
+                p.paragraph_format.right_indent = Pt(0)
+                p.paragraph_format.left_indent = Pt(12)
+
+                # Set RTL for paragraph
+                try:
+                    p._element.get_or_add_pPr().set('bidi', '1')
+                except:
+                    pass
+
+                # Get the number from original text
+                number_match = re.match(r'^(\d+)\.', line.strip())
+                number = number_match.group(1) if number_match else "1"
+
+                # Add manual number in RTL
+                run = p.add_run(f"{number}. ")
+                run.font.rtl = True
+                run.font.name = 'Traditional Arabic'
 
                 # Get the text after the number
                 text = re.sub(r'^\d+\.\s', '', line.strip())
@@ -211,10 +251,12 @@ def save_rfp_sections_to_word(sections, output_path):
                         run = p.add_run(part[2:-2])
                         run.bold = True
                         run.font.rtl = True
+                        run.font.name = 'Traditional Arabic'
                     else:
                         # Add normal text
                         run = p.add_run(part)
                         run.font.rtl = True
+                        run.font.name = 'Traditional Arabic'
 
             # Regular paragraph
             else:
@@ -253,10 +295,12 @@ def save_rfp_sections_to_word(sections, output_path):
     return output_path
 
 
-# Build vector store from PDF files in knowledge directory
+
+
 def build_vector_store(knowledge_dir):
     """
     Process PDF files in the knowledge directory and build a vector store.
+    Uses caching to avoid rebuilding if files haven't changed.
 
     Args:
         knowledge_dir: Directory containing the RFP PDF files
@@ -264,20 +308,59 @@ def build_vector_store(knowledge_dir):
     Returns:
         FAISS vector store object
     """
-    # Get all PDF files in the knowledge directory
+    cache_dir = os.path.join(knowledge_dir, ".cache")
+    os.makedirs(cache_dir, exist_ok=True)
+
+    # Create a hash of the PDF files to check if they've changed
     pdf_files = [os.path.join(knowledge_dir, f) for f in os.listdir(knowledge_dir) if f.endswith('.pdf')]
+    pdf_files.sort()  # Ensure consistent ordering
 
-    print(f"Found {len(pdf_files)} PDF files in knowledge directory")
+    # Get modification times and file sizes for hash
+    file_metadata = []
+    for pdf_file in pdf_files:
+        file_stat = os.stat(pdf_file)
+        file_metadata.append((pdf_file, file_stat.st_mtime, file_stat.st_size))
 
-    # Store all chunks and metadata
+    # Create a hash of the file metadata
+    metadata_str = str(file_metadata).encode('utf-8')
+    files_hash = hashlib.md5(metadata_str).hexdigest()
+
+    # Check if we have a cached vector store for this hash
+    vector_store_path = os.path.join(cache_dir, f"vector_store_{files_hash}")
+    metadata_path = os.path.join(cache_dir, f"metadata_{files_hash}.json")
+
+    # If cache exists, load it
+    if os.path.exists(vector_store_path) and os.path.exists(metadata_path):
+        try:
+            print(f"⏳ Loading vector store from cache...")
+            vector_store = FAISS.load_local(
+                vector_store_path,
+                OpenAIEmbeddings(model='text-embedding-ada-002'),
+                allow_dangerous_deserialization=True  # Add this parameter
+            )
+
+            # Read metadata (optional, could be useful for debugging)
+            with open(metadata_path, 'r') as f:
+                metadata = json.load(f)
+                cached_time = metadata.get('time', 'unknown')
+                print(f"✅ Using cached vector store from {cached_time}")
+
+            return vector_store
+
+        except Exception as e:
+            print(f"⚠️ Error loading cached vector store: {str(e)}")
+            print("Rebuilding vector store...")
+            # Continue with rebuilding if loading failed
+
+    print(f"🔹 Building new vector store from {len(pdf_files)} PDF files...")
+
+    # The rest of the original function to build vector store
     all_chunks = []
     all_metadata = []
-
-    # Pattern for section headers in RFP documents
     section_pattern = re.compile(r"^\s*(\d+\..+|[أ-ي]+[.)].+)$", re.MULTILINE)
 
     for file_index, file in enumerate(pdf_files):
-        rfp_name = os.path.basename(file).replace('.pdf', '')  # Extract RFP name from filename
+        rfp_name = os.path.basename(file).replace('.pdf', '')
         text = ""
 
         try:
@@ -288,20 +371,17 @@ def build_vector_store(knowledge_dir):
                         text += fix_arabic_text(extracted_text) + "\n"
 
             if text.strip():
-                # Extract sections based on headers (without replacing principles)
                 sections = section_pattern.split(text)
                 rfp_text = ""
 
                 for section in sections:
                     section = section.strip()
-                    if section:  # Avoid empty sections
+                    if section:
                         rfp_text += f"{section}\n\n"
 
-                # Split text into small chunks
                 text_splitter = RecursiveCharacterTextSplitter(chunk_size=200, chunk_overlap=50, length_function=len)
                 rfp_chunks = text_splitter.split_text(rfp_text)
 
-                # Add chunks and metadata to lists
                 for chunk in rfp_chunks:
                     all_chunks.append(chunk)
                     all_metadata.append({"source": rfp_name, "file_path": file})
@@ -310,21 +390,38 @@ def build_vector_store(knowledge_dir):
         except Exception as e:
             print(f"Error processing {file}: {str(e)}")
 
-    # Create documents from chunks and metadata
     documents = [LangchainDocument(page_content=chunk, metadata=metadata)
                  for chunk, metadata in zip(all_chunks, all_metadata)]
 
     print(f"Created {len(documents)} documents from all RFPs.")
 
-    # Create vector store
     if documents:
         embeddings = OpenAIEmbeddings(model='text-embedding-ada-002')
         vector_store = FAISS.from_documents(documents, embedding=embeddings)
+
+        # Save the vector store and metadata
+        try:
+            vector_store.save_local(vector_store_path)
+
+            # Save metadata about the cache
+            metadata = {
+                'hash': files_hash,
+                'time': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                'num_documents': len(documents),
+                'files': [os.path.basename(f) for f in pdf_files]
+            }
+
+            with open(metadata_path, 'w') as f:
+                json.dump(metadata, f, indent=2)
+
+            print(f"✅ Vector store cached successfully for future use")
+        except Exception as e:
+            print(f"⚠️ Error caching vector store: {str(e)}")
+
         return vector_store
     else:
         print("No documents created. Vector store initialization failed.")
         return None
-
 
 # Section generation functions
 def generate_rfp_intro(llm, example_rfp, competition_name, competition_objectives, competition_description):
@@ -1266,20 +1363,12 @@ def generate_rfp_annexes_and_forms(llm, example_rfp):
 
 
 # Main function to generate RFP document
+import concurrent.futures
+from functools import partial
+
+
 def generate_rfp_document(competition_name, competition_objectives, competition_description, output_dir, static_dir):
-    """
-    Generate an RFP document based on user inputs.
 
-    Args:
-        competition_name: Name of the competition
-        competition_objectives: Objectives of the competition
-        competition_description: Description of the competition
-        output_dir: Directory to save the output file
-        static_dir: Directory containing the static knowledge base
-
-    Returns:
-        Path to the generated document
-    """
     # Build vector store from PDF files in knowledge directory
     knowledge_dir = os.path.join(static_dir, "knowledge")
     vector_store = build_vector_store(knowledge_dir)
@@ -1303,58 +1392,57 @@ def generate_rfp_document(competition_name, competition_objectives, competition_
     # Setup LLM
     llm = ChatOpenAI(model='gpt-4-turbo', temperature=0.2)
 
-    # Generate each section separately
-    print("🔹 Generating RFP section 1: Introduction...")
-    section1 = generate_rfp_intro(llm, example_rfp, competition_name, competition_objectives, competition_description)
-
-    print("🔹 Generating RFP section 2: General Terms...")
-    section2 = generate_rfp_general_terms(llm, example_rfp)
-
-    print("🔹 Generating RFP section 3: Offer Preparation...")
-    section3 = generate_rfp_offer_preparation(llm, example_rfp)
-
-    print("🔹 Generating RFP section 4: Offer Submission...")
-    section4 = generate_rfp_offer_submission(llm, example_rfp)
-
-    print("🔹 Generating RFP section 5: Offer Analysis...")
-    section5 = generate_rfp_offer_analysis(llm, example_rfp)
-
-    print("🔹 Generating RFP section 6: Award Contract...")
-    section6 = generate_rfp_award_contract(llm, example_rfp)
-
-    print("🔹 Generating RFP section 7: Guarantees...")
-    section7 = generate_rfp_guarantees(llm, example_rfp)
-
-    print("🔹 Generating RFP section 8: Specifications...")
-    section8 = generate_rfp_specifications(llm, example_rfp)
-
-    print("🔹 Generating RFP section 9: General Contract Terms...")
-    section9 = generate_rfp_general_contract_terms(llm, example_rfp)
-
-    print("🔹 Generating RFP section 10: Special Terms...")
-    section10 = generate_rfp_special_terms(llm, example_rfp)
-
-    print("🔹 Generating RFP section 11: Attachments...")
-    section11 = generate_rfp_attachments(llm, example_rfp)
-
-    print("🔹 Generating RFP section 12: Annexes and Forms...")
-    section12 = generate_rfp_annexes_and_forms(llm, example_rfp)
-
-    # Combine all sections
-    sections = [
-        ("المقدمة", section1),
-        ("الأحكام العامة", section2),
-        ("إعداد العروض", section3),
-        ("تقديم العروض", section4),
-        ("تقييم العروض", section5),
-        ("متطلبات التعاقد", section6),
-        ("نطاق العمل المفصل", section7),
-        ("المواصفات الفنية", section8),
-        ("متطلبات المحتوى المحلي", section9),
-        ("متطلبات برنامج المشاركة الاقتصادية", section10),
-        ("الشروط الخاصة", section11),
-        ("الملاحق والنماذج الإضافية", section12)
+    # Define all section generation tasks with their titles
+    generation_tasks = [
+        (1, "المقدمة", partial(generate_rfp_intro, llm, example_rfp, competition_name, competition_objectives,
+                               competition_description)),
+        (2, "الأحكام العامة", partial(generate_rfp_general_terms, llm, example_rfp)),
+        (3, "إعداد العروض", partial(generate_rfp_offer_preparation, llm, example_rfp)),
+        (4, "تقديم العروض", partial(generate_rfp_offer_submission, llm, example_rfp)),
+        (5, "تقييم العروض", partial(generate_rfp_offer_analysis, llm, example_rfp)),
+        (6, "متطلبات التعاقد", partial(generate_rfp_award_contract, llm, example_rfp)),
+        (7, "نطاق العمل المفصل", partial(generate_rfp_guarantees, llm, example_rfp)),
+        (8, "المواصفات الفنية", partial(generate_rfp_specifications, llm, example_rfp)),
+        (9, "متطلبات المحتوى المحلي", partial(generate_rfp_general_contract_terms, llm, example_rfp)),
+        (10, "متطلبات برنامج المشاركة الاقتصادية", partial(generate_rfp_special_terms, llm, example_rfp)),
+        (11, "الشروط الخاصة", partial(generate_rfp_attachments, llm, example_rfp)),
+        (12, "الملاحق والنماذج الإضافية", partial(generate_rfp_annexes_and_forms, llm, example_rfp))
     ]
+
+    # Store results by section number to maintain ordering
+    sections_content = {}
+
+    print("🔹 Starting parallel generation of all RFP sections...")
+
+    # Use ThreadPoolExecutor to run generation tasks in parallel
+    # Limiting to 4 workers to avoid overwhelming the API or system resources
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+        # Create a dictionary to map futures to their section info
+        future_to_section = {}
+
+        # Submit all tasks
+        for section_num, section_title, generate_func in generation_tasks:
+            future = executor.submit(generate_func)
+            future_to_section[future] = (section_num, section_title)
+
+        # Process results as they complete
+        for future in concurrent.futures.as_completed(future_to_section):
+            section_num, section_title = future_to_section[future]
+            try:
+                section_content = future.result()
+                sections_content[section_num] = (section_title, section_content)
+                print(f"✅ Completed section {section_num}: {section_title}")
+            except Exception as e:
+                print(f"❌ Error generating section {section_num}: {section_title}")
+                print(f"   Error details: {str(e)}")
+                # Provide a placeholder for failed sections
+                sections_content[section_num] = (
+                section_title, f"Error generating {section_title} section. Please try again.")
+
+    print("✅ All sections completed!")
+
+    # Combine all sections in the correct order
+    sections = [sections_content[i] for i in range(1, 13)]
 
     # Generate a filename based on the competition name
     safe_filename = re.sub(r'[^\w\s]', '', competition_name).strip().replace(' ', '_')
@@ -1365,3 +1453,189 @@ def generate_rfp_document(competition_name, competition_objectives, competition_
     save_rfp_sections_to_word(sections, output_path)
 
     return filename
+
+
+import fitz  # PyMuPDF for PDF extraction
+
+
+def read_pdf_with_fitz(file_path):
+    """
+    Extract text from PDF using PyMuPDF (fitz).
+    """
+    text = ""
+    try:
+        doc = fitz.open(file_path)
+        for page in doc:
+            text += page.get_text()
+        doc.close()
+    except Exception as e:
+        print(f"Error reading PDF: {str(e)}")
+    return text
+
+
+def clean_text(text):
+    """
+    Clean extracted text.
+    """
+    text = re.sub(r'Error! Bookmark not defined\.', '', text)
+    text = re.sub(r'\d{1,3}', '', text)
+    text = re.sub(r'\.{2,}', '', text)
+    text = re.sub(r'\n+', '\n', text)
+    return text.strip()
+
+
+def improve_rfp_with_extracted_text(pdf_text, competition_name, competition_objectives, competition_description,
+                                    output_path, vector_store=None):
+    """
+    Improve an existing RFP document using pre-extracted text.
+    This function is optimized for parallel processing.
+    """
+    # Setup LLM
+    llm = ChatOpenAI(model='gpt-4-turbo', temperature=0.2)
+
+    # Define required sections
+    required_sections = [
+        'المقدمة', 'الأحكام العامة', 'إعداد العروض', 'تقديم العروض',
+        'تقييم العروض', 'متطلبات التعاقد', 'نطاق العمل المفصل',
+        'المواصفات الفنية', 'متطلبات المحتوى المحلي', 'متطلبات برنامج المشاركة الاقتصادية',
+        'الشروط الخاصة', 'الملاحق والنماذج الإضافية'
+    ]
+
+    # Get example RFP if vector store is available
+    example_rfp = ""
+    if vector_store:
+        try:
+            retrieved_docs = vector_store.similarity_search(competition_description, k=1)
+            if retrieved_docs:
+                example_rfp = retrieved_docs[0].page_content
+                print("✅ Found similar RFP to use as reference model.")
+            else:
+                print("⚠️ No similar RFP found. Will generate without reference example.")
+        except Exception as e:
+            print(f"Error during similarity search: {str(e)}")
+            print("⚠️ Will generate without reference example.")
+
+    # Clean the text
+    text = clean_text(pdf_text)
+    notes = []
+
+    # Prepare tasks for section processing
+    section_tasks = []
+
+    for section in required_sections:
+        # Try to find the section in the original document
+        pattern = rf"{section}\s*([\s\S]*?)(?=\n\s*(?:{'|'.join(required_sections)})|$)"
+        match = re.search(pattern, text)
+        section_content = match.group(1).strip() if match else ""
+
+        generate_flag = False
+
+        # Check if section needs to be generated or improved
+        if len(section_content) < 50:
+            note = f"❌ القسم '{section}' مفقود → سيتم توليده."
+            notes.append(note)
+            generate_flag = True
+        elif section == 'المقدمة':
+            key_terms = ['تعريف', 'خلفية', 'نطاق', 'أهداف']
+            if not all(term in section_content for term in key_terms):
+                note = f"⚠️ القسم '{section}' ناقص في التعريف/الخلفية/النطاق/الأهداف → سيتم تحسينه."
+                notes.append(note)
+                generate_flag = True
+        else:
+            note = f"ℹ️ القسم '{section}' موجود وسنعيد كتابته لضمان التنسيق والترتيب."
+            notes.append(note)
+
+        # Add to tasks list
+        section_tasks.append((section, section_content, generate_flag))
+
+    # Process sections in parallel using ThreadPoolExecutor with increased workers
+    section_results = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
+        # Create a dictionary to map futures to their section info
+        future_to_section = {}
+
+        for section, content, generate_flag in section_tasks:
+            # Submit task to generate or improve the section
+            future = executor.submit(
+                improve_section,
+                llm,
+                section,
+                content,
+                competition_name,
+                competition_objectives,
+                competition_description,
+                generate_flag
+            )
+            future_to_section[future] = section
+
+        # Process results as they complete
+        for future in concurrent.futures.as_completed(future_to_section):
+            section = future_to_section[future]
+            try:
+                section_content = future.result()
+                section_results[section] = section_content
+                print(f"✅ Completed improving section: {section}")
+            except Exception as e:
+                print(f"❌ Error improving section {section}: {e}")
+                # Provide a placeholder for failed sections
+                section_results[section] = f"Error generating {section} section. Please try again."
+
+    # Organize sections in the correct order
+    sections = []
+    for section in required_sections:
+        if section in section_results:
+            sections.append((section, section_results[section]))
+
+    # Ensure directory exists
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    # Save the improved RFP to a Word document
+    save_rfp_sections_to_word(sections, output_path)
+
+    # Generate filename
+    filename_base = os.path.basename(output_path)
+
+    # Print notes
+    notes_text = "\n".join(notes)
+    print("\n===== 📝 ملاحظات المراجعة =====\n")
+    print(notes_text)
+    print(f"\n✅ تم حفظ الكراسة المحسنة في {filename_base}.\n")
+
+    return filename_base
+
+
+def improve_section(llm, section, original_content, competition_name, competition_objectives, competition_description,
+                    generate_flag):
+    """
+    Generate or improve a single section of an RFP.
+    """
+    if generate_flag:
+        prompt = f"""
+        بصفتك خبيرًا محترفًا، اكتب قسم '{section}' لكراسة بعنوان '{competition_name}' بهدف '{competition_objectives}' في مجال '{competition_description}'. 
+
+        اكتب محتوى تفصيلي لا يقل عن 1000-1500 كلمة، بلغة عربية فصحى واضحة وطويلة ومترابطة. المحتوى يجب أن يكون شاملاً وعميقاً ومتخصصاً.
+
+        استخدم التنسيق التالي:
+        - لا تستخدم علامة # للعناوين، بل استخدم العناوين بشكل عادي.
+        - لا تستخدم علامة ** للنص العريض، اكتب النص بشكل عادي.
+        - استخدم الترقيم العادي للقوائم المرقمة (1. 2. 3.).
+        - استخدم النقاط العادية للقوائم غير المرقمة (•).
+        - ضع الجداول بصيغة عادية باستخدام | بين الأعمدة.
+
+        ابدأ القسم مباشرة دون ذكر العنوان، حيث سيتم إضافته تلقائياً.
+        """
+    else:
+        prompt = f"""
+        بصفتك خبيرًا محترفًا، أعد كتابة وتحسين قسم '{section}' التالي من كراسة بعنوان '{competition_name}' بهدف '{competition_objectives}' في مجال '{competition_description}'.
+
+        حافظ على نفس المعنى ولكن حسّن الأسلوب والصياغة، نظّف النص من أي أخطاء، واكتب بلغة عربية فصحى واضحة.
+        المحتوى يجب أن يكون لا يقل عن 1000-1500 كلمة، وابدأ القسم مباشرة دون ذكر العنوان (سيتم إضافته تلقائياً).
+
+        أضف المزيد من التفاصيل والشرح إذا كان المحتوى الأصلي مختصراً جداً.
+
+        النص الأصلي:
+        {original_content}
+        """
+
+    section_content = llm.predict(prompt).strip()
+    return clean_text(section_content)

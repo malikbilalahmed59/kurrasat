@@ -17,7 +17,6 @@ urlpatterns += i18n_patterns(
     path(_('admin/'), admin.site.urls),  # Make the admin URL translatable
     path('', include(('core.urls', 'core'), namespace='core')),
     path('accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
-    path('documents/', include(('documents.urls', 'documents'), namespace='documents')),
     path('generator/', include(('generator.urls', 'generator'), namespace="generator")),
     prefix_default_language=False,  # Don't prefix URLs for default language
 )
