@@ -121,6 +121,11 @@
     color: #555;
     word-break: break-all;
   }
+
+  /* Error styling */
+  .input-error {
+    border-color: #dc3545 !important;
+  }
 </style>
 {% endblock %}
 
@@ -151,38 +156,45 @@
   <div class="container">
     <div class="form-container">
       <h2>{% trans "نموذج تحسين كراسة الشروط" %}</h2>
-      
-      <div class="alert alert-info">
-        {% trans "قم بتحميل كراسة الشروط الحالية وإدخال تفاصيل المنافسة وسيتم تحسين الكراسة بتنسيق Word. يرجى الانتظار بعد الضغط على زر التحسين، حيث قد تستغرق عملية التحليل والتحسين من 5 إلى 10 دقائق." %}
-      </div>
-      
+
       {% if messages %}
-        {% for message in messages %}
-          <div class="error-message">
-            {{ message }}
-          </div>
-        {% endfor %}
-      {% endif %}
-      
+      {% for message in messages %}
+        <div class="alert {% if message.tags == 'error' or message.tags == 'warning' %}alert-danger{% elif message.tags == 'success' %}alert-success{% else %}alert-info{% endif %} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+<div id="validationErrors" class="alert alert-danger" style="display: none; direction: rtl;">
+  <h4 class="alert-heading">{% trans "توجد أخطاء في البيانات المدخلة:" %}</h4>
+  <ul id="errorsList">
+  </ul>
+</div>
+
+<div class="alert alert-info">
+  {% trans "قم بتحميل كراسة الشروط الحالية وإدخال معلومات دقيقة عن المنافسة. سيتم التحقق أولاً من أن الملف المرفق هو كراسة شروط، ثم سيتم تحليل البيانات المدخلة للمساعدة في تحسين الكراسة." %}
+</div>
+
+
       <form id="improve-form" method="post" action="{% url 'generator:improve_rfp' %}" enctype="multipart/form-data">
         {% csrf_token %}
-        
+
         <div class="file-input-container">
           <label for="original_document" class="file-input-label">
             <div class="file-input-icon"><i class="fas fa-file-upload"></i></div>
-            <span>{% trans "اضغط هنا لتحميل كراسة الشروط (.pdf)" %}</span>
+            <span>{% trans "اضغط هنا لتحميل كراسة الشروط" %}</span>
             <div id="file-name" class="file-name"></div>
           </label>
-          <input 
+          <input
             type="file"
             id="original_document"
             name="original_document"
             class="file-input"
-            accept=".pdf"
             required
           />
         </div>
-        
+
         <div class="form-group">
           <label for="competition_name">{% trans "اسم المنافسة:" %}</label>
           <input
@@ -210,11 +222,88 @@
           <textarea
             id="competition_description"
             name="competition_description"
-            rows="8"
+            rows="4"
             placeholder="{% trans 'أدخل وصف المنافسة' %}"
             required
           ></textarea>
         </div>
+
+        <div class="form-group">
+          <label for="government_entity">{% trans "الجهة الحكومية:" %}</label>
+          <input type="text" id="government_entity" name="government_entity" required />
+        </div>
+
+        <!-- الحقول الإضافية - الآن اختيارية -->
+        <div class="form-group">
+          <label for="cost_value">{% trans "قيمة التكاليف:" %}</label>
+          <input type="text" id="cost_value" name="cost_value" />
+        </div>
+
+        <div class="form-group">
+          <label for="cost_method">{% trans "آلية البيع:" %}</label>
+          <input type="text" id="cost_method" name="cost_method" />
+        </div>
+
+        <div class="form-group">
+          <label for="start_stage">{% trans "بداية التنافس:" %}</label>
+          <input type="text" id="start_stage" name="start_stage" />
+        </div>
+
+        <div class="form-group">
+          <label for="end_stage">{% trans "نهاية التنافس:" %}</label>
+          <input type="text" id="end_stage" name="end_stage" />
+        </div>
+
+        <div class="form-group">
+          <label for="technical_docs">{% trans "وثائق العرض الفني:" %}</label>
+          <textarea id="technical_docs" name="technical_docs" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="alternative_offers">{% trans "العروض البديلة:" %}</label>
+          <textarea id="alternative_offers" name="alternative_offers" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="initial_guarantee">{% trans "الضمان الابتدائي:" %}</label>
+          <textarea id="initial_guarantee" name="initial_guarantee" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="pause_period">{% trans "فترة التوقف:" %}</label>
+          <input type="text" id="pause_period" name="pause_period" />
+        </div>
+
+        <div class="form-group">
+          <label for="penalties">{% trans "الغرامات:" %}</label>
+          <textarea id="penalties" name="penalties" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="execution_city">{% trans "مدينة التنفيذ:" %}</label>
+          <input type="text" id="execution_city" name="execution_city" />
+        </div>
+
+        <div class="form-group">
+          <label for="execution_district">{% trans "حي التنفيذ:" %}</label>
+          <input type="text" id="execution_district" name="execution_district" />
+        </div>
+
+        <div class="form-group">
+          <label for="execution_region">{% trans "منطقة التنفيذ:" %}</label>
+          <input type="text" id="execution_region" name="execution_region" />
+        </div>
+
+        <div class="form-group">
+          <label for="required_materials">{% trans "المواد المطلوبة:" %}</label>
+          <textarea id="required_materials" name="required_materials" rows="2"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="special_terms">{% trans "الشروط الخاصة:" %}</label>
+          <textarea id="special_terms" name="special_terms" rows="2"></textarea>
+        </div>
+
 
         <div class="form-actions">
           <button type="submit" id="submitBtn" class="btn btn-primary">
@@ -237,80 +326,142 @@
     document.getElementById('file-name').textContent = fileName;
   });
 
-  // Form submission handler
-  document.getElementById('improve-form').addEventListener('submit', function(event) {
-    // Check if file is selected
-    const fileInput = document.getElementById('original_document');
-    if (fileInput.files.length === 0) {
-      alert('{% trans "يرجى تحديد ملف كراسة الشروط" %}');
-      event.preventDefault();
-      return;
+// Form submission handler
+document.getElementById('improve-form').addEventListener('submit', function(event) {
+  // Always prevent default submission first to take control
+  event.preventDefault();
+
+  // Reset error section
+  document.getElementById('validationErrors').style.display = 'none';
+  document.getElementById('errorsList').innerHTML = '';
+
+  // Remove error styling
+  document.querySelectorAll('.input-error').forEach(field => {
+    field.classList.remove('input-error');
+  });
+
+  let hasErrors = false;
+  let errors = [];
+
+  // Validate file exists
+  const fileInput = document.getElementById('original_document');
+  if (fileInput.files.length === 0) {
+    errors.push('{% trans "يرجى تحديد ملف كراسة الشروط" %}');
+    hasErrors = true;
+  } else {
+    // Validate file extension
+    const fileName = fileInput.files[0].name.toLowerCase();
+    if (!fileName.endsWith('.pdf')) {
+      errors.push('{% trans "يجب أن يكون الملف بصيغة PDF" %}');
+      hasErrors = true;
     }
-    
-    // Check file type
-    const fileName = fileInput.files[0].name;
-    if (!fileName.toLowerCase().endsWith('.pdf')) {
-      alert('{% trans "يرجى تحميل ملف بصيغة PDF فقط" %}');
-      event.preventDefault();
-      return;
-    }
-    
-    // Show spinner and loading overlay
-    showLoader();
-    
-    // Check form validity before proceeding
-    if (!this.checkValidity()) {
-      hideLoader();
-      return;
+  }
+
+  // Validate required fields
+  const requiredFields = [
+    { id: 'competition_name', name: '{% trans "اسم المنافسة" %}' },
+    { id: 'competition_objectives', name: '{% trans "أهداف المنافسة" %}' },
+    { id: 'competition_description', name: '{% trans "وصف المنافسة" %}' },
+    { id: 'government_entity', name: '{% trans "الجهة الحكومية" %}' }
+  ];
+
+  requiredFields.forEach(field => {
+    const element = document.getElementById(field.id);
+    if (!element.value.trim()) {
+      errors.push(`${field.name} {% trans "مطلوب" %}`);
+      element.classList.add('input-error');
+      hasErrors = true;
     }
   });
 
-  function showLoader() {
-    // Show the small spinner inside the button
-    document.getElementById('loader').style.display = 'inline-block';
-    
-    // Change button text
-    document.querySelector('.btn-text').innerText = '{% trans "جاري التحليل والتحسين..." %}';
-    
-    // Disable the button
-    document.getElementById('submitBtn').disabled = true;
-    
-    // Show the full-screen overlay
-    document.getElementById('loadingOverlay').classList.add('visible');
-    
-    // Optional: Update progress text periodically to keep user informed
-    startProgressUpdates();
+  // Display errors if found
+  if (hasErrors) {
+    // Add errors to list
+    const errorsList = document.getElementById('errorsList');
+    errors.forEach(error => {
+      const li = document.createElement('li');
+      li.textContent = error;
+      errorsList.appendChild(li);
+    });
+
+    // Show error section
+    document.getElementById('validationErrors').style.display = 'block';
+
+    // Scroll to errors
+    document.getElementById('validationErrors').scrollIntoView({ behavior: 'smooth' });
+
+    return;
   }
-  
-  function hideLoader() {
-    document.getElementById('loader').style.display = 'none';
-    document.querySelector('.btn-text').innerText = '{% trans "تحسين كراسة الشروط" %}';
-    document.getElementById('submitBtn').disabled = false;
-    document.getElementById('loadingOverlay').classList.remove('visible');
-  }
-  
-  function startProgressUpdates() {
-    const progressElement = document.getElementById('generationProgress');
-    const messages = [
-      '{% trans "جاري تحليل الكراسة الحالية..." %}',
-      '{% trans "جاري استخراج الأقسام من الكراسة..." %}',
-      '{% trans "جاري تحسين قسم المقدمة..." %}',
-      '{% trans "جاري تحسين الأحكام العامة..." %}',
-      '{% trans "جاري تحسين شروط تقديم العروض..." %}',
-      '{% trans "جاري تحسين المتطلبات الفنية..." %}',
-      '{% trans "جاري تنسيق المستند النهائي..." %}',
-      '{% trans "اقتربنا من الانتهاء، يرجى الانتظار..." %}'
-    ];
-    
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < messages.length) {
-        progressElement.textContent = messages[index];
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 30000); // Update message every 30 seconds
-  }
+
+  // Show loading UI
+  showLoader();
+
+  // Actually submit the form after UI has updated
+  setTimeout(function() {
+    document.getElementById('improve-form').submit();
+  }, 100);
+});
+
+function showLoader() {
+  // إخفاء قسم الأخطاء إذا كان ظاهرًا
+  document.getElementById('validationErrors').style.display = 'none';
+
+  // إظهار المؤشر الصغير داخل الزر
+  document.getElementById('loader').style.display = 'inline-block';
+
+  // تغيير نص الزر
+  document.querySelector('.btn-text').innerText = '{% trans "جاري التحليل والتحسين..." %}';
+
+  // تعطيل الزر فقط
+  document.getElementById('submitBtn').disabled = true;
+
+  // إظهار الغطاء الشامل
+  document.getElementById('loadingOverlay').classList.add('visible');
+
+  // تحديث نص التقدم بشكل دوري
+  startProgressUpdates();
+
+  // No onbeforeunload since we want the form to submit normally
+}
+function hideLoader() {
+  document.getElementById('loader').style.display = 'none';
+  document.querySelector('.btn-text').innerText = '{% trans "تحسين كراسة الشروط" %}';
+  document.getElementById('submitBtn').disabled = false;
+
+  // إعادة تفعيل حقول النموذج
+  const formInputs = document.querySelectorAll('#improve-form input, #improve-form textarea, #improve-form select');
+  formInputs.forEach(input => {
+    input.disabled = false;
+  });
+
+  document.getElementById('loadingOverlay').classList.remove('visible');
+
+  // إلغاء تعطيل الخروج من الصفحة
+  window.onbeforeunload = null;
+}
+
+function startProgressUpdates() {
+  const progressElement = document.getElementById('generationProgress');
+  const messages = [
+    '{% trans "جاري تحليل الكراسة الحالية..." %}',
+    '{% trans "جاري استخراج الأقسام من الكراسة..." %}',
+    '{% trans "جاري تحسين قسم المقدمة..." %}',
+    '{% trans "جاري تحسين الأحكام العامة..." %}',
+    '{% trans "جاري تحسين شروط تقديم العروض..." %}',
+    '{% trans "جاري تحسين المتطلبات الفنية..." %}',
+    '{% trans "جاري تنسيق المستند النهائي..." %}',
+    '{% trans "اقتربنا من الانتهاء، يرجى الانتظار..." %}'
+  ];
+
+  let index = 0;
+  const interval = setInterval(() => {
+    if (index < messages.length) {
+      progressElement.textContent = messages[index];
+      index++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 30000); // Update message every 30 seconds
+}
 </script>
 {% endblock %}

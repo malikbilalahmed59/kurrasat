@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <br>
+<div class="container py-5">
+    <div class="min-vh-100 d-flex flex-column">
+        <div class="row justify-content-center flex-grow-1">
+            <div class="col-md-8">
+                <div class="card shadow text-center">
+                    <div class="card-body p-5">
+                        <h2 class="card-title mb-4" id="status-title">جاري المعالجة...</h2>
+
+                        <!-- Loading Animation -->
+                        <div class="loading-animation mb-4" id="loading-animation">
+                            <div class="spinner-container">
+                                <div class="spinner-grow text-primary" role="status"></div>
+                                <div class="spinner-grow text-secondary" role="status" style="animation-delay: 0.2s"></div>
+                                <div class="spinner-grow text-success" role="status" style="animation-delay: 0.4s"></div>
+                            </div>
+
+                            <!-- Document Processing Animation -->
+                            <div class="document-process mt-4">
+                                <div class="document-icon">
+                                    <i class="fas fa-file-alt fa-3x mb-3 text-muted"></i>
+                                </div>
+                                <div class="processing-steps">
+                                    <div class="step active" id="step1">
+                                        <span class="step-dot"></span>
+                                        <span class="step-label">تحليل الملف</span>
+                                    </div>
+                                    <div class="step" id="step2">
+                                        <span class="step-dot"></span>
+                                        <span class="step-label">معالجة المحتوى</span>
+                                    </div>
+                                    <div class="step" id="step3">
+                                        <span class="step-dot"></span>
+                                        <span class="step-label">إنشاء الكراسة المحسنة</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="progress mb-4" style="height: 10px">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%"></div>
+                        </div>
+
+                        <p id="status-message" class="lead">يرجى الانتظار أثناء معالجة طلبك. قد تستغرق هذه العملية بضع دقائق...</p>
+
+                        <!-- Error Display -->
+                        <div id="error-container" class="alert alert-danger d-none">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <span id="error-message"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Animation Styles */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.document-process {
+    margin: 30px auto;
+    max-width: 500px;
+}
+
+.processing-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 20px;
+}
+
+.processing-steps:before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.step-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.step-label {
+    font-size: 14px;
+    color: #6c757d;
+    text-align: center;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+}
+
+.step.active .step-dot {
+    background-color: #007bff;
+    box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.step.active .step-label {
+    color: #007bff;
+    font-weight: bold;
+}
+
+.step.completed .step-dot {
+    background-color: #28a745;
+}
+
+.step.completed .step-dot:after {
+    content: '✓';
+    color: white;
+    font-size: 16px;
+}
+
+.step.error .step-dot {
+    background-color: #dc3545;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.document-icon {
+    animation: pulse 2s infinite;
+    text-align: center;
+}
+
+/* Make content area take at least full viewport height to push footer down */
+.min-vh-100 {
+    min-height: 80vh;
+}
+
+/* Error styling */
+#error-container {
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#error-container.show {
+    max-height: 500px;
+    opacity: 1;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+</style>
+
+<script>
+    // Process step animation timing
+    const stepInterval = 8000; // 8 seconds between steps
+    let currentStep = 1;
+    let totalSteps = 3;
+
+    // Function to advance to the next step
+    function advanceStep() {
+        if (currentStep < totalSteps) {
+            // Mark current step as completed
+            document.getElementById('step' + currentStep).classList.add('completed');
+
+            // Activate next step
+            currentStep++;
+            document.getElementById('step' + currentStep).classList.add('active');
+
+            // Schedule next step advancement
+            if (currentStep < totalSteps) {
+                setTimeout(advanceStep, stepInterval);
+            }
+        }
+    }
+
+    // Start the step animation after a delay
+    setTimeout(advanceStep, stepInterval);
+
+    // Function to show error state
+    function showError(message) {
+        // Update visual elements
+        document.getElementById('status-title').textContent = 'فشلت عملية المعالجة';
+        document.getElementById('status-title').classList.add('text-danger');
+        document.getElementById('status-message').textContent = 'فشلت عملية المعالجة.';
+
+        // Show error container with animation
+        const errorContainer = document.getElementById('error-container');
+        errorContainer.classList.remove('d-none');
+        errorContainer.classList.add('show');
+        document.getElementById('error-message').textContent = message;
+
+        // Update steps
+        document.querySelectorAll('.step.active').forEach(step => {
+            step.classList.remove('active');
+            step.classList.add('error');
+        });
+
+        // Stop the progress bar animation
+        document.querySelector('.progress-bar').classList.remove('progress-bar-animated');
+        document.querySelector('.progress-bar').style.width = '100%';
+        document.querySelector('.progress-bar').classList.add('bg-danger');
+    }
+
+    // Function to show success state
+    function showSuccess() {
+        // Mark all steps as completed
+        for (let i = 1; i <= totalSteps; i++) {
+            document.getElementById('step' + i).classList.add('completed');
+            document.getElementById('step' + i).classList.remove('active');
+        }
+
+        // Update progress bar
+        document.querySelector('.progress-bar').classList.remove('progress-bar-animated');
+        document.querySelector('.progress-bar').classList.add('bg-success');
+    }
+
+    // Function to check task status
+    function checkTaskStatus() {
+        fetch('{% url "generator:check_task_status" task_id=task_id document_type=document_type document_id=document_id %}')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'completed') {
+                    // Show success state
+                    showSuccess();
+
+                    // Update message
+                    document.getElementById('status-message').textContent = 'تمت المعالجة بنجاح! جاري التحويل...';
+
+                    // Redirect after a short delay to show the success state
+                    setTimeout(() => {
+                        window.location.href = data.redirect_url;
+                    }, 1500);
+
+                    // Stop checking
+                    clearInterval(checkInterval);
+                } else if (data.status === 'error') {
+                    // Show error message with animation
+                    showError(data.error);
+
+                    // Stop checking
+                    clearInterval(checkInterval);
+                } else {
+                    // Continue checking - update the message with a bit of variety
+                    const messages = [
+                        'جاري معالجة طلبك، يرجى الانتظار...',
+                        'نعمل على تحسين الكراسة، قد يستغرق ذلك بضع دقائق...',
+                        'جاري تحليل المحتوى وإعداد النسخة المحسنة...'
+                    ];
+                    const randomIndex = Math.floor(Math.random() * messages.length);
+                    document.getElementById('status-message').textContent = messages[randomIndex];
+                }
+            })
+            .catch(error => {
+                console.error('Error checking task status:', error);
+            });
+    }
+
+    // Check status immediately
+    checkTaskStatus();
+    
+    // Then check every 5 seconds
+    const checkInterval = setInterval(checkTaskStatus, 5000);
+</script>
+{% endblock %}

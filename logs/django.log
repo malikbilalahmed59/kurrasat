@@ -1,0 +1,640 @@
+INFO 2025-05-18 03:21:05,510 autoreload 13416 4428 Watching for file changes with StatReloader
+INFO 2025-05-18 03:21:14,057 basehttp 13416 5960 "GET / HTTP/1.1" 200 19445
+INFO 2025-05-18 03:21:14,491 basehttp 13416 1092 "GET /static/images/logo1.png HTTP/1.1" 200 63837
+INFO 2025-05-18 03:21:14,493 basehttp 13416 7364 "GET /static/js/script.js HTTP/1.1" 200 6633
+INFO 2025-05-18 03:21:14,493 basehttp 13416 5960 "GET /static/style/style.css HTTP/1.1" 200 43937
+WARNING 2025-05-18 03:21:15,681 log 13416 7364 Not Found: /favicon.ico
+WARNING 2025-05-18 03:21:15,686 basehttp 13416 7364 "GET /favicon.ico HTTP/1.1" 404 4684
+INFO 2025-05-18 03:21:20,371 basehttp 13416 7364 "GET /generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 03:21:20,437 basehttp 13416 7364 "GET /generator/ HTTP/1.1" 200 12912
+INFO 2025-05-18 03:21:20,530 basehttp 13416 7364 "GET /static/style/create.css HTTP/1.1" 200 5037
+INFO 2025-05-18 03:22:23,102 autoreload 12012 13432 Watching for file changes with StatReloader
+INFO 2025-05-18 03:26:01,981 basehttp 12012 14116 "POST /generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 03:26:02,010 basehttp 12012 14116 "GET /generator/task/status/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 8804
+INFO 2025-05-18 03:26:02,119 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:07,109 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:13,105 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:17,113 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:23,111 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:28,109 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:33,113 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:36,044 basehttp 12012 14116 "GET /generator/task/status/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 8804
+INFO 2025-05-18 03:26:36,102 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:41,109 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:46,113 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:51,104 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:26:56,113 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:01,116 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:06,097 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:11,116 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:16,638 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:21,111 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:26,114 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:31,108 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:36,105 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:41,102 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:46,111 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:51,116 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:27:56,110 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:28:01,107 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:28:40,125 basehttp 12012 14116 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 90
+INFO 2025-05-18 03:56:39,636 autoreload 12012 13432 C:\Users\malik\PycharmProjects\Kurrasat\generator\rfp_processor.py changed, reloading.
+INFO 2025-05-18 03:56:52,651 autoreload 2116 9116 Watching for file changes with StatReloader
+INFO 2025-05-18 03:57:26,936 autoreload 2116 9116 C:\Users\malik\PycharmProjects\Kurrasat\generator\rfp_processor.py changed, reloading.
+INFO 2025-05-18 03:57:30,769 autoreload 2152 2712 Watching for file changes with StatReloader
+INFO 2025-05-18 03:57:47,995 basehttp 2152 14164 "GET /generator/task/status/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 8804
+INFO 2025-05-18 03:57:48,181 basehttp 2152 14164 "GET /generator/task/check/fb6883bd-a72c-48e3-90ca-afc2e8fa258b/rfp/9/ HTTP/1.1" 200 90
+INFO 2025-05-18 03:57:56,861 basehttp 2152 14164 "GET /generator/ HTTP/1.1" 200 12912
+INFO 2025-05-18 03:58:42,128 basehttp 2152 14164 "POST /generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 03:58:42,139 basehttp 2152 14164 "GET /generator/task/status/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 8807
+INFO 2025-05-18 03:58:42,221 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:58:48,124 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:58:53,110 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:58:58,101 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:02,190 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:08,122 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:13,110 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:18,154 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:22,211 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:28,102 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:33,110 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:38,100 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:43,120 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:48,108 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:53,101 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 03:59:57,195 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:03,105 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:08,114 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:12,184 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:18,105 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:23,109 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:28,115 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:33,107 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:37,196 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:43,112 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:48,114 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:00:53,112 basehttp 2152 14164 "GET /generator/task/check/439f1a0c-1ace-4f40-bd83-da681c21e64c/rfp/10/ HTTP/1.1" 200 90
+INFO 2025-05-18 04:13:59,899 autoreload 2152 2712 C:\Users\malik\PycharmProjects\Kurrasat\kurrasat\settings.py changed, reloading.
+INFO 2025-05-18 04:14:09,781 autoreload 10788 10304 Watching for file changes with StatReloader
+INFO 2025-05-18 04:14:39,913 autoreload 10788 10304 C:\Users\malik\PycharmProjects\Kurrasat\generator\tasks.py changed, reloading.
+INFO 2025-05-18 04:14:44,144 autoreload 10348 14256 Watching for file changes with StatReloader
+INFO 2025-05-18 04:15:15,003 autoreload 10348 14256 C:\Users\malik\PycharmProjects\Kurrasat\generator\tasks.py changed, reloading.
+INFO 2025-05-18 04:15:17,927 autoreload 7600 2036 Watching for file changes with StatReloader
+INFO 2025-05-18 04:15:48,443 autoreload 7600 2036 C:\Users\malik\PycharmProjects\Kurrasat\generator\tasks.py changed, reloading.
+INFO 2025-05-18 04:15:51,151 autoreload 6368 1544 Watching for file changes with StatReloader
+INFO 2025-05-18 04:16:59,665 basehttp 6368 6784 "GET /generator/ HTTP/1.1" 200 12912
+INFO 2025-05-18 04:17:34,359 basehttp 6368 6784 "POST /generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 04:17:34,404 basehttp 6368 6784 "GET /generator/task/status/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 8807
+INFO 2025-05-18 04:17:34,514 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:17:40,109 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:17:45,107 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:17:50,096 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:17:54,441 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:00,110 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:05,118 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:10,110 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:15,118 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:20,105 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:25,109 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:30,102 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:35,110 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:40,111 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:45,111 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:50,115 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:18:55,106 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:19:40,114 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 24
+INFO 2025-05-18 04:20:02,575 basehttp 6368 6784 "GET /generator/task/check/76e62cfb-b153-4384-886c-ac8974ed480d/rfp/11/ HTTP/1.1" 200 65
+ERROR 2025-05-18 04:20:03,029 log 6368 6784 Internal Server Error: /generator/success/11/
+Traceback (most recent call last):
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py", line 188, in success_view
+    return render(request, 'generator/success.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: generator/success.html
+ERROR 2025-05-18 04:20:03,064 basehttp 6368 6784 "GET /generator/success/11/ HTTP/1.1" 500 88660
+ERROR 2025-05-18 04:21:37,257 log 6368 6784 Internal Server Error: /generator/success/11/
+Traceback (most recent call last):
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py", line 188, in success_view
+    return render(request, 'generator/success.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: generator/success.html
+ERROR 2025-05-18 04:21:37,266 basehttp 6368 6784 "GET /generator/success/11/ HTTP/1.1" 500 88928
+ERROR 2025-05-18 04:21:38,929 log 6368 6784 Internal Server Error: /generator/success/11/
+Traceback (most recent call last):
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py", line 188, in success_view
+    return render(request, 'generator/success.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: generator/success.html
+ERROR 2025-05-18 04:21:38,935 basehttp 6368 6784 "GET /generator/success/11/ HTTP/1.1" 500 88928
+ERROR 2025-05-18 04:21:39,497 log 6368 6784 Internal Server Error: /generator/success/11/
+Traceback (most recent call last):
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py", line 188, in success_view
+    return render(request, 'generator/success.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: generator/success.html
+ERROR 2025-05-18 04:21:39,502 basehttp 6368 6784 "GET /generator/success/11/ HTTP/1.1" 500 88928
+ERROR 2025-05-18 04:21:39,917 log 6368 6784 Internal Server Error: /generator/success/11/
+Traceback (most recent call last):
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py", line 188, in success_view
+    return render(request, 'generator/success.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malik\PycharmProjects\Kurrsat\.venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: generator/success.html
+ERROR 2025-05-18 04:21:39,920 basehttp 6368 6784 "GET /generator/success/11/ HTTP/1.1" 500 88928
+INFO 2025-05-18 04:22:07,427 basehttp 6368 6784 "GET /generator/success/11/ HTTP/1.1" 200 10322
+INFO 2025-05-18 06:12:22,910 autoreload 6368 1544 C:\Users\malik\PycharmProjects\Kurrasat\generator\tasks.py changed, reloading.
+INFO 2025-05-18 06:12:26,585 autoreload 1312 12412 Watching for file changes with StatReloader
+INFO 2025-05-18 06:31:57,822 autoreload 1312 12412 C:\Users\malik\PycharmProjects\Kurrasat\generator\rfp_processor.py changed, reloading.
+INFO 2025-05-18 06:32:00,948 autoreload 11652 13252 Watching for file changes with StatReloader
+INFO 2025-05-18 07:11:22,059 autoreload 10836 8816 Watching for file changes with StatReloader
+INFO 2025-05-18 07:11:39,625 basehttp 10836 1776 "GET / HTTP/1.1" 200 19445
+INFO 2025-05-18 07:11:43,852 basehttp 10836 1776 "GET /generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 07:11:43,929 basehttp 10836 1776 "GET /generator/ HTTP/1.1" 200 17852
+INFO 2025-05-18 07:17:33,116 basehttp 10836 12916 "POST /generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 07:17:33,173 basehttp 10836 12916 "GET /generator/task/status/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 8807
+INFO 2025-05-18 07:17:33,279 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:17:38,295 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:17:44,103 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:17:49,107 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:17:54,100 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:17:59,107 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:04,107 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:08,267 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:14,251 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:19,111 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:24,111 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:29,107 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:34,111 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:38,654 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:44,106 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:49,113 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:54,108 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:18:59,106 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:19:04,106 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:19:40,118 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:20:40,104 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:21:26,341 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:21:28,258 basehttp 10836 12916 "GET /generator/task/check/0e5db8e3-38b1-41d5-9259-57206bde2c2e/rfp/12/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:21:30,716 basehttp 10836 12916 "GET /generator/ HTTP/1.1" 200 17852
+INFO 2025-05-18 07:22:39,359 basehttp 10836 12916 "POST /generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 07:22:39,373 basehttp 10836 12916 "GET /generator/task/status/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 8807
+INFO 2025-05-18 07:22:39,450 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:22:45,113 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:22:50,099 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:22:55,103 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:23:00,099 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:23:05,099 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:23:10,105 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:23:15,102 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:23:20,111 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:23:25,109 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:23:30,099 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:23:35,101 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:23:40,119 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:24:36,059 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:24:39,424 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:24:45,114 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:24:50,110 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:24:55,104 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:25:00,103 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:25:05,110 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:25:10,105 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:25:15,102 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:25:20,101 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:25:25,109 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:25:30,107 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:25:35,111 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:25:40,130 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:25:45,101 basehttp 10836 12916 "GET /generator/task/check/76946685-6ecd-48ae-8f71-b9178329d1bc/rfp/13/ HTTP/1.1" 200 65
+INFO 2025-05-18 07:25:45,142 basehttp 10836 12916 "GET /generator/success/13/ HTTP/1.1" 200 10531
+INFO 2025-05-18 07:25:54,082 basehttp 10836 12916 "GET /generator/download/%D8%A3%D8%AF%D8%AE%D9%84_%D8%A7%D8%B3%D9%85_%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%81%D8%B3%D8%A9_%D9%85%D8%B4%D8%B1%D9%88%D8%B9_%D8%A7%D9%84%D8%A3%D9%85%D9%86_%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A_rfp_WmE2rbx.docx HTTP/1.1" 302 0
+INFO 2025-05-18 07:29:31,264 basehttp 10836 12916 "GET /generator/download/%D8%A3%D8%AF%D8%AE%D9%84_%D8%A7%D8%B3%D9%85_%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%81%D8%B3%D8%A9_%D9%85%D8%B4%D8%B1%D9%88%D8%B9_%D8%A7%D9%84%D8%A3%D9%85%D9%86_%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A_rfp_WmE2rbx.docx HTTP/1.1" 302 0
+INFO 2025-05-18 07:32:21,874 autoreload 10836 8816 C:\Users\malik\PycharmProjects\Kurrasat\kurrasat\settings.py changed, reloading.
+INFO 2025-05-18 07:32:24,922 autoreload 1816 15328 Watching for file changes with StatReloader
+INFO 2025-05-18 07:32:45,211 basehttp 1816 12432 "GET /generator/ HTTP/1.1" 200 17852
+INFO 2025-05-18 07:33:53,999 basehttp 1816 12432 "POST /generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 07:33:54,020 basehttp 1816 12432 "GET /generator/task/status/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 8807
+INFO 2025-05-18 07:33:54,137 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:33:59,068 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:04,072 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:09,113 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:14,106 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:19,106 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:24,096 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:29,100 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:34,109 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:39,106 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:44,112 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:49,113 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:54,112 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:34:59,114 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:35:04,105 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:35:09,113 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:35:14,113 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:35:19,102 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:35:24,105 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:35:40,106 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:11,808 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:14,074 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:19,107 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:24,098 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:29,110 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:34,108 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:39,070 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:44,098 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:49,101 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:54,100 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:36:59,104 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:37:04,110 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:37:09,107 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 24
+INFO 2025-05-18 07:37:14,109 basehttp 1816 12432 "GET /generator/task/check/aa055c4e-ca25-4ed6-9a3a-82c604540a90/rfp/14/ HTTP/1.1" 200 65
+INFO 2025-05-18 07:37:14,141 basehttp 1816 12432 "GET /generator/success/14/ HTTP/1.1" 200 10546
+INFO 2025-05-18 07:37:32,323 basehttp 1816 12432 "GET /generator/download/%D8%A3%D8%AF%D8%AE%D9%84_%D8%A7%D8%B3%D9%85_%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%81%D8%B3%D8%A9_%D9%85%D8%B4%D8%B1%D9%88%D8%B9_%D8%A7%D9%84%D8%A3%D9%85%D9%86_%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A_rfp.docx HTTP/1.1" 302 0
+INFO 2025-05-18 07:37:32,339 basehttp 1816 12432 "GET /generator/ HTTP/1.1" 200 18363
+INFO 2025-05-18 07:38:02,539 basehttp 1816 12432 "GET /admin HTTP/1.1" 301 0
+INFO 2025-05-18 07:38:02,567 basehttp 1816 14152 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-05-18 07:38:02,738 basehttp 1816 14152 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3745
+INFO 2025-05-18 07:38:02,955 basehttp 1816 15288 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-05-18 07:38:02,960 basehttp 1816 14152 "GET /static/admin/css/base.css HTTP/1.1" 200 22154
+INFO 2025-05-18 07:38:02,981 basehttp 1816 15236 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-05-18 07:38:02,998 basehttp 1816 15288 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-05-18 07:38:02,999 basehttp 1816 14152 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-05-18 07:38:03,015 basehttp 1816 15236 "GET /static/admin/css/rtl.css HTTP/1.1" 200 4772
+INFO 2025-05-18 07:38:03,023 basehttp 1816 15288 "GET /static/admin/css/responsive_rtl.css HTTP/1.1" 200 1991
+INFO 2025-05-18 07:38:03,024 basehttp 1816 14152 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16632
+INFO 2025-05-18 07:38:03,056 basehttp 1816 15236 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-05-18 07:38:06,417 basehttp 1816 15236 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3988
+INFO 2025-05-18 07:39:41,426 autoreload 5204 15080 Watching for file changes with StatReloader
+INFO 2025-05-18 07:39:53,035 basehttp 5204 11872 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3988
+INFO 2025-05-18 07:40:06,429 basehttp 5204 11872 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-05-18 07:40:06,488 basehttp 5204 11872 "GET /admin/ HTTP/1.1" 200 12856
+INFO 2025-05-18 07:40:06,623 basehttp 5204 11872 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-05-18 07:40:06,636 basehttp 5204 11872 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-05-18 07:40:06,651 basehttp 5204 6904 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-05-18 07:40:09,256 basehttp 5204 6904 "POST /i18n/setlang/ HTTP/1.1" 302 0
+INFO 2025-05-18 07:40:09,286 basehttp 5204 6904 "GET /en/admin/ HTTP/1.1" 200 12671
+INFO 2025-05-18 07:40:12,726 basehttp 5204 6904 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 20204
+INFO 2025-05-18 07:40:12,808 basehttp 5204 6904 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-05-18 07:40:12,866 basehttp 5204 13236 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-05-18 07:40:12,873 basehttp 5204 1536 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-05-18 07:40:12,875 basehttp 5204 6904 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-05-18 07:40:12,938 basehttp 5204 11872 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 07:40:12,962 basehttp 5204 13972 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-05-18 07:40:12,972 basehttp 5204 13236 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-05-18 07:40:12,980 basehttp 5204 1536 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-05-18 07:40:12,991 basehttp 5204 11872 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-05-18 07:40:13,006 basehttp 5204 2504 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-05-18 07:40:13,041 basehttp 5204 2504 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-05-18 07:40:13,194 basehttp 5204 6904 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-05-18 07:40:13,249 basehttp 5204 6904 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-05-18 07:40:13,258 basehttp 5204 2504 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-05-18 07:40:17,875 basehttp 5204 2504 "GET /en/admin/generator/rfpdocument/14/change/ HTTP/1.1" 200 20615
+INFO 2025-05-18 07:40:17,936 basehttp 5204 1536 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-05-18 07:40:17,949 basehttp 5204 2504 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-05-18 07:40:17,953 basehttp 5204 13236 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 07:40:17,962 basehttp 5204 11872 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-05-18 07:40:17,963 basehttp 5204 6904 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-05-18 07:40:17,991 basehttp 5204 2504 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-05-18 07:40:18,030 basehttp 5204 6904 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-05-18 07:40:18,186 basehttp 5204 6904 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-05-18 07:40:18,189 basehttp 5204 2504 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-05-18 07:41:19,403 basehttp 5204 2504 "GET /generator/download/%D8%A3%D8%AF%D8%AE%D9%84_%D8%A7%D8%B3%D9%85_%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%81%D8%B3%D8%A9_%D9%85%D8%B4%D8%B1%D9%88%D8%B9_%D8%A7%D9%84%D8%A3%D9%85%D9%86_%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A_rfp.docx HTTP/1.1" 302 0
+INFO 2025-05-18 07:41:19,428 basehttp 5204 2504 "GET /generator/ HTTP/1.1" 200 18201
+INFO 2025-05-18 07:41:51,008 basehttp 5204 2504 "GET /generator/download/%D8%A3%D8%AF%D8%AE%D9%84_%D8%A7%D8%B3%D9%85_%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%81%D8%B3%D8%A9_%D9%85%D8%B4%D8%B1%D9%88%D8%B9_%D8%A7%D9%84%D8%A3%D9%85%D9%86_%D8%A7%D9%84%D8%B3%D9%8A%D8%A8%D8%B1%D8%A7%D9%86%D9%8A_rfp.docx HTTP/1.1" 302 0
+INFO 2025-05-18 07:41:51,024 basehttp 5204 2504 "GET /generator/ HTTP/1.1" 200 18201
+INFO 2025-05-18 07:47:18,914 autoreload 5204 15080 C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py changed, reloading.
+INFO 2025-05-18 07:47:22,088 autoreload 13124 13180 Watching for file changes with StatReloader
+INFO 2025-05-18 07:47:30,748 autoreload 13124 13180 C:\Users\malik\PycharmProjects\Kurrasat\generator\urls.py changed, reloading.
+INFO 2025-05-18 07:47:32,843 autoreload 5216 6668 Watching for file changes with StatReloader
+INFO 2025-05-18 07:48:55,421 basehttp 5216 12036 "GET /generator/success/14/ HTTP/1.1" 200 10167
+INFO 2025-05-18 07:48:57,670 basehttp 5216 12036 "GET /generator/download_by_id/14/ HTTP/1.1" 302 0
+INFO 2025-05-18 07:49:37,004 basehttp 5216 12036 "GET /generator/ HTTP/1.1" 200 17690
+INFO 2025-05-18 07:52:59,089 basehttp 5216 12036 "GET /generator/improve/ HTTP/1.1" 200 20734
+WARNING 2025-05-18 07:55:36,072 log 5216 12036 Forbidden (CSRF token missing.): /generator/improve/process/
+WARNING 2025-05-18 07:55:36,073 basehttp 5216 12036 "POST /generator/improve/process/ HTTP/1.1" 403 2517
+WARNING 2025-05-18 07:56:07,774 log 5216 12036 Forbidden (CSRF token missing.): /generator/improve/process/
+WARNING 2025-05-18 07:56:07,776 basehttp 5216 12036 "POST /generator/improve/process/ HTTP/1.1" 403 2517
+WARNING 2025-05-18 07:56:25,012 log 5216 12036 Forbidden (CSRF token missing.): /generator/improve/process/
+WARNING 2025-05-18 07:56:25,013 basehttp 5216 12036 "POST /generator/improve/process/ HTTP/1.1" 403 2517
+INFO 2025-05-18 07:59:03,550 autoreload 5216 6668 C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py changed, reloading.
+INFO 2025-05-18 07:59:09,755 autoreload 10736 1428 Watching for file changes with StatReloader
+INFO 2025-05-18 08:02:11,271 basehttp 10736 6536 "GET /generator/improve/ HTTP/1.1" 200 20670
+WARNING 2025-05-18 08:03:10,436 log 10736 6536 Forbidden (CSRF token missing.): /generator/improve/process/
+WARNING 2025-05-18 08:03:10,439 basehttp 10736 6536 "POST /generator/improve/process/ HTTP/1.1" 403 2517
+INFO 2025-05-18 08:03:26,301 autoreload 12996 13960 Watching for file changes with StatReloader
+INFO 2025-05-18 08:03:52,623 basehttp 12996 3820 "GET /generator/improve/ HTTP/1.1" 200 20670
+INFO 2025-05-18 08:03:53,571 basehttp 12996 3820 "GET /generator/improve/ HTTP/1.1" 200 20670
+INFO 2025-05-18 08:03:53,977 basehttp 12996 3820 "GET /generator/improve/ HTTP/1.1" 200 20670
+INFO 2025-05-18 08:03:54,232 basehttp 12996 3820 "GET /generator/improve/ HTTP/1.1" 200 20670
+WARNING 2025-05-18 08:04:38,828 log 12996 3820 Forbidden (CSRF token missing.): /generator/improve/process/
+WARNING 2025-05-18 08:04:38,834 basehttp 12996 3820 "POST /generator/improve/process/ HTTP/1.1" 403 2517
+INFO 2025-05-18 08:06:52,009 autoreload 11736 13696 Watching for file changes with StatReloader
+WARNING 2025-05-18 08:07:00,461 log 11736 5756 Forbidden (CSRF token missing.): /generator/improve/process/
+WARNING 2025-05-18 08:07:00,463 basehttp 11736 5756 "POST /generator/improve/process/ HTTP/1.1" 403 2517
+INFO 2025-05-18 08:07:07,214 basehttp 11736 5756 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:07:07,421 basehttp 11736 5756 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:07:07,779 basehttp 11736 5756 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:07:08,013 basehttp 11736 5756 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:07:08,334 basehttp 11736 5756 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:07:08,563 basehttp 11736 5756 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:07:08,757 basehttp 11736 5756 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:07:58,618 basehttp 11736 5756 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 08:07:58,638 basehttp 11736 5756 "GET /generator/improve/ HTTP/1.1" 200 21261
+INFO 2025-05-18 08:12:31,820 autoreload 11736 13696 C:\Users\malik\PycharmProjects\Kurrasat\kurrasat\settings.py changed, reloading.
+INFO 2025-05-18 08:12:35,579 autoreload 264 14904 Watching for file changes with StatReloader
+INFO 2025-05-18 08:12:51,513 basehttp 264 14100 "GET / HTTP/1.1" 200 19283
+INFO 2025-05-18 08:12:55,971 basehttp 264 14100 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:13:33,559 basehttp 264 14100 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 08:13:33,572 basehttp 264 14100 "GET /generator/improve/ HTTP/1.1" 200 21261
+INFO 2025-05-18 08:19:15,550 autoreload 264 14904 C:\Users\malik\PycharmProjects\Kurrasat\generator\tasks.py changed, reloading.
+INFO 2025-05-18 08:19:19,242 autoreload 12872 3304 Watching for file changes with StatReloader
+INFO 2025-05-18 08:20:15,961 autoreload 12872 3304 C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py changed, reloading.
+INFO 2025-05-18 08:20:20,659 autoreload 4692 14444 Watching for file changes with StatReloader
+INFO 2025-05-18 08:20:35,334 autoreload 5240 14152 Watching for file changes with StatReloader
+INFO 2025-05-18 08:20:41,520 basehttp 5240 5912 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:21:20,539 basehttp 5240 5912 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 08:21:20,554 basehttp 5240 5912 "GET /generator/improve/ HTTP/1.1" 200 21261
+INFO 2025-05-18 08:23:56,745 autoreload 5240 14152 C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py changed, reloading.
+INFO 2025-05-18 08:23:59,912 autoreload 5676 2300 Watching for file changes with StatReloader
+INFO 2025-05-18 08:24:07,789 basehttp 5676 2280 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:24:44,850 basehttp 5676 2280 "POST /generator/improve/process/ HTTP/1.1" 200 7872
+INFO 2025-05-18 08:26:12,638 basehttp 5676 2280 "GET /generator/task/status/85002490-ccc6-41f9-a127-8fd4cd33b9c4/improve/2/ HTTP/1.1" 200 8654
+INFO 2025-05-18 08:26:12,697 basehttp 5676 2280 "GET /generator/task/check/85002490-ccc6-41f9-a127-8fd4cd33b9c4/improve/2/ HTTP/1.1" 200 582
+INFO 2025-05-18 08:32:21,620 autoreload 5676 2300 C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py changed, reloading.
+INFO 2025-05-18 08:32:24,055 autoreload 4040 12940 Watching for file changes with StatReloader
+INFO 2025-05-18 08:32:40,228 basehttp 4040 14172 "GET / HTTP/1.1" 200 19283
+INFO 2025-05-18 08:32:44,041 basehttp 4040 14172 "GET /generator/improve/ HTTP/1.1" 200 19505
+INFO 2025-05-18 08:37:02,798 basehttp 4040 14172 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 08:39:10,119 basehttp 4040 14172 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 08:39:10,133 basehttp 4040 14172 "GET /generator/improve/ HTTP/1.1" 200 21261
+INFO 2025-05-18 08:40:43,476 basehttp 4040 14172 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 08:40:43,495 basehttp 4040 14172 "GET /generator/improve/ HTTP/1.1" 200 21261
+INFO 2025-05-18 08:46:10,155 basehttp 4040 11220 "GET /admin/ HTTP/1.1" 200 12856
+INFO 2025-05-18 08:46:13,242 basehttp 4040 11220 "POST /i18n/setlang/ HTTP/1.1" 302 0
+INFO 2025-05-18 08:46:13,267 basehttp 4040 11220 "GET /en/admin/ HTTP/1.1" 200 12671
+INFO 2025-05-18 08:46:16,467 basehttp 4040 11220 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 20204
+INFO 2025-05-18 08:46:16,537 basehttp 4040 11220 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 08:46:20,883 basehttp 4040 11220 "POST /en/admin/generator/rfpdocument/ HTTP/1.1" 200 14928
+INFO 2025-05-18 08:46:21,054 basehttp 4040 11220 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-05-18 08:46:22,154 basehttp 4040 11220 "POST /en/admin/generator/rfpdocument/ HTTP/1.1" 302 0
+INFO 2025-05-18 08:46:22,185 basehttp 4040 11220 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 14417
+INFO 2025-05-18 08:46:22,238 basehttp 4040 11220 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 08:46:22,268 basehttp 4040 11220 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-05-18 08:46:23,691 basehttp 4040 11220 "GET /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 200 16483
+INFO 2025-05-18 08:46:23,742 basehttp 4040 11220 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 08:46:26,177 basehttp 4040 11220 "GET /en/admin/generator/improvedrfpdocument/2/change/ HTTP/1.1" 200 20242
+INFO 2025-05-18 08:46:26,232 basehttp 4040 11220 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 08:46:48,004 basehttp 4040 11220 "GET /en/admin/generator/improvedrfpdocument/2/change/ HTTP/1.1" 200 20242
+INFO 2025-05-18 08:46:52,818 basehttp 4040 11220 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 14273
+INFO 2025-05-18 08:46:52,873 basehttp 4040 11220 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 08:46:54,418 basehttp 4040 11220 "GET /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 200 16483
+INFO 2025-05-18 08:46:54,472 basehttp 4040 11220 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 08:46:58,546 basehttp 4040 11220 "POST /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 200 13265
+INFO 2025-05-18 08:46:59,587 basehttp 4040 11220 "POST /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 302 0
+INFO 2025-05-18 08:46:59,623 basehttp 4040 11220 "GET /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 200 14494
+INFO 2025-05-18 08:46:59,673 basehttp 4040 11220 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 08:47:02,426 basehttp 4040 11220 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 09:03:59,959 basehttp 4040 6736 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 09:04:00,736 basehttp 4040 6736 "GET /generator/improve/ HTTP/1.1" 200 20270
+WARNING 2025-05-18 09:05:28,215 log 4040 6736 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-18 09:05:28,228 basehttp 4040 6736 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4795
+INFO 2025-05-18 09:05:44,366 basehttp 4040 6736 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 09:05:44,384 basehttp 4040 6736 "GET /generator/improve/ HTTP/1.1" 200 21261
+WARNING 2025-05-18 09:05:44,612 log 4040 6736 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-18 09:05:44,614 basehttp 4040 6736 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4795
+INFO 2025-05-18 09:06:05,291 basehttp 4040 6736 "GET /en/admin/generator/rfpdocument/14/change/ HTTP/1.1" 302 0
+INFO 2025-05-18 09:06:05,323 basehttp 4040 6736 "GET /en/admin/ HTTP/1.1" 200 16621
+INFO 2025-05-18 09:06:05,421 basehttp 4040 6736 "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+INFO 2025-05-18 09:06:05,433 basehttp 4040 13000 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-05-18 09:06:08,579 basehttp 4040 13000 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 14273
+INFO 2025-05-18 09:06:08,670 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:10,824 basehttp 4040 13000 "GET /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 200 14342
+INFO 2025-05-18 09:06:10,889 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:11,644 basehttp 4040 13000 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 14273
+INFO 2025-05-18 09:06:11,700 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:12,394 basehttp 4040 13000 "GET /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 200 14342
+INFO 2025-05-18 09:06:12,447 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:13,081 basehttp 4040 13000 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 14273
+INFO 2025-05-18 09:06:13,140 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:13,711 basehttp 4040 13000 "GET /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 200 14342
+INFO 2025-05-18 09:06:13,769 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:15,005 basehttp 4040 13000 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 14273
+INFO 2025-05-18 09:06:15,095 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:15,691 basehttp 4040 13000 "GET /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 200 14342
+INFO 2025-05-18 09:06:15,765 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:16,370 basehttp 4040 13000 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 14273
+INFO 2025-05-18 09:06:16,425 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:17,271 basehttp 4040 13000 "GET /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 200 14342
+INFO 2025-05-18 09:06:17,365 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:17,870 basehttp 4040 13000 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 14273
+INFO 2025-05-18 09:06:17,944 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:18,463 basehttp 4040 13000 "GET /en/admin/generator/improvedrfpdocument/ HTTP/1.1" 200 14342
+INFO 2025-05-18 09:06:18,523 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:06:19,096 basehttp 4040 13000 "GET /en/admin/generator/rfpdocument/ HTTP/1.1" 200 14273
+INFO 2025-05-18 09:06:19,159 basehttp 4040 13000 "GET /en/admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-18 09:14:51,490 autoreload 4040 12940 C:\Users\malik\PycharmProjects\Kurrasat\generator\rfp_processor.py changed, reloading.
+INFO 2025-05-18 09:14:59,478 autoreload 4756 10816 Watching for file changes with StatReloader
+INFO 2025-05-18 09:15:56,761 autoreload 4756 10816 C:\Users\malik\PycharmProjects\Kurrasat\generator\rfp_processor.py changed, reloading.
+INFO 2025-05-18 09:16:06,195 autoreload 13448 14528 Watching for file changes with StatReloader
+INFO 2025-05-18 09:16:56,584 autoreload 13448 14528 C:\Users\malik\PycharmProjects\Kurrasat\generator\rfp_processor.py changed, reloading.
+INFO 2025-05-18 09:16:59,114 autoreload 5912 6132 Watching for file changes with StatReloader
+INFO 2025-05-18 09:17:27,775 autoreload 5912 6132 C:\Users\malik\PycharmProjects\Kurrasat\generator\tasks.py changed, reloading.
+INFO 2025-05-18 09:17:33,746 autoreload 14924 14784 Watching for file changes with StatReloader
+INFO 2025-05-18 09:18:50,298 autoreload 14924 14784 C:\Users\malik\PycharmProjects\Kurrasat\generator\rfp_processor.py changed, reloading.
+INFO 2025-05-18 09:19:02,926 autoreload 6696 3044 Watching for file changes with StatReloader
+INFO 2025-05-18 09:19:12,916 basehttp 6696 10056 "GET /generator/improve/ HTTP/1.1" 200 20270
+WARNING 2025-05-18 09:19:13,076 log 6696 10056 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-18 09:19:13,079 basehttp 6696 10056 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4795
+INFO 2025-05-18 09:21:32,430 basehttp 6696 10056 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 09:21:32,447 basehttp 6696 10056 "GET /generator/improve/ HTTP/1.1" 200 21049
+INFO 2025-05-18 09:24:56,272 basehttp 6696 10056 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 09:25:03,848 basehttp 6696 10056 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 09:26:13,336 basehttp 6696 10056 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 09:26:13,360 basehttp 6696 10056 "GET /generator/improve/ HTTP/1.1" 200 21049
+INFO 2025-05-18 09:27:48,933 autoreload 6696 3044 C:\Users\malik\PycharmProjects\Kurrasat\generator\rfp_processor.py changed, reloading.
+INFO 2025-05-18 09:27:58,502 autoreload 7908 13972 Watching for file changes with StatReloader
+INFO 2025-05-18 09:34:28,883 autoreload 7908 13972 C:\Users\malik\PycharmProjects\Kurrasat\generator\rfp_processor.py changed, reloading.
+INFO 2025-05-18 09:34:33,832 autoreload 15144 12032 Watching for file changes with StatReloader
+INFO 2025-05-18 09:34:47,068 basehttp 15144 1452 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 09:35:24,211 basehttp 15144 1452 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 09:35:24,284 basehttp 15144 1452 "GET /generator/improve/ HTTP/1.1" 200 21049
+INFO 2025-05-18 09:46:26,607 basehttp 15144 15816 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 09:46:26,625 basehttp 15144 15816 "GET /generator/improve/ HTTP/1.1" 200 21387
+INFO 2025-05-18 09:47:05,463 basehttp 15144 15816 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 09:47:05,711 basehttp 15144 15816 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 09:47:06,116 basehttp 15144 15816 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 09:47:06,550 basehttp 15144 15816 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 09:47:06,830 basehttp 15144 15816 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 09:47:07,050 basehttp 15144 15816 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 10:40:41,745 autoreload 15144 12032 C:\Users\malik\PycharmProjects\Kurrasat\generator\tasks.py changed, reloading.
+INFO 2025-05-18 10:40:47,405 autoreload 16212 8560 Watching for file changes with StatReloader
+INFO 2025-05-18 10:41:06,416 basehttp 16212 15280 "GET / HTTP/1.1" 200 19283
+INFO 2025-05-18 10:41:10,615 basehttp 16212 15280 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 10:43:12,619 basehttp 16212 15280 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 10:43:12,634 basehttp 16212 15280 "GET /generator/improve/ HTTP/1.1" 200 21049
+INFO 2025-05-18 10:45:03,670 basehttp 16212 15280 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 10:45:03,689 basehttp 16212 2184 "GET /generator/improve/ HTTP/1.1" 200 21387
+INFO 2025-05-18 18:03:29,827 autoreload 16212 8560 C:\Users\malik\PycharmProjects\Kurrasat\generator\tasks.py changed, reloading.
+INFO 2025-05-18 18:03:37,032 autoreload 12828 7968 Watching for file changes with StatReloader
+INFO 2025-05-18 18:05:23,237 autoreload 12828 7968 C:\Users\malik\PycharmProjects\Kurrasat\generator\tasks.py changed, reloading.
+INFO 2025-05-18 18:05:26,500 autoreload 10408 9024 Watching for file changes with StatReloader
+INFO 2025-05-18 18:06:18,361 autoreload 10408 9024 C:\Users\malik\PycharmProjects\Kurrasat\generator\views.py changed, reloading.
+INFO 2025-05-18 18:06:20,756 autoreload 16060 14044 Watching for file changes with StatReloader
+INFO 2025-05-18 18:06:43,125 autoreload 2864 11572 Watching for file changes with StatReloader
+INFO 2025-05-18 18:07:12,624 basehttp 2864 3816 "GET / HTTP/1.1" 200 19283
+INFO 2025-05-18 18:07:16,677 basehttp 2864 3816 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 18:07:38,026 basehttp 2864 3816 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 18:07:38,101 basehttp 2864 3816 "GET /generator/task/status/ade6838a-0d32-4ad0-b829-ffb0724366e4/improve/3/ HTTP/1.1" 200 8654
+INFO 2025-05-18 18:07:38,178 basehttp 2864 3816 "GET /generator/task/check/ade6838a-0d32-4ad0-b829-ffb0724366e4/improve/3/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:07:43,325 basehttp 2864 3816 "GET /generator/task/check/ade6838a-0d32-4ad0-b829-ffb0724366e4/improve/3/ HTTP/1.1" 200 85
+INFO 2025-05-18 18:09:33,348 autoreload 2864 11572 C:\Users\malik\PycharmProjects\Kurrasat\generator\tasks.py changed, reloading.
+INFO 2025-05-18 18:09:35,607 autoreload 8948 7708 Watching for file changes with StatReloader
+INFO 2025-05-18 18:09:58,917 basehttp 8948 10576 "GET /generator/task/status/ade6838a-0d32-4ad0-b829-ffb0724366e4/improve/3/ HTTP/1.1" 200 8654
+INFO 2025-05-18 18:09:59,154 basehttp 8948 10576 "GET /generator/task/check/ade6838a-0d32-4ad0-b829-ffb0724366e4/improve/3/ HTTP/1.1" 200 85
+INFO 2025-05-18 18:10:06,057 basehttp 8948 10576 "GET /generator/ HTTP/1.1" 200 17690
+INFO 2025-05-18 18:10:11,830 basehttp 8948 10576 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-18 18:10:35,818 basehttp 8948 10576 "POST /generator/improve/process/ HTTP/1.1" 302 0
+INFO 2025-05-18 18:10:35,879 basehttp 8948 10576 "GET /generator/task/status/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 8654
+INFO 2025-05-18 18:10:35,954 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:10:41,297 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:10:46,294 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:10:51,291 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:10:56,290 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:01,289 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:06,290 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:11,287 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:16,290 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:20,948 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:25,946 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:30,946 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:35,948 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:41,954 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:46,360 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:51,296 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:11:55,953 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:12:01,295 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:12:06,288 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:12:11,287 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:12:16,288 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:12:21,289 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:12:26,371 basehttp 8948 10576 "GET /generator/task/check/ade0770e-07f4-4539-85cc-aaaa7507cf94/improve/4/ HTTP/1.1" 200 72
+INFO 2025-05-18 18:12:27,203 basehttp 8948 10576 "GET /generator/improve/success/4/ HTTP/1.1" 200 12350
+INFO 2025-05-18 18:13:22,603 basehttp 8948 10576 "POST /i18n/setlang/ HTTP/1.1" 302 0
+INFO 2025-05-18 18:13:22,629 basehttp 8948 10576 "GET /en/generator/improve/success/4/ HTTP/1.1" 200 11645
+INFO 2025-05-18 18:13:26,655 basehttp 8948 10576 "GET /en/generator/improve/download_by_id/4/ HTTP/1.1" 302 0
+WARNING 2025-05-18 18:13:47,946 log 8948 10576 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-18 18:13:47,948 basehttp 8948 10576 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 4795
+INFO 2025-05-18 18:15:53,719 basehttp 8948 2872 "GET /en/generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 18:15:53,771 basehttp 8948 2872 "GET /en/generator/ HTTP/1.1" 200 17102
+INFO 2025-05-18 18:16:35,961 basehttp 8948 2872 "POST /en/generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 18:16:36,004 basehttp 8948 2872 "GET /en/generator/ HTTP/1.1" 200 18619
+INFO 2025-05-18 18:20:03,777 basehttp 8948 2872 "POST /en/generator/generate/ HTTP/1.1" 302 0
+INFO 2025-05-18 18:20:03,839 basehttp 8948 2872 "GET /en/generator/task/status/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 15853
+INFO 2025-05-18 18:20:03,918 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:08,919 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:13,926 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:18,918 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:24,290 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:29,287 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:33,915 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:39,300 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:43,920 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:48,924 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:54,295 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:20:58,915 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:03,914 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:09,296 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:14,289 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:19,285 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:24,287 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:29,295 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:34,499 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:39,607 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:44,295 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:48,909 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:50,693 basehttp 8948 2872 "GET /en/generator/task/status/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 15871
+INFO 2025-05-18 18:21:50,760 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:21:55,760 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:01,296 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:05,861 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:10,759 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:15,758 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:21,299 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:26,303 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:31,296 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:36,286 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:41,304 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:46,296 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:51,291 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:22:56,296 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:23:01,288 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
+INFO 2025-05-18 18:23:06,286 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 68
+INFO 2025-05-18 18:23:08,340 basehttp 8948 2872 "GET /en/generator/success/15/ HTTP/1.1" 200 9704

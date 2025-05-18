@@ -8,17 +8,8 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kurrasat.settings')
 # Set up Django explicitly - this is critical
 django.setup()
 
-# Now import other components after Django is configured
+# Import Django's default ASGI application
 from django.core.asgi import get_asgi_application
-from channels.routing import ProtocolTypeRouter, URLRouter
-from channels.auth import AuthMiddlewareStack
-import documents.routing
 
-application = ProtocolTypeRouter({
-    "http": get_asgi_application(),
-    "websocket": AuthMiddlewareStack(
-        URLRouter(
-            documents.routing.websocket_urlpatterns
-        )
-    ),
-})
+# Only handle HTTP protocol
+application = get_asgi_application()

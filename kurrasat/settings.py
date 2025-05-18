@@ -15,9 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -29,9 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['kurwast.onrender.com', 'localhost', '127.0.0.1']
 
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,7 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',  # Add django-storages
     'channels',
+    'django_celery_results',  # Add Celery results backend
     'accounts',
     'core',
     'generator'
@@ -83,7 +79,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'kurrasat.wsgi.application'
-
+ASGI_APPLICATION = 'kurrasat.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -94,7 +90,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -113,7 +108,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
@@ -137,15 +131,108 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
 
+# Define base media and temporary directories
+# These are needed regardless of whether S3 is used
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+TEMP_DIR = os.path.join(MEDIA_ROOT, 'temp')
 
-# Static files
+# Create temporary directories
+os.makedirs(TEMP_DIR, exist_ok=True)
+
+# Create temporary subdirectories for file processing
+TEMP_RFP_DIR = os.path.join(TEMP_DIR, 'rfp_documents')
+TEMP_IMPROVED_DIR = os.path.join(TEMP_DIR, 'improved_rfps')
+TEMP_ORIGINAL_DIR = os.path.join(TEMP_DIR, 'original_rfps')
+os.makedirs(TEMP_RFP_DIR, exist_ok=True)
+os.makedirs(TEMP_IMPROVED_DIR, exist_ok=True)
+os.makedirs(TEMP_ORIGINAL_DIR, exist_ok=True)
+
+# Static files configuration (used by both S3 and local)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+# S3 Configuration
+USE_S3 = True
+
+if USE_S3:
+    # AWS Settings
+    AWS_ACCESS_KEY_ID = 'AKIAYQVSVJKR56ZHAP2I'
+    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_STORAGE_BUCKET_NAME = 'kurrasat-storage'
+    AWS_S3_REGION_NAME = 'eu-north-1'
+    AWS_S3_SIGNATURE_VERSION = 's3v4'
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_DEFAULT_ACL = None
+    AWS_S3_VERIFY = True
+    AWS_S3_OBJECT_PARAMETERS = {
+        'CacheControl': 'max-age=86400',
+    }
+    AWS_QUERYSTRING_AUTH = False  # Don't add complex query parameters to URLs
+
+    # S3 optimized read settings
+    S3_OPTIMIZE_READ = True
+    S3_READ_CHUNK_SIZE = 8192
+
+    # S3 Storage classes
+    DEFAULT_FILE_STORAGE = 'kurrasat.storage_backends.MediaStorage'
+
+    # Specialized storage classes
+    RFP_DOCUMENT_STORAGE = 'kurrasat.storage_backends.RfpDocumentStorage'
+    IMPROVED_RFP_STORAGE = 'kurrasat.storage_backends.ImprovedRfpStorage'
+    ORIGINAL_RFP_STORAGE = 'kurrasat.storage_backends.OriginalRfpStorage'
+    CSV_FILE_STORAGE = 'kurrasat.storage_backends.CSVStorage'
+
+    # URLs for media in S3
+    MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/media/'
+
+    # Option to cleanup local files after S3 upload
+    CLEANUP_LOCAL_FILES = True
+else:
+    # Use local storage settings
+    MEDIA_URL = '/media/'
+
+    # Create permanent directories for local storage
+    RFP_DOCUMENTS_DIR = os.path.join(MEDIA_ROOT, 'rfp_documents')
+    IMPROVED_RFPS_DIR = os.path.join(MEDIA_ROOT, 'improved_rfps')
+    ORIGINAL_RFPS_DIR = os.path.join(MEDIA_ROOT, 'original_rfps')
+    os.makedirs(RFP_DOCUMENTS_DIR, exist_ok=True)
+    os.makedirs(IMPROVED_RFPS_DIR, exist_ok=True)
+    os.makedirs(ORIGINAL_RFPS_DIR, exist_ok=True)
+
+    # Don't cleanup local files when using local storage
+    CLEANUP_LOCAL_FILES = False
+
+    # Set storage classes to None when not using S3
+    RFP_DOCUMENT_STORAGE = None
+    IMPROVED_RFP_STORAGE = None
+    ORIGINAL_RFP_STORAGE = None
+    CSV_FILE_STORAGE = None
+
+# Celery Configuration
+CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://localhost:6380/0')
+CELERY_RESULT_BACKEND = 'django-db'  # Store results in the Django database
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE
+
+# Redis Configuration (used by Celery)
+REDIS_HOST = os.environ.get('REDIS_HOST', 'localhost')
+REDIS_PORT = os.environ.get('REDIS_PORT', '6380')
+REDIS_DB = os.environ.get('REDIS_DB', '0')
+REDIS_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}'
+
+# Celery task settings
+CELERY_TASK_TRACK_STARTED = True  # Track when tasks are started
+CELERY_TASK_TIME_LIMIT = 30 * 60  # 30 minutes time limit for tasks
+CELERY_WORKER_CONCURRENCY = 4  # Number of worker processes
+
+# Maximum Upload Size - 50MB
+DATA_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50 MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50 MB
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -154,5 +241,61 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'core:index'
 LOGOUT_REDIRECT_URL = 'accounts:login'
+
+# Create logs directory
+LOGS_DIR = os.path.join(BASE_DIR, 'logs')
+os.makedirs(LOGS_DIR, exist_ok=True)
+
+# Logging Configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(LOGS_DIR, 'django.log'),
+            'formatter': 'verbose',
+        },
+        'celery_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(LOGS_DIR, 'celery.log'),
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'celery': {
+            'handlers': ['console', 'celery_file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'generator': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
 
 OPENAI_API_KEY = "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"

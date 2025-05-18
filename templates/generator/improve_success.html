@@ -172,9 +172,11 @@
             <div class="document-card">
                 <h4>{% trans "الكراسة المُحسّنة" %}</h4>
                 <p>{% trans "يمكنك تحميل النسخة المُحسّنة من كراسة الشروط:" %}</p>
-                <a href="{{ rfp.improved_document.url }}" class="download-btn">
+                <a href="{% url 'generator:download_improved_by_id' rfp.id %}" class="btn btn-primary">
                     <i class="fas fa-download"></i> {% trans "تحميل الكراسة المُحسّنة" %}
-                </a>
+</a>
+{#                <a href="{{ rfp.improved_document.url }}" class="download-btn">#}
+{#                </a>#}
             </div>
         </div>
 

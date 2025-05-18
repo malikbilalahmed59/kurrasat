@@ -5,6 +5,7 @@
 {% block title %}{% trans "كُرّاس - مولد كراسة الشروط" %}{% endblock %}
 
 {% block extra_css %}
+
 <link rel="stylesheet" href="{% static 'style/create.css' %}" />
 <style>
   /* Spinner styling */
@@ -77,6 +78,11 @@
     opacity: 0.7;
     cursor: not-allowed;
   }
+
+  /* Error styling */
+  .input-error {
+    border-color: #dc3545 !important;
+  }
 </style>
 {% endblock %}
 
@@ -86,7 +92,7 @@
   <div class="spinner"></div>
   <div class="text">{% trans "جاري إنشاء كراسة الشروط..." %}</div>
   <div id="generationProgress" class="generation-progress">
-    {% trans "يرجى الانتظار، قد تستغرق العملية من 3 إلى 5 دقائق" %}
+    {% trans "يرجى الانتظار، قد تستغرق العملية من 1 إلى 3 دقيقة" %}
   </div>
 </div>
 
@@ -108,53 +114,120 @@
     <div class="form-container">
       <h2>{% trans "نموذج تسجيل المنافسة" %}</h2>
 
-      <div class="alert alert-info">
-        {% trans "قم بإدخال تفاصيل المنافسة وسيتم إنشاء كراسة شروط كاملة بتنسيق Word. يرجى الانتظار بعد الضغط على زر الإنشاء، حيث قد تستغرق عملية التوليد من 3 إلى 5 دقائق لإنشاء كافة الأقسام الـ 12 للكراسة." %}
-      </div>
+    <!-- إضافة هذا القسم للأخطاء المفصلة -->
+    <div id="validationErrors" class="alert alert-danger" style="display: none; direction: rtl;">
+      <h4 class="alert-heading">{% trans "توجد أخطاء في البيانات المدخلة:" %}</h4>
+      <ul id="errorsList">
+      </ul>
+    </div>
 
-      {% if messages %}
-        {% for message in messages %}
-          <div class="error-message">
-            {{ message }}
-          </div>
-        {% endfor %}
-      {% endif %}
+    {% if messages %}
+    {% for message in messages %}
+      <div class="alert {% if message.tags == 'error' or message.tags == 'warning' %}alert-danger{% elif message.tags == 'success' %}alert-success{% else %}alert-info{% endif %} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <div class="alert alert-info">
+    {% trans "قم بإدخال معلومات دقيقة وشاملة عن المنافسة. كلما كانت البيانات المدخلة أكثر تفصيلاً ودقة، كلما كانت كراسة الشروط الناتجة أكثر فعالية." %}
+</div>
 
       <form id="rfp-form" method="post" action="{% url 'generator:generate_rfp' %}">
         {% csrf_token %}
 
         <div class="form-group">
           <label for="competition_name">{% trans "اسم الكراسة:" %}</label>
-          <input
-            type="text"
-            id="competition_name"
-            name="competition_name"
-            placeholder="{% trans 'أدخل اسم الكراسة' %}"
-            required
-          />
+          <input type="text" id="competition_name" name="competition_name" placeholder="{% trans 'أدخل اسم الكراسة' %}" required />
         </div>
 
         <div class="form-group">
           <label for="competition_objectives">{% trans "أهداف المنافسة:" %}</label>
-          <textarea
-            id="competition_objectives"
-            name="competition_objectives"
-            rows="4"
-            placeholder="{% trans 'أدخل أهداف المنافسة' %}"
-            required
-          ></textarea>
+          <textarea id="competition_objectives" name="competition_objectives" rows="4" placeholder="{% trans 'أدخل أهداف المنافسة' %}" required></textarea>
         </div>
 
         <div class="form-group">
           <label for="competition_description">{% trans "وصف المنافسة:" %}</label>
-          <textarea
-            id="competition_description"
-            name="competition_description"
-            rows="8"
-            placeholder="{% trans 'أدخل وصف المنافسة' %}"
-            required
-          ></textarea>
+          <textarea id="competition_description" name="competition_description" rows="4" placeholder="{% trans 'أدخل وصف المنافسة' %}" required></textarea>
         </div>
+
+        <div class="form-group">
+          <label>الجهة الحكومية:</label>
+          <input type="text" name="government_entity" required />
+        </div>
+
+        <div class="form-group">
+          <label>قيمة التكاليف:</label>
+          <input type="text" name="cost_value" required />
+        </div>
+
+        <div class="form-group">
+          <label>آلية البيع:</label>
+          <input type="text" name="cost_method" required />
+        </div>
+
+        <div class="form-group">
+          <label>تاريخ بداية التنافس:</label>
+          <input type="text" name="start_stage" required />
+        </div>
+
+        <div class="form-group">
+          <label>تاريخ نهاية التنافس:</label>
+          <input type="text" name="end_stage" required />
+        </div>
+
+        <div class="form-group">
+          <label>وثائق العرض الفني:</label>
+          <input type="text" name="technical_docs" required />
+        </div>
+
+        <div class="form-group">
+          <label>العروض البديلة:</label>
+          <input type="text" name="alternative_offers" required />
+        </div>
+
+        <div class="form-group">
+          <label>الضمان الابتدائي:</label>
+          <input type="text" name="initial_guarantee" required />
+        </div>
+
+        <div class="form-group">
+          <label>فترة التوقف بعد النتائج:</label>
+          <input type="text" name="pause_period" required />
+        </div>
+
+        <div class="form-group">
+          <label>الغرامات:</label>
+          <input type="text" name="penalties" required />
+        </div>
+
+        <div class="form-group">
+          <label>مدينة التنفيذ:</label>
+          <input type="text" name="execution_city" required />
+        </div>
+
+        <div class="form-group">
+          <label>حي التنفيذ:</label>
+          <input type="text" name="execution_district" required />
+        </div>
+
+        <div class="form-group">
+          <label>منطقة التنفيذ:</label>
+          <input type="text" name="execution_region" required />
+        </div>
+
+        <div class="form-group">
+          <label>وصف المواد المطلوبة:</label>
+          <input type="text" name="required_materials" required />
+        </div>
+
+
+        <div class="form-group">
+          <label>الشروط الخاصة:</label>
+          <textarea name="special_terms" required></textarea>
+        </div>
+
 
         <div class="form-actions">
           <button type="submit" id="submitBtn" class="btn btn-primary">
@@ -165,70 +238,140 @@
       </form>
     </div>
   </div>
+</section>
+
   <div class="floating-circle small"></div>
 </section>
 {% endblock %}
 
 {% block extra_js %}
 <script>
-  // Form submission handler
-  document.getElementById('rfp-form').addEventListener('submit', function(event) {
-    // Show spinner and loading overlay
-    showLoader();
+// Form submission handler
+document.getElementById('rfp-form').addEventListener('submit', function(event) {
+  // إعادة ضبط قسم الأخطاء
+  document.getElementById('validationErrors').style.display = 'none';
+  document.getElementById('errorsList').innerHTML = '';
 
-    // Check form validity before proceeding
-    if (!this.checkValidity()) {
-      hideLoader();
-      return;
+  // إزالة تأثير الخطأ من كل الحقول
+  document.querySelectorAll('.input-error').forEach(field => {
+    field.classList.remove('input-error');
+  });
+
+  let hasErrors = false;
+  let errors = [];
+
+  // التحقق من الحقول الإلزامية الأساسية فقط
+  const requiredFields = [
+    { id: 'competition_name', name: '{% trans "اسم الكراسة" %}' },
+    { id: 'competition_objectives', name: '{% trans "أهداف المنافسة" %}' },
+    { id: 'competition_description', name: '{% trans "وصف المنافسة" %}' },
+    { id: 'government_entity', name: '{% trans "الجهة الحكومية" %}' }
+  ];
+
+  requiredFields.forEach(field => {
+    const element = document.getElementById(field.id);
+    if (!element.value.trim()) {
+      errors.push(`${field.name} {% trans "مطلوب" %}`);
+      element.classList.add('input-error');
+      hasErrors = true;
     }
   });
 
-  function showLoader() {
-    // Show the small spinner inside the button
-    document.getElementById('loader').style.display = 'inline-block';
+  // عرض الأخطاء إذا وجدت
+  if (hasErrors) {
+    event.preventDefault();
 
-    // Change button text
-    document.querySelector('.btn-text').innerText = '{% trans "جاري التوليد..." %}';
+    // إضافة الأخطاء للقائمة
+    const errorsList = document.getElementById('errorsList');
+    errors.forEach(error => {
+      const li = document.createElement('li');
+      li.textContent = error;
+      errorsList.appendChild(li);
+    });
 
-    // Disable the button
-    document.getElementById('submitBtn').disabled = true;
+    // عرض قسم الأخطاء
+    document.getElementById('validationErrors').style.display = 'block';
 
-    // Show the full-screen overlay
-    document.getElementById('loadingOverlay').classList.add('visible');
+    // التمرير لقسم الأخطاء
+    document.getElementById('validationErrors').scrollIntoView({ behavior: 'smooth' });
 
-    // Optional: Update progress text periodically to keep user informed
-    startProgressUpdates();
+    return;
   }
 
-  function hideLoader() {
-    document.getElementById('loader').style.display = 'none';
-    document.querySelector('.btn-text').innerText = '{% trans "إنشاء كراسة الشروط" %}';
-    document.getElementById('submitBtn').disabled = false;
-    document.getElementById('loadingOverlay').classList.remove('visible');
-  }
+  // استمرار في تقديم النموذج وعرض مؤشر التحميل
+  showLoader();
+});
 
-  function startProgressUpdates() {
-    const progressElement = document.getElementById('generationProgress');
-    const messages = [
-      '{% trans "جاري معالجة البيانات..." %}',
-      '{% trans "جاري تحليل المتطلبات..." %}',
-      '{% trans "جاري إنشاء المقدمة..." %}',
-      '{% trans "جاري إنشاء الأحكام العامة..." %}',
-      '{% trans "جاري إنشاء شروط تقديم العروض..." %}',
-      '{% trans "جاري إنشاء المتطلبات الفنية..." %}',
-      '{% trans "جاري تنسيق المستند النهائي..." %}',
-      '{% trans "اقتربنا من الانتهاء، يرجى الانتظار..." %}'
-    ];
+function showLoader() {
+  // إخفاء قسم الأخطاء إذا كان ظاهرًا
+  document.getElementById('validationErrors').style.display = 'none';
 
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < messages.length) {
-        progressElement.textContent = messages[index];
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 15000); // Update message every 15 seconds
-  }
+  // إظهار المؤشر الصغير داخل الزر
+  document.getElementById('loader').style.display = 'inline-block';
+
+  // تغيير نص الزر
+  document.querySelector('.btn-text').innerText = '{% trans "جاري التوليد..." %}';
+
+  // تعطيل الزر
+  document.getElementById('submitBtn').disabled = true;
+
+  // تعطيل حقول النموذج
+  const formInputs = document.querySelectorAll('#rfp-form input, #rfp-form textarea, #rfp-form select');
+  formInputs.forEach(input => {
+    input.disabled = true;
+  });
+
+  // إظهار الغطاء الشامل
+  document.getElementById('loadingOverlay').classList.add('visible');
+
+  // تحديث نص التقدم بشكل دوري
+  startProgressUpdates();
+
+  // لمزيد من الأمان، تعطيل الخروج من الصفحة
+  window.onbeforeunload = function() {
+    return '{% trans "عملية إنشاء كراسة الشروط قيد التنفيذ. هل أنت متأكد من الخروج؟" %}';
+  };
+}
+
+function hideLoader() {
+  document.getElementById('loader').style.display = 'none';
+  document.querySelector('.btn-text').innerText = '{% trans "إنشاء" %}';
+  document.getElementById('submitBtn').disabled = false;
+
+  // إعادة تفعيل حقول النموذج
+  const formInputs = document.querySelectorAll('#rfp-form input, #rfp-form textarea, #rfp-form select');
+  formInputs.forEach(input => {
+    input.disabled = false;
+  });
+
+  document.getElementById('loadingOverlay').classList.remove('visible');
+
+  // إلغاء تعطيل الخروج من الصفحة
+  window.onbeforeunload = null;
+}
+
+function startProgressUpdates() {
+  const progressElement = document.getElementById('generationProgress');
+  const messages = [
+    '{% trans "جاري معالجة البيانات..." %}',
+    '{% trans "جاري إنشاء قسم المقدمة..." %}',
+    '{% trans "جاري إنشاء الأحكام العامة..." %}',
+    '{% trans "جاري إنشاء شروط تقديم العروض..." %}',
+    '{% trans "جاري إنشاء المتطلبات الفنية..." %}',
+    '{% trans "جاري تنسيق المستند النهائي..." %}',
+    '{% trans "اقتربنا من الانتهاء، يرجى الانتظار..." %}'
+  ];
+
+  let index = 0;
+  const interval = setInterval(() => {
+    if (index < messages.length) {
+      progressElement.textContent = messages[index];
+      index++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 15000); // Update message every 15 seconds
+}
+
 </script>
 {% endblock %}

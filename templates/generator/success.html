@@ -110,9 +110,10 @@
         <p class="message-text">{% trans "يمكنك تحميل ملف الكراسة كامل الآن أو الرجوع للصفحة الرئيسية لإنشاء كراسة جديدة." %}</p>
 
         <div class="actions-container">
-            <a href="{% url 'generator:download_file' filename=filename %}" class="download-btn">
+            <a href="{% url 'generator:download_by_id' rfp.id %}" class="btn btn-primary">
                 <i class="fas fa-download"></i> {% trans "تحميل كراسة الشروط" %}
-            </a>
+</a>
+
             <a href="{% url 'generator:rfp_form' %}" class="return-btn">
                 <i class="fas fa-arrow-right"></i> {% trans "العودة للصفحة الرئيسية" %}
             </a>
