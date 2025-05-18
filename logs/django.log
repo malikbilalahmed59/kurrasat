@@ -638,3 +638,9 @@ INFO 2025-05-18 18:22:56,296 basehttp 8948 2872 "GET /en/generator/task/check/5b
 INFO 2025-05-18 18:23:01,288 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 24
 INFO 2025-05-18 18:23:06,286 basehttp 8948 2872 "GET /en/generator/task/check/5b11c7c8-059f-46c2-9e2c-1480b788b577/rfp/15/ HTTP/1.1" 200 68
 INFO 2025-05-18 18:23:08,340 basehttp 8948 2872 "GET /en/generator/success/15/ HTTP/1.1" 200 9704
+INFO 2025-05-18 23:57:27,030 autoreload 15212 8464 Watching for file changes with StatReloader
+INFO 2025-05-18 23:57:32,701 basehttp 15212 16648 "GET / HTTP/1.1" 200 19283
+WARNING 2025-05-18 23:57:33,574 log 15212 16648 Not Found: /favicon.ico
+WARNING 2025-05-18 23:57:33,585 basehttp 15212 16648 "GET /favicon.ico HTTP/1.1" 404 4684
+INFO 2025-05-18 23:57:37,921 basehttp 15212 16648 "GET /generator/improve/ HTTP/1.1" 200 20270
+INFO 2025-05-19 01:35:19,265 autoreload 15212 8464 C:\Users\malik\PycharmProjects\Kurrasat\kurrasat\settings.py changed, reloading.

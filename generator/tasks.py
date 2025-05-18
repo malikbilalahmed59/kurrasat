@@ -9,7 +9,7 @@ from .rfp_processor import (
     generate_rfp_with_validation, build_vector_store,
     improved_rfp_with_validation,
     extract_text_from_pdf, is_valid_rfp_document,
-    validate_rfp_inputs, improve_rfp_with_extracted_text
+    validate_rfp_inputs
 )
 
 # Configure S3 client only if S3 is enabled
@@ -174,7 +174,8 @@ def improve_rfp_task(
         bypass_validation=False, debug_mode=False
 ):
     """
-    Background task to improve RFP document - validation removed
+    Background task to improve RFP document with enhanced validation and OCR support
+    Added bypass_validation and debug_mode options
     """
     try:
         # Print diagnostic info at the start
@@ -217,15 +218,17 @@ def improve_rfp_task(
         knowledge_dir = os.path.join(settings.STATIC_ROOT, "knowledge")
         vector_store = build_vector_store(knowledge_dir)
 
-        # Run the improvement process without validation
+        # Run the improvement process with validation
         print(f"Starting RFP improvement process")
-        improved_filename = improve_rfp_with_extracted_text(
+        improved_filename = improved_rfp_with_validation(
             temp_original_path,
             competition_name,
             competition_objectives,
             competition_description,
             output_path,
             vector_store,
+            bypass_validation=bypass_validation,
+            debug_mode=debug_mode,
             government_entity=government_entity,
             cost_value=cost_value,
             cost_method=cost_method,

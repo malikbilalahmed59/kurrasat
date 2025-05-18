@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-3j+-w-v^!*swjc=424z3(d)%(lhixmshd+0cg+4t6o7=4z7o9h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kurwast.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -150,9 +150,9 @@ os.makedirs(TEMP_ORIGINAL_DIR, exist_ok=True)
 # Static files configuration (used by both S3 and local)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 # S3 Configuration
 USE_S3 = True
@@ -212,7 +212,7 @@ else:
     CSV_FILE_STORAGE = None
 
 # Celery Configuration
-CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://localhost:6380/0')
+CELERY_BROKER_URL = os.environ.get('REDIS_URL', 'redis://localhost:6379/0')
 CELERY_RESULT_BACKEND = 'django-db'  # Store results in the Django database
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
@@ -221,7 +221,7 @@ CELERY_TIMEZONE = TIME_ZONE
 
 # Redis Configuration (used by Celery)
 REDIS_HOST = os.environ.get('REDIS_HOST', 'localhost')
-REDIS_PORT = os.environ.get('REDIS_PORT', '6380')
+REDIS_PORT = os.environ.get('REDIS_PORT', '6379')
 REDIS_DB = os.environ.get('REDIS_DB', '0')
 REDIS_URL = f'redis://{REDIS_HOST}:{REDIS_PORT}/{REDIS_DB}'
 
@@ -298,4 +298,4 @@ LOGGING = {
     },
 }
 
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
